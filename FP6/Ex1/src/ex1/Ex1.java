@@ -23,10 +23,13 @@ public class Ex1 {
         // TODO code application logic here
         Ingredient n1 = new Ingredient(1 , "Queijo", VEGETAL);
         Ingredient n2 = new Ingredient(2 , "Chouriço", ANIMAL);
+        Ingredient n3 = new Ingredient(3 , "Chouriço", ANIMAL);
         
-        Ingredient[] ingredientes = { n1 , n2};
+        Ingredient[] ingredientes = { n1 , n2 , n3};
         
         Pizza pizza1 = new Pizza(1, "Pizza 1", "Ola", ingredientes, ingredientes.length, SMALL);
+        System.out.println(pizza1.toString());
+        pizza1.removeIngredient(3);
         System.out.println(pizza1.toString());
         
     }

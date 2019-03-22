@@ -16,10 +16,19 @@ public class Ingredient {
     private String name;
     private IngredientType origin;
 
+    /**
+     *
+     */
     public Ingredient(){
         
     }
 
+    /**
+     *
+     * @param id
+     * @param name
+     * @param origin
+     */
     public Ingredient(int id, String name, IngredientType origin) {
         this.id = id;
         this.name = name;
@@ -31,5 +40,11 @@ public class Ingredient {
         String text = " " + name + ",";
         return text;
     }
+
+    public int getId() {
+        return id;
+    }
+    
+    
              
 }

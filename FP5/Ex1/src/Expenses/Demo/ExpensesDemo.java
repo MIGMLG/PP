@@ -37,7 +37,7 @@ public class ExpensesDemo {
         
         //User u1 = new User(new char[] {'1','2','3'},"Miguel Costa", ParseDates("02/01/1998") , "gmail");
         User u2 = new User(new char[] {'1','2','4'},"Miguel Costa", ParseDates("02/01/1998") , "gmail", array);
-        //u2.makeDonations(20);
+        u2.makeDonations(20);
         
         
         System.out.println(u2.toString());

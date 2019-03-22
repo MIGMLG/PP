@@ -40,22 +40,39 @@ public class Pizza {
         this.description = description;
     }
 
-    public Pizza(int id, String name, String description, Ingredient[] array, int numberOfIngredients) {
-        if (numberOfIngredients < 5 && numberOfIngredients > 0) {
-            this.id = id;
-            this.name = name;
-            this.description = description;
-            this.ingredients = array;
-            this.numberOfIngredients = numberOfIngredients;
-        }
-        else{
-            System.out.println("Nao podem haver mais que 5 ingredientes.");
-        }
-
-    }
+//    /**
+//     *
+//     * @param id
+//     * @param name
+//     * @param description
+//     * @param array
+//     * @param numberOfIngredients
+//     */
+//    public Pizza(int id, String name, String description, Ingredient[] array, int numberOfIngredients) {
+//        if (numberOfIngredients < MAX_INGREDIENTS && numberOfIngredients > 0) {
+//            this.id = id;
+//            this.name = name;
+//            this.description = description;
+//            this.ingredients = array;
+//            this.numberOfIngredients = numberOfIngredients;
+//        }
+//        else{
+//            System.out.println("Nao podem haver mais que 5 ingredientes.");
+//        }
+//
+//    }
     
+    /**
+     *
+     * @param id
+     * @param name
+     * @param description
+     * @param array
+     * @param numberOfIngredients
+     * @param size
+     */
     public Pizza(int id, String name, String description, Ingredient[] array, int numberOfIngredients, PizzaSize size) {
-        if (numberOfIngredients < 5 && numberOfIngredients > 0) {
+        if (numberOfIngredients < MAX_INGREDIENTS && numberOfIngredients > 0) {
             this.id = id;
             this.name = name;
             this.description = description;
@@ -67,6 +84,35 @@ public class Pizza {
             System.out.println("Nao podem haver mais que 5 ingredientes.");
         }
 
+    }
+    
+    public void removeIngredient(int id){
+        int[] positions = new int[ingredients.length];
+        int found = 0;
+        
+        for(int i = 0; i < ingredients.length; i++){ //type de varivel, nome da variavel a ser usada, array no final
+            if(ingredients[i].getId() == id){
+                positions[i] = 1;
+                found += 1; 
+            }
+        }
+        
+        if(found > 0){
+            Ingredient[] tmp = new Ingredient[ingredients.length - found];
+            int tmpPosition = 0;
+            
+            for(int i = 0; i < positions.length; i++){
+                if(positions[i] == 0){
+                    tmp[tmpPosition] = ingredients[i];
+                    tmpPosition += 1;
+                }
+            }
+            
+            this.ingredients = tmp;
+        }
+        else{
+            System.out.println("Não foi encontrado.");
+        }
     }
     
     @Override

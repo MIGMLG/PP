@@ -83,8 +83,8 @@ public class PremiumFeatures {
         int[] mes = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         float total;
 
-        for (int i = 0; i < despesas.length; i++) {
-            c.setTime(despesas[i].data);
+        for (Expenses despesa : despesas) {
+            c.setTime(despesa.data);
             mes[c.get(Calendar.MONTH)] = 1;
         }
 
@@ -93,12 +93,11 @@ public class PremiumFeatures {
 
                 total = 0;
 
-                for (int j = 0; j < despesas.length; j++) {
+                for (Expenses despesa : despesas) {
                     Calendar c1 = Calendar.getInstance();
-                    c1.setTime(despesas[j].data);
-
+                    c1.setTime(despesa.data);
                     if (i == c1.get(Calendar.MONTH) && c.get(Calendar.YEAR) == year) {
-                        total += despesas[j].value;
+                        total += despesa.value;
                     }
                 }
 
@@ -132,11 +131,11 @@ public class PremiumFeatures {
         String mostExpensiveType = "";
 
 
-        for (int i = 0; i < despesas.length; i++) {
-            c.setTime(despesas[i].data);
-            if(c.after(begin) && c.before(end)){
-                if(despesas[i].value > mostExpensive){
-                    mostExpensiveType = despesas[i].type;
+        for (Expenses despesa : despesas) {
+            c.setTime(despesa.data);
+            if (c.after(begin) && c.before(end)) {
+                if (despesa.value > mostExpensive) {
+                    mostExpensiveType = despesa.type;
                 }
             }
         }

@@ -1,8 +1,31 @@
 package pp_fp06.PizzaRestaurant.enums;
 
+/**
+ *
+ * @author NERD-X
+ */
 public enum PizzaSize {
-    SMALL, MEDIUM, BIG;
 
+    /**
+     *
+     */
+    SMALL,
+
+    /**
+     *
+     */
+    MEDIUM,
+
+    /**
+     *
+     */
+    BIG;
+
+    /**
+     *
+     * @param size
+     * @return
+     */
     public static String PizzaSizeToString(PizzaSize size) {
         switch (size) {
             case SMALL:
@@ -16,6 +39,12 @@ public enum PizzaSize {
         }
     }
 
+    /**
+     *
+     * @param size
+     * @param defaultPrice
+     * @return
+     */
     public static float GetPizzaPrice(PizzaSize size, float defaultPrice) {
         switch (size) {
             case SMALL:
