@@ -38,9 +38,10 @@ public class Ex1 {
         
         Pizza[] pizzas = {pizza1, pizza2}; 
         
-        Ementa ementa = new Ementa(pizzas);
+        Ementa ementa = Ementa.returnInstance(pizzas);
         System.out.println("---------------------------------");
         System.out.println(ementa.toString());
+        Ementa ementa1 = Ementa.returnInstance(pizzas);
         
     }
     

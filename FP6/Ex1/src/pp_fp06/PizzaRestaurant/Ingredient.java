@@ -9,15 +9,18 @@ import pp_fp06.PizzaRestaurant.enums.IngredientType;
 
 /**
  * Classe que representa a estrutura de Ingrediente
+ *
  * @author NERD-X
  */
 public class Ingredient {
+
     private int id;
     private String name;
     private IngredientType origin;
 
     /**
      * Metodo construtor de Ingrediente
+     *
      * @param id
      * @param name
      * @param origin
@@ -27,15 +30,16 @@ public class Ingredient {
         this.name = name;
         this.origin = origin;
     }
-    
+
     @Override
-    public String toString(){
+    public String toString() {
         String text = " " + name + ",";
         return text;
     }
 
     /**
      * returnar id do ingrediente
+     *
      * @return
      */
     public int getId() {
@@ -44,13 +48,11 @@ public class Ingredient {
 
     /**
      * Metodo que retorna o type de ingrediente
+     *
      * @return
      */
     public IngredientType getOrigin() {
         return origin;
     }
-    
-    
-    
-             
+
 }
