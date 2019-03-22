@@ -8,6 +8,7 @@ package ex1;
 import pp_fp06.PizzaRestaurant.Ingredient;
 import pp_fp06.PizzaRestaurant.Pizza;
 import static pp_fp06.PizzaRestaurant.enums.IngredientType.*;
+import static pp_fp06.PizzaRestaurant.enums.PizzaSize.*;
 
 /**
  *
@@ -25,8 +26,8 @@ public class Ex1 {
         
         Ingredient[] ingredientes = { n1 , n2};
         
-        Pizza pizza1 = new Pizza(1, "Pizza 1", "Ola", ingredientes, ingredientes.length);
-        
+        Pizza pizza1 = new Pizza(1, "Pizza 1", "Ola", ingredientes, ingredientes.length, SMALL);
+        System.out.println(pizza1.toString());
         
     }
     

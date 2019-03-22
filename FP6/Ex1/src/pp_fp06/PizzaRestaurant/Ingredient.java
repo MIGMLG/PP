@@ -25,9 +25,11 @@ public class Ingredient {
         this.name = name;
         this.origin = origin;
     }
-            
     
-    
-    
-    
+    @Override
+    public String toString(){
+        String text = " " + name + ",";
+        return text;
+    }
+             
 }

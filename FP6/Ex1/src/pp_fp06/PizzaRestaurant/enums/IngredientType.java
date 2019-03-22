@@ -12,17 +12,17 @@ package pp_fp06.PizzaRestaurant.enums;
 public enum IngredientType {
     ANIMAL, VEGETAL, MINERAL;
     
-//    public static String IngredientTypeToString(IngredientType type){
-//        switch(type){
-//            case ANIMAL:
-//                return "Animal";
-//            case VEGETAL:
-//                return "This Pizza is medium.";
-//            case MINERAL:
-//                return "This Pizza is big.";
-//            default:
-//                return "The size is not valid";
-//        }
-//    }
+    public static String IngredientTypeToString(IngredientType type){
+        switch(type){
+            case ANIMAL:
+                return "Animal";
+            case VEGETAL:
+                return "Vegetal";
+            case MINERAL:
+                return "Mineral";
+            default:
+                return "Invalido";
+        }
+    }
     
 }

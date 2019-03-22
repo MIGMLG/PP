@@ -6,17 +6,17 @@ public enum PizzaSize {
     public static String PizzaSizeToString(PizzaSize size) {
         switch (size) {
             case SMALL:
-                return "This Pizza is small.";
+                return "Pequena";
             case MEDIUM:
-                return "This Pizza is medium.";
+                return "Media";
             case BIG:
-                return "This Pizza is big.";
+                return "Grande";
             default:
-                return "The size is not valid";
+                return "Invalido";
         }
     }
 
-    public static float getPizzaPrice(PizzaSize size, float defaultPrice) {
+    public static float GetPizzaPrice(PizzaSize size, float defaultPrice) {
         switch (size) {
             case SMALL:
                 return (float) (defaultPrice * 0.5);

@@ -1,6 +1,7 @@
 package pp_fp06.PizzaRestaurant;
 
 import pp_fp06.PizzaRestaurant.enums.PizzaSize;
+import static pp_fp06.PizzaRestaurant.enums.PizzaSize.*;
 
 /**
  * <h3>
@@ -23,6 +24,7 @@ public class Pizza {
     private Ingredient[] ingredients;
     private int numberOfIngredients;
     private PizzaSize size;
+    private final float defaultPrice = (float) 5.00; 
 
     /**
      * Método construtor para a criação de uma instância de {@link Pizza pizza}.
@@ -65,6 +67,21 @@ public class Pizza {
             System.out.println("Nao podem haver mais que 5 ingredientes.");
         }
 
+    }
+    
+    @Override
+    public String toString(){
+        String text = "ID: " + id + "\n"
+                    + "Nome : " + name + "\n"
+                    + "Tamanho : " + PizzaSizeToString(size) + "\n"
+                    + "Ingredientes : ";
+        for(Ingredient ingredient : ingredients){ //type de varivel, nome da variavel a ser usada, array no final
+            text += ingredient.toString();
+        }
+        
+        text += "\n" 
+                + "Preço : " + GetPizzaPrice(size, defaultPrice) + "$";
+        return text;
     }
     
 
