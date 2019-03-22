@@ -7,22 +7,22 @@ package pp_fp06.PizzaRestaurant.enums;
 public enum PizzaSize {
 
     /**
-     *
+     * Tamanho pequeno
      */
     SMALL,
 
     /**
-     *
+     * Tamanho médio
      */
     MEDIUM,
 
     /**
-     *
+     * Tamanho grande
      */
     BIG;
 
     /**
-     *
+     * Metodo para retornar o tamanho da pizza
      * @param size
      * @return
      */
@@ -40,7 +40,7 @@ public enum PizzaSize {
     }
 
     /**
-     *
+     * Metodo para obter o preco da pizza
      * @param size
      * @param defaultPrice
      * @return

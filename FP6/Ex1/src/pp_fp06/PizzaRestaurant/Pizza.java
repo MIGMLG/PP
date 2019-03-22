@@ -1,5 +1,6 @@
 package pp_fp06.PizzaRestaurant;
 
+import static pp_fp06.PizzaRestaurant.enums.IngredientType.*;
 import pp_fp06.PizzaRestaurant.enums.PizzaSize;
 import static pp_fp06.PizzaRestaurant.enums.PizzaSize.*;
 
@@ -15,6 +16,7 @@ import static pp_fp06.PizzaRestaurant.enums.PizzaSize.*;
  * Classe que representa a estrutura de uma pizza
  * </p>
  */
+
 public class Pizza {
 
     private final int MAX_INGREDIENTS = 5;
@@ -39,31 +41,9 @@ public class Pizza {
         this.name = name;
         this.description = description;
     }
-
-//    /**
-//     *
-//     * @param id
-//     * @param name
-//     * @param description
-//     * @param array
-//     * @param numberOfIngredients
-//     */
-//    public Pizza(int id, String name, String description, Ingredient[] array, int numberOfIngredients) {
-//        if (numberOfIngredients < MAX_INGREDIENTS && numberOfIngredients > 0) {
-//            this.id = id;
-//            this.name = name;
-//            this.description = description;
-//            this.ingredients = array;
-//            this.numberOfIngredients = numberOfIngredients;
-//        }
-//        else{
-//            System.out.println("Nao podem haver mais que 5 ingredientes.");
-//        }
-//
-//    }
     
     /**
-     *
+     * Método construtor para a criação de uma instância de {@link Pizza pizza} com ingredientes e tamanho da pizza incluidos.
      * @param id
      * @param name
      * @param description
@@ -86,6 +66,10 @@ public class Pizza {
 
     }
     
+    /**
+     * Metodo para remover ingredientes da pizza
+     * @param id
+     */
     public void removeIngredient(int id){
         int[] positions = new int[ingredients.length];
         int found = 0;
@@ -129,6 +113,19 @@ public class Pizza {
                 + "Preço : " + GetPizzaPrice(size, defaultPrice) + "$";
         return text;
     }
-    
 
+    /**
+     * Metodo para verificar se existem ingredientes vegetais
+     * @return
+     */
+    public int findVegetalIngredients() {
+        int found = 0;
+        for(Ingredient ingredient : ingredients){
+            if(ingredient.getOrigin() == VEGETAL){
+                found += 1;
+            }
+        }
+        return found;
+    }
+    
 }

@@ -5,6 +5,7 @@
  */
 package ex1;
 
+import pp_fp06.PizzaRestaurant.*;
 import pp_fp06.PizzaRestaurant.Ingredient;
 import pp_fp06.PizzaRestaurant.Pizza;
 import static pp_fp06.PizzaRestaurant.enums.IngredientType.*;
@@ -20,6 +21,7 @@ public class Ex1 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        
         // TODO code application logic here
         Ingredient n1 = new Ingredient(1 , "Queijo", VEGETAL);
         Ingredient n2 = new Ingredient(2 , "Chouriço", ANIMAL);
@@ -31,6 +33,14 @@ public class Ex1 {
         System.out.println(pizza1.toString());
         pizza1.removeIngredient(3);
         System.out.println(pizza1.toString());
+        
+        Pizza pizza2 = new Pizza(2, "Pizza 2", "Ola", ingredientes, ingredientes.length, SMALL);
+        
+        Pizza[] pizzas = {pizza1, pizza2}; 
+        
+        Ementa ementa = new Ementa(pizzas);
+        System.out.println("---------------------------------");
+        System.out.println(ementa.toString());
         
     }
     

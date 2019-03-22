@@ -12,22 +12,22 @@ package pp_fp06.PizzaRestaurant.enums;
 public enum IngredientType {
 
     /**
-     *
+     * Tipo Animal
      */
     ANIMAL,
 
     /**
-     *
+     * Tipo Vegetal
      */
     VEGETAL,
 
     /**
-     *
+     * Tipo Mineral
      */
     MINERAL;
     
     /**
-     *
+     * Metodo para returnar o tipo de ingrediente
      * @param type
      * @return
      */

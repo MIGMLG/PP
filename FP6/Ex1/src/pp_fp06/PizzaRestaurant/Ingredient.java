@@ -8,7 +8,7 @@ package pp_fp06.PizzaRestaurant;
 import pp_fp06.PizzaRestaurant.enums.IngredientType;
 
 /**
- *
+ * Classe do Objeto Ingrediente
  * @author NERD-X
  */
 public class Ingredient {
@@ -17,14 +17,7 @@ public class Ingredient {
     private IngredientType origin;
 
     /**
-     *
-     */
-    public Ingredient(){
-        
-    }
-
-    /**
-     *
+     * Metodo construtor de Ingrediente
      * @param id
      * @param name
      * @param origin
@@ -41,9 +34,22 @@ public class Ingredient {
         return text;
     }
 
+    /**
+     * returnar id do ingrediente
+     * @return
+     */
     public int getId() {
         return id;
     }
+
+    /**
+     * Metodo que retorna o type de ingrediente
+     * @return
+     */
+    public IngredientType getOrigin() {
+        return origin;
+    }
+    
     
     
              
