@@ -8,7 +8,7 @@ package pp_fp06.PizzaRestaurant;
 import pp_fp06.PizzaRestaurant.enums.IngredientType;
 
 /**
- * Classe do Objeto Ingrediente
+ * Classe que representa a estrutura de Ingrediente
  * @author NERD-X
  */
 public class Ingredient {

@@ -10,7 +10,7 @@ import java.time.LocalDateTime;
 
 
 /**
- * Class que define a Ementa
+ * Classe que representa a estrutura de uma Ementa
  * @author NERD-X
  */
 public class Ementa {
