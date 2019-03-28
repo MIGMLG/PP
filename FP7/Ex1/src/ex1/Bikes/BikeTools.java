@@ -6,7 +6,7 @@
 package ex1.Bikes;
 
 /**
- *
+ * Definição do Objeto BikeTools
  * @author NERD-X
  */
 public class BikeTools {

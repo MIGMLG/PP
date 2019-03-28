@@ -6,7 +6,7 @@
 package ex1.Bikes;
 
 /**
- *
+ * Classe de Gestão das Bikes
  * @author NERD-X
  */
 public class BikeManagment {

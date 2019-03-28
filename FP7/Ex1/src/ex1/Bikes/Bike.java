@@ -8,7 +8,7 @@ package ex1.Bikes;
 import ex1.enums.*;
 
 /**
- *
+ * Definição do Objeto Bike
  * @author NERD-X
  */
 public class Bike {
@@ -23,7 +23,7 @@ public class Bike {
     private int guarantee;
 
     /**
-     *
+     * Metodo Construtor da Bike
      * @param id
      * @param numberOfGears
      * @param mainColor
