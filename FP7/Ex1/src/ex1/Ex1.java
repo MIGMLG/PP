@@ -7,6 +7,7 @@ package ex1;
 
 import ex1.Bikes.BikeTools;
 import ex1.Bikes.MountainBike;
+import ex1.Bikes.RoadBike;
 import static ex1.enums.BrakeType.*;
 import static ex1.enums.Material.*;
 import static ex1.enums.MountainBikeSuspension.*;
@@ -36,6 +37,21 @@ public class Ex1 {
         n1.removeTools(2);
         n1.editTools(1, tool1);
         System.out.println(n1.printTools());
+        System.out.println("\n"+"--------------------------------------------------");
+        
+        RoadBike n2 = new RoadBike("Fita Cola", 4, 2, 10, "Preto", 23, 200, 2);
+        System.out.println(n2.toString());
+        
+        n2.addObservations("Ola");
+        n2.addObservations("Adeus");
+        
+        System.out.println(n2.printObservations());
+        
+        n2.removeObservations(1);
+        n2.editObservations(0, "Adeus");
+        
+        System.out.println(n2.printObservations());
+        
     }
     
 }
