@@ -10,6 +10,15 @@ package ex1.enums;
  * @author NERD-X
  */
 public enum BrakeType {
-    P , H ;
+
+    /**
+     * Tipo de Travão de Pinças
+     */
+    P ,
+
+    /**
+     * Tipo de Travão Hidraúlico
+     */
+    H ;
     
 }

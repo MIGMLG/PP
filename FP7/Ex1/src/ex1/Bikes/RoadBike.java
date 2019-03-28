@@ -9,7 +9,7 @@ import static ex1.enums.BrakeType.*;
 import static ex1.enums.Material.*;
 
 /**
- *
+ * Definição do Objeto RoadBike
  * @author NERD-X
  */
 public class RoadBike extends Bike {
@@ -20,12 +20,27 @@ public class RoadBike extends Bike {
     private String[] observations = new String[MAX_OBS];
     private int counterObs = 0;
 
+    /**
+     * Metodo Constructor para RoadBike
+     * @param handlebelt
+     * @param frameSize
+     * @param id
+     * @param numberOfGears
+     * @param mainColor
+     * @param wheelSize
+     * @param price
+     * @param guarantee
+     */
     public RoadBike(String handlebelt, float frameSize, int id, int numberOfGears, String mainColor, float wheelSize, float price, int guarantee) {
         super(id, numberOfGears, mainColor, wheelSize, H, CARBONO, price, guarantee);
         this.handlebelt = handlebelt;
         this.frameSize = frameSize;
     }
 
+    /**
+     * Metodo que permite adicionar observações
+     * @param observation
+     */
     public void addObservations(String observation) {
         if (counterObs < MAX_OBS ) {
             observations[counterObs] = observation;
@@ -37,6 +52,10 @@ public class RoadBike extends Bike {
 
     }
 
+    /**
+     * Metodo que permite remover observações
+     * @param position
+     */
     public void removeObservations(int position) {
         String[] tmp = new String[MAX_OBS];
         int found = 0;
@@ -57,6 +76,11 @@ public class RoadBike extends Bike {
         }
     }
 
+    /**
+     * Metodo que permite editar observações
+     * @param position
+     * @param obs
+     */
     public void editObservations(int position, String obs) {
         int found = 0;
 
@@ -75,6 +99,10 @@ public class RoadBike extends Bike {
         }
     }
 
+    /**
+     * Metodo que retorna uma lista das observações
+     * @return
+     */
     public String printObservations() {
         String text = "";
         for (int i = 0; i < counterObs; i++) {

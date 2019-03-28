@@ -10,6 +10,15 @@ package ex1.enums;
  * @author NERD-X
  */
 public enum Material {
-    CARBONO, ALUMINIO;
+
+    /**
+     * Tipo de Material Carbono
+     */
+    CARBONO,
+
+    /**
+     * Tipo de Material Aluminio
+     */
+    ALUMINIO;
     
 }

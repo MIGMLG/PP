@@ -14,6 +14,10 @@ public class BikeManagment {
     private Bike[] lista = new Bike[MAX_BIKES];
     private int counterBikes = 0;
     
+    /**
+     * Este metodo permite adicionar Bikes á lista
+     * @param bike
+     */
     public void addBike(Bike bike){
         if ( counterBikes < MAX_BIKES){
             lista[counterBikes] = bike;

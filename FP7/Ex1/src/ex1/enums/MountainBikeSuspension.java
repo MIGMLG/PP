@@ -10,6 +10,20 @@ package ex1.enums;
  * @author NERD-X
  */
 public enum MountainBikeSuspension {
-    SIMPLES, DUPLA, SEMSUSPENSAO;
+
+    /**
+     * Tipo de Suspensão Simples
+     */
+    SIMPLES,
+
+    /**
+     * Tipo de Suspensão Dupla
+     */
+    DUPLA,
+
+    /**
+     * Sem suspensão
+     */
+    SEMSUSPENSAO;
     
 }

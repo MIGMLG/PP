@@ -14,7 +14,7 @@ import static ex1.enums.Material.*;
 import static ex1.enums.MountainBikeSuspension.*;
 
 /**
- *
+ * BikeDemo
  * @author NERD-X
  */
 public class Ex1 {

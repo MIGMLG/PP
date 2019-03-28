@@ -22,6 +22,17 @@ public class Bike {
     private float price;
     private int guarantee;
 
+    /**
+     *
+     * @param id
+     * @param numberOfGears
+     * @param mainColor
+     * @param wheelSize
+     * @param brakes
+     * @param material
+     * @param price
+     * @param guarantee
+     */
     public Bike(int id, int numberOfGears, String mainColor, float wheelSize, BrakeType brakes, Material material, float price, int guarantee) {
         this.id = id;
         this.numberOfGears = numberOfGears;
@@ -33,34 +44,66 @@ public class Bike {
         this.guarantee = guarantee;
     }
 
+    /**
+     * Retorna o Id da Bike
+     * @return
+     */
     public int getId() {
         return id;
     }
 
+    /**
+     * Retorna o numero de mudanças da Bike
+     * @return
+     */
     public int getNumberOfGears() {
         return numberOfGears;
     }
 
+    /**
+     * Retorna a cor da Bike
+     * @return
+     */
     public String getMainColor() {
         return mainColor;
     }
 
+    /**
+     * Retorna o tamanho da roda da Bike
+     * @return
+     */
     public float getWheelSize() {
         return wheelSize;
     }
 
+    /**
+     * Retorna o tipo de travão da Bike
+     * @return
+     */
     public BrakeType getBrakes() {
         return brakes;
     }
 
+    /**
+     * Retorna o tipo de material usado para a construção do quadro da Bike
+     * @return
+     */
     public Material getMaterial() {
         return material;
     }
 
+    /**
+     * Retorna o preço da Bike
+     * @return
+     */
     public float getPrice() {
         return price;
     }
 
+    /**
+     * Retorna o numero de anos da Bike
+     * @return
+     */
     public int getGuarantee() {
         return guarantee;
     }

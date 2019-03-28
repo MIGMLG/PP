@@ -14,15 +14,28 @@ public class BikeTools {
     private int id;
     private String name;
 
+    /**
+     * Metodo Construtor para as ferramentas da Bike
+     * @param id
+     * @param name
+     */
     public BikeTools(int id, String name) {
         this.id = id;
         this.name = name;
     }
 
+    /**
+     * Retorna o ID da ferramenta da Bike
+     * @return
+     */
     public int getId() {
         return id;
     }
 
+    /**
+     * Retorna o nome da ferramenta da Bike
+     * @return
+     */
     public String getName() {
         return name;
     }
