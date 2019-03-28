@@ -5,9 +5,7 @@
  */
 package ex1.Bikes;
 
-import ex1.enums.BrakeType;
 import static ex1.enums.BrakeType.*;
-import ex1.enums.Material;
 import static ex1.enums.Material.*;
 
 /**
@@ -29,8 +27,14 @@ public class RoadBike extends Bike {
     }
 
     public void addObservations(String observation) {
-        observations[counterObs] = observation;
-        counterObs += 1;
+        if (counterObs < 10) {
+            observations[counterObs] = observation;
+            counterObs += 1;
+        }
+        else {
+            System.out.println("Já antigiu o numero máximo de Observações.");
+        }
+
     }
 
     public void removeObservations(int position) {
@@ -52,8 +56,8 @@ public class RoadBike extends Bike {
             System.out.println("Não foi encontrado.");
         }
     }
-    
-        public void editObservations(int position, String obs) {
+
+    public void editObservations(int position, String obs) {
         int found = 0;
 
         for (int i = 0; i < counterObs; i++) {
@@ -70,16 +74,16 @@ public class RoadBike extends Bike {
             System.out.println("Não foi encontrado.");
         }
     }
-    
+
     public String printObservations() {
         String text = "";
         for (int i = 0; i < counterObs; i++) {
-            text += "Observação " + (i+1) + " : " +observations[i] + "\n";
+            text += "Observação " + (i + 1) + " : " + observations[i] + "\n";
         }
         return text;
 
     }
-    
+
     @Override
     public String toString() {
         String text = "ID : " + super.getId() + "\n"

@@ -10,6 +10,7 @@ package ex1.Bikes;
  * @author NERD-X
  */
 public class BikeTools {
+
     private int id;
     private String name;
 
@@ -25,12 +26,11 @@ public class BikeTools {
     public String getName() {
         return name;
     }
-    
-    public String toString(){
+
+    public String toString() {
         String text = "ID : " + id + "\n"
                 + "Nome : " + name + "\n";
         return text;
     }
-    
-    
+
 }

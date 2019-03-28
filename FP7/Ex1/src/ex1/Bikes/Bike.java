@@ -12,6 +12,7 @@ import ex1.enums.*;
  * @author NERD-X
  */
 public class Bike {
+
     private int id;
     private int numberOfGears;
     private String mainColor;
@@ -63,7 +64,5 @@ public class Bike {
     public int getGuarantee() {
         return guarantee;
     }
-    
-    
-    
+
 }
