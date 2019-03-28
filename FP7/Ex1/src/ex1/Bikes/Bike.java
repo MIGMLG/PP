@@ -64,5 +64,14 @@ public class Bike {
     public int getGuarantee() {
         return guarantee;
     }
+    
+    @Override
+    public String toString() {
+        String text = "ID : " + id + "\n"
+                + "Number of gears : " + numberOfGears + "\n"
+                + "Cor : " + mainColor + "\n"
+                + "Garantia : " + guarantee + "\n";
+        return text;
+    }
 
 }

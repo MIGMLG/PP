@@ -23,4 +23,12 @@ public class BikeManagment {
             System.out.println("Já antigiu o numero máximo de bikes na lista.");
         }
     }
+    
+    public String toString(){
+        String text = "";
+        for(int i = 0; i < counterBikes; i++){
+            text += "Bike " + (i+1) + " : "+ "\n" +lista[i].toString() +"\n";
+        }
+        return text;
+    }
 }

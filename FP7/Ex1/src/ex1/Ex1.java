@@ -57,6 +57,7 @@ public class Ex1 {
         BikeManagment lista = new BikeManagment();
         lista.addBike(n1);
         lista.addBike(n2);
+        System.out.println(lista.toString());
         
     }
     

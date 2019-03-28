@@ -84,12 +84,4 @@ public class MountainBike extends Bike {
 
     }
 
-    public String toString() {
-        String text = "ID : " + super.getId() + "\n"
-                + "Number of gears : " + super.getNumberOfGears() + "\n"
-                + "Cor : " + super.getMainColor() + "\n"
-                + "Garantia : " + super.getGuarantee() + "\n";
-        return text;
-    }
-
 }
