@@ -27,7 +27,7 @@ public class RoadBike extends Bike {
     }
 
     public void addObservations(String observation) {
-        if (counterObs < 10) {
+        if (counterObs < MAX_OBS ) {
             observations[counterObs] = observation;
             counterObs += 1;
         }

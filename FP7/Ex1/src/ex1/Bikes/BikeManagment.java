@@ -10,5 +10,17 @@ package ex1.Bikes;
  * @author NERD-X
  */
 public class BikeManagment {
+    private final int MAX_BIKES = 20;
+    private Bike[] lista = new Bike[MAX_BIKES];
+    private int counterBikes = 0;
     
+    public void addBike(Bike bike){
+        if ( counterBikes < MAX_BIKES){
+            lista[counterBikes] = bike;
+            counterBikes +=1;
+        }
+        else {
+            System.out.println("Já antigiu o numero máximo de bikes na lista.");
+        }
+    }
 }

@@ -5,6 +5,7 @@
  */
 package ex1;
 
+import ex1.Bikes.BikeManagment;
 import ex1.Bikes.BikeTools;
 import ex1.Bikes.MountainBike;
 import ex1.Bikes.RoadBike;
@@ -37,7 +38,7 @@ public class Ex1 {
         n1.removeTools(2);
         n1.editTools(1, tool1);
         System.out.println(n1.printTools());
-        System.out.println("\n"+"--------------------------------------------------");
+        System.out.println("--------------------------------------------------");
         
         RoadBike n2 = new RoadBike("Fita Cola", 4, 2, 10, "Preto", 23, 200, 2);
         System.out.println(n2.toString());
@@ -51,6 +52,11 @@ public class Ex1 {
         n2.editObservations(0, "Adeus");
         
         System.out.println(n2.printObservations());
+        System.out.println("--------------------------------------------------");
+        
+        BikeManagment lista = new BikeManagment();
+        lista.addBike(n1);
+        lista.addBike(n2);
         
     }
     
