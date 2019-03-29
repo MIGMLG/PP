@@ -3,9 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package pp_fp06.PizzaRestaurant;
+package pp_fp06.PizzaRestaurant.Ingredients;
 
-import pp_fp06.PizzaRestaurant.enums.IngredientType;
 import pp_fp06.PizzaRestaurant.enums.UnitOfMeasure;
 
 /**
@@ -17,33 +16,16 @@ public class Ingredient {
 
     private int id;
     private String name;
-    private IngredientType origin;
     private UnitOfMeasure unit;
-    private float calories; 
+    private float calories;
 
-    /**
-     * Metodo construtor de Ingrediente
-     *
-     * @param id
-     * @param name
-     * @param origin
-     */
-    public Ingredient(int id, String name, IngredientType origin) {
+    public Ingredient(int id, String name, UnitOfMeasure unit, float calories) {
         this.id = id;
         this.name = name;
-        this.origin = origin;
-    }
-
-    public Ingredient(int id, String name, IngredientType origin, UnitOfMeasure unit, float calories) {
-        this.id = id;
-        this.name = name;
-        this.origin = origin;
         this.unit = unit;
         this.calories = calories;
     }
 
-    
-    
     @Override
     public String toString() {
         String text = " " + name + ",";
@@ -57,15 +39,6 @@ public class Ingredient {
      */
     public int getId() {
         return id;
-    }
-
-    /**
-     * Metodo que retorna o type de ingrediente
-     *
-     * @return
-     */
-    public IngredientType getOrigin() {
-        return origin;
     }
 
 }

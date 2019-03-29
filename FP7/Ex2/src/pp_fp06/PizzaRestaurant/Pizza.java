@@ -1,6 +1,6 @@
 package pp_fp06.PizzaRestaurant;
 
-import static pp_fp06.PizzaRestaurant.enums.IngredientType.*;
+import pp_fp06.PizzaRestaurant.Ingredients.Ingredient;
 import pp_fp06.PizzaRestaurant.enums.PizzaSize;
 import static pp_fp06.PizzaRestaurant.enums.PizzaSize.*;
 
@@ -24,6 +24,7 @@ public class Pizza {
     private String name;
     private String description;
     private Ingredient[] ingredients;
+    private PizzaIngredients[] ingredients1;
     private int numberOfIngredients;
     private PizzaSize size;
     private final float defaultPrice = (float) 5.00; 
@@ -112,20 +113,5 @@ public class Pizza {
         text += "\n" 
                 + "Preço : " + GetPizzaPrice(size, defaultPrice) + "$";
         return text;
-    }
-
-    /**
-     * Metodo para verificar se existem ingredientes vegetais
-     * @return
-     */
-    public int findVegetalIngredients() {
-        int found = 0;
-        for(Ingredient ingredient : ingredients){
-            if(ingredient.getOrigin() == VEGETAL){
-                found += 1;
-            }
-        }
-        return found;
-    }
-    
+    }  
 }

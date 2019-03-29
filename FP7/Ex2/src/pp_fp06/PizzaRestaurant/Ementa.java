@@ -23,17 +23,7 @@ public class Ementa {
 
     public static Ementa returnInstance(Pizza[] ementa) {
         if (Ementa.counter < MAX_MENUS) {
-            counter +=1;
-            return (new Ementa(ementa));
-        } else {
-            System.out.println("Já existe uma ementa.");
-            return null;
-        }
-    }
-    
-    public static Ementa returnInstance(Pizza ementa) {
-        if (Ementa.counter < MAX_MENUS) {
-            counter +=1;
+            counter += 1;
             return (new Ementa(ementa));
         } else {
             System.out.println("Já existe uma ementa.");
@@ -56,25 +46,6 @@ public class Ementa {
         }
     }
 
-    /**
-     * Metodo constructor que so recebe uma pizza e verifica se contem um
-     * ingrediente vegetal
-     *
-     * @param ementa
-     */
-    private Ementa(Pizza ementa) {
-        if (counter < 1) {
-            if (ementa.findVegetalIngredients() > 0) {
-                this.ementa = new Pizza[MAX_PIZZAS];
-                this.ementa[0] = ementa;
-                this.sizeOfList = 1;
-            }
-        } else {
-            System.out.println("Já existe uma ementa.");
-        }
-
-    }
-    
     /**
      * Metodo para obter o tamanho do array
      *

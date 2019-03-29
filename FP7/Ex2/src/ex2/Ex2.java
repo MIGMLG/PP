@@ -6,9 +6,10 @@
 package ex2;
 
 import pp_fp06.PizzaRestaurant.Ementa;
-import pp_fp06.PizzaRestaurant.Ingredient;
+import pp_fp06.PizzaRestaurant.Ingredients.*;
+import pp_fp06.PizzaRestaurant.Ingredients.Ingredient;
 import pp_fp06.PizzaRestaurant.Pizza;
-import static pp_fp06.PizzaRestaurant.enums.IngredientType.*;
+import pp_fp06.PizzaRestaurant.enums.PizzaBaseType;
 import static pp_fp06.PizzaRestaurant.enums.PizzaSize.*;
 import static pp_fp06.PizzaRestaurant.enums.UnitOfMeasure.*;
 
@@ -23,25 +24,9 @@ public class Ex2 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        Ingredient n1 = new Ingredient(1 , "Queijo", VEGETAL , GRAMAS, 230);
-        Ingredient n2 = new Ingredient(2 , "Chouriço", ANIMAL, GRAMAS, 450);
-        Ingredient n3 = new Ingredient(3 , "Chouriço", ANIMAL, GRAMAS, 450);
         
-        Ingredient[] ingredientes = { n1 , n2 , n3};
+        Base base = new Base(1, "Base Da Pizza", 200, PizzaBaseType.MFINA , "Ola");
         
-        Pizza pizza1 = new Pizza(1, "Pizza 1", "Ola", ingredientes, ingredientes.length, SMALL);
-        System.out.println(pizza1.toString());
-        pizza1.removeIngredient(3);
-        System.out.println(pizza1.toString());
-        
-        Pizza pizza2 = new Pizza(2, "Pizza 2", "Ola", ingredientes, ingredientes.length, SMALL);
-        
-        Pizza[] pizzas = {pizza1, pizza2}; 
-        
-        Ementa ementa = Ementa.returnInstance(pizzas);
-        System.out.println("---------------------------------");
-        System.out.println(ementa.toString());
-        Ementa ementa1 = Ementa.returnInstance(pizzas);
     }
     
 }
