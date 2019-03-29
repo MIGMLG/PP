@@ -9,6 +9,7 @@ import pp_fp06.PizzaRestaurant.Ementa;
 import pp_fp06.PizzaRestaurant.Ingredients.*;
 import pp_fp06.PizzaRestaurant.Ingredients.Ingredient;
 import pp_fp06.PizzaRestaurant.Pizza;
+import pp_fp06.PizzaRestaurant.enums.OriginType;
 import pp_fp06.PizzaRestaurant.enums.PizzaBaseType;
 import static pp_fp06.PizzaRestaurant.enums.PizzaSize.*;
 import static pp_fp06.PizzaRestaurant.enums.UnitOfMeasure.*;
@@ -26,7 +27,7 @@ public class Ex2 {
         // TODO code application logic here
         
         Base base = new Base(1, "Base Da Pizza", 200, PizzaBaseType.MFINA , "Ola");
-        
+        Topping top1 = new Topping(OriginType.NACIONAL, 1 , "Chouriço", GRAMAS, 200);
     }
     
 }
