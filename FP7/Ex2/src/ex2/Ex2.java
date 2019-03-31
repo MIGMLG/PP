@@ -30,6 +30,7 @@ public class Ex2 {
         Base base = new Base(1, "Base Da Pizza", 200, PizzaBaseType.MFINA , "Ola");
         Topping top1 = new Topping(OriginType.NACIONAL, 1 , "Chouriço", GRAMAS, 200);
         Pizza n1 = new Pizza(1, "Pizza PERIGRINI", "PERIGRINI", BIG);
+        n1.addBase(base);
         n1.addTopping(top1, 200);
         
     }
