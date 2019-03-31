@@ -11,13 +11,22 @@ import pp_fp06.PizzaRestaurant.enums.SeaFoodType;
 import pp_fp06.PizzaRestaurant.enums.UnitOfMeasure;
 
 /**
- *
+ * Definição do Objeto SeaFood
  * @author NERD-X
  */
 public class SeaFood extends Topping{
     
     private SeaFoodType seaFood;
 
+    /**
+     * Metodo Construtor da SeaFood
+     * @param seaFood
+     * @param origin
+     * @param id
+     * @param name
+     * @param unit
+     * @param calories
+     */
     public SeaFood(SeaFoodType seaFood, OriginType origin, int id, String name, UnitOfMeasure unit, float calories) {
         super(origin, id, name, unit, calories);
         this.seaFood = seaFood;

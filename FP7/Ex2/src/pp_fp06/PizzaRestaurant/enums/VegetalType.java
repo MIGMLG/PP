@@ -6,13 +6,31 @@
 package pp_fp06.PizzaRestaurant.enums;
 
 /**
- *
+ * Enumeraçao com o tipo de vegetais
  * @author NERD-X
  */
 public enum VegetalType {
     
-    TOMATE, CEBOLA, COGUMELOS ;
+    /**
+     * Tipo de vegetal - Tomate
+     */
+    TOMATE,
+
+    /**
+     * Tipo de vegetal - Cebola
+     */
+    CEBOLA,
+
+    /**
+     * Tipo de vegetal - Cogumelos
+     */
+    COGUMELOS ;
     
+    /**
+     * Metodo que retorna uma string com o tipo de vegetal
+     * @param vegetal
+     * @return
+     */
     public static String VegetalTypeToString(VegetalType vegetal) {
         switch (vegetal) {
             case TOMATE:

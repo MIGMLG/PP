@@ -1,7 +1,7 @@
 package pp_fp06.PizzaRestaurant.enums;
 
 /**
- *
+ * Enumeraçao com o tipo de tamanhos de pizza
  * @author NERD-X
  */
 public enum PizzaSize {

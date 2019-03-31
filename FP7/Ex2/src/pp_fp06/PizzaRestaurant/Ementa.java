@@ -21,6 +21,11 @@ public class Ementa {
     private LocalDateTime date;
     private int sizeOfList;
 
+    /**
+     * Metodo que limita a quantidade de instancias do objeto 
+     * @param ementa
+     * @return
+     */
     public static Ementa returnInstance(Pizza[] ementa) {
         if (Ementa.counter < MAX_MENUS) {
             counter += 1;

@@ -6,12 +6,26 @@
 package pp_fp06.PizzaRestaurant.enums;
 
 /**
- *
+ * Enumeraçao com o tipo de origens dos produtos
  * @author NERD-X
  */
 public enum OriginType {
-    NACIONAL, IMPORTADO;
 
+    /**
+     * Tipo de origem Nacional
+     */
+    NACIONAL,
+
+    /**
+     * Tipo de origem Importado
+     */
+    IMPORTADO;
+
+    /**
+     * Metodo para retornar uma string com o tipo de origem
+     * @param origin
+     * @return
+     */
     public static String OriginTypeToString(OriginType origin) {
         switch (origin) {
             case NACIONAL:

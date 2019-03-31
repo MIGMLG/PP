@@ -55,6 +55,10 @@ public class Pizza {
         this.size = size;
     }
 
+    /**
+     * Metodo para adicionar uma base há pizza
+     * @param base
+     */
     public void addBase(Base base) {
         if (counterBase == 0) {
             this.base = base;
@@ -64,6 +68,11 @@ public class Pizza {
         }
     }
 
+    /**
+     * Metodo que premite adicionar um ingrediente do tipo Cheese
+     * @param top
+     * @param quantity
+     */
     public void addTopping(Cheese top, float quantity) {
         if (counterBase == 1) {
             if (counterTop < MAX_INGREDIENTS) {
@@ -79,6 +88,11 @@ public class Pizza {
 
     }
     
+    /**
+     * Metodo que premite adicionar um ingrediente do tipo Meat
+     * @param top
+     * @param quantity
+     */
     public void addTopping(Meat top, float quantity) {
         if (counterBase == 1) {
             if (counterTop < MAX_INGREDIENTS) {
@@ -95,6 +109,11 @@ public class Pizza {
 
     }
     
+    /**
+     * Metodo que premite adicionar um ingrediente do tipo Vegetable
+     * @param top
+     * @param quantity
+     */
     public void addTopping(Vegetable top, float quantity) {
         if (counterBase == 1) {
             if (counterTop < MAX_INGREDIENTS) {
@@ -111,6 +130,11 @@ public class Pizza {
 
     }
     
+    /**
+     * Metodo que premite adicionar um ingrediente do tipo SeaFood
+     * @param top
+     * @param quantity
+     */
     public void addTopping(SeaFood top, float quantity) {
         if (counterBase == 1) {
             if (counterTop < MAX_INGREDIENTS) {

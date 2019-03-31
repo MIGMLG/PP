@@ -6,12 +6,31 @@
 package pp_fp06.PizzaRestaurant.enums;
 
 /**
- *
+ * Enumeraçao com o tipo de carnes
  * @author NERD-X
  */
 public enum MeatType {
-    PORCO, VACA, SALAME ;
+
+    /**
+     * Tipo Carne de Porco
+     */
+    PORCO,
+
+    /**
+     * Tipo Carne de Vaca
+     */
+    VACA,
+
+    /**
+     * Tipo Carne de Salame
+     */
+    SALAME ;
     
+    /**
+     * Metodo para retornar uma string com o tipo de carne
+     * @param meat
+     * @return
+     */
     public static String MeatTypeToString(MeatType meat) {
         switch (meat) {
             case PORCO:

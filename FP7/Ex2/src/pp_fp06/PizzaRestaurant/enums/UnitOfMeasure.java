@@ -6,12 +6,31 @@
 package pp_fp06.PizzaRestaurant.enums;
 
 /**
- *
+ * Enumeraçao com o tipo de unidades de medida
  * @author NERD-X
  */
 public enum UnitOfMeasure {
-    GRAMAS, LITROS, UNIDADES;
+
+    /**
+     * Tipo de medida - gramas
+     */
+    GRAMAS,
+
+    /**
+     * Tipo de medida - litros
+     */
+    LITROS,
+
+    /**
+     * Tipo de medida - unidades
+     */
+    UNIDADES;
     
+    /**
+     * Metodo que retorna uma string com a unidade de medida utilizada
+     * @param unit
+     * @return
+     */
     public static String UnitOfMeasureToString(UnitOfMeasure unit){
         switch(unit){
             case GRAMAS:

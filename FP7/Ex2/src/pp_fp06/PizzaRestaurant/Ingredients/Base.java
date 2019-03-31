@@ -10,13 +10,21 @@ import static pp_fp06.PizzaRestaurant.enums.PizzaBaseType.PizzaBaseTypeToString;
 import static pp_fp06.PizzaRestaurant.enums.UnitOfMeasure.GRAMAS;
 
 /**
- *
+ * Definição do Objeto Base
  * @author NERD-X
  */
 public class Base extends Ingredient{
     private PizzaBaseType baseType;
     private String description;
 
+    /**
+     * Metodo Construtor da Base 
+     * @param id
+     * @param name
+     * @param calories
+     * @param baseType
+     * @param description
+     */
     public Base(int id, String name, float calories, PizzaBaseType baseType, String description) {
         super(id, name, GRAMAS, calories);
         this.baseType = baseType;

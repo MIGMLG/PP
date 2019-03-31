@@ -20,6 +20,13 @@ public class Ingredient {
     private UnitOfMeasure unit;
     private float calories;
 
+    /**
+     * Metodo Construtor dao Ingredient
+     * @param id
+     * @param name
+     * @param unit
+     * @param calories
+     */
     public Ingredient(int id, String name, UnitOfMeasure unit, float calories) {
         this.id = id;
         this.name = name;

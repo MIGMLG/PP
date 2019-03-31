@@ -5,13 +5,27 @@
  */
 package pp_fp06.PizzaRestaurant.enums;
 
-/**
- *
+/** 
+ * Enumeraçao com o tipo de queijos
  * @author NERD-X
  */
 public enum CheeseType {
-    MOZZARELA , SERRA ;
+
+    /**
+     * Tipo de Queijo Mozzarela
+     */
+    MOZZARELA ,
+
+    /**
+     * Tipo de Queijo Serra
+     */
+    SERRA ;
     
+    /**
+     * Metodo para retornar uma string com o tipo de queijo
+     * @param cheese
+     * @return
+     */
     public static String CheeseTypeToString(CheeseType cheese) {
         switch (cheese) {
             case MOZZARELA:

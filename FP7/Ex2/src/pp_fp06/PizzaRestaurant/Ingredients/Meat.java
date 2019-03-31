@@ -11,13 +11,22 @@ import pp_fp06.PizzaRestaurant.enums.OriginType;
 import pp_fp06.PizzaRestaurant.enums.UnitOfMeasure;
 
 /**
- *
+ * Definição do Objeto Meat
  * @author NERD-X
  */
 public class Meat extends Topping{
     
     private MeatType meat;
 
+    /**
+     * Metodo Construtor da Meat
+     * @param meat
+     * @param origin
+     * @param id
+     * @param name
+     * @param unit
+     * @param calories
+     */
     public Meat(MeatType meat, OriginType origin, int id, String name, UnitOfMeasure unit, float calories) {
         super(origin, id, name, unit, calories);
         this.meat = meat;

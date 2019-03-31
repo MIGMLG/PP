@@ -15,23 +15,44 @@ public class PizzaIngredients {
     private Ingredient ingredient;
     private float quantity;
 
+    /**
+     *
+     * @param ingredient
+     * @param quantity
+     */
     public PizzaIngredients(Ingredient ingredient, float quantity) {
         this.ingredient = ingredient;
         this.quantity = quantity;
     }
 
+    /**
+     * Metodo para retornar o ingrediente
+     * @return
+     */
     public Ingredient getIngredient() {
         return ingredient;
     }
 
+    /**
+     * Metodo para definir o ingrediente
+     * @param ingredient
+     */
     public void setIngredient(Ingredient ingredient) {
         this.ingredient = ingredient;
     }
 
+    /**
+     * Metodo para retornar a quantidade
+     * @return
+     */
     public float getQuantity() {
         return quantity;
     }
 
+    /**
+     * Metodo para definir a quantidade
+     * @param quantity
+     */
     public void setQuantity(float quantity) {
         this.quantity = quantity;
     }
