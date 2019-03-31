@@ -14,5 +14,28 @@ import pp_fp06.PizzaRestaurant.Ingredients.Ingredient;
 public class PizzaIngredients {
     private Ingredient ingredient;
     private float quantity;
+
+    public PizzaIngredients(Ingredient ingredient, float quantity) {
+        this.ingredient = ingredient;
+        this.quantity = quantity;
+    }
+
+    public Ingredient getIngredient() {
+        return ingredient;
+    }
+
+    public void setIngredient(Ingredient ingredient) {
+        this.ingredient = ingredient;
+    }
+
+    public float getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(float quantity) {
+        this.quantity = quantity;
+    }
+    
+    
     
 }

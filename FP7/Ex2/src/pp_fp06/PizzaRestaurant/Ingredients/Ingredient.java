@@ -32,13 +32,4 @@ public class Ingredient {
         return text;
     }
 
-    /**
-     * returnar id do ingrediente
-     *
-     * @return
-     */
-    public int getId() {
-        return id;
-    }
-
 }
