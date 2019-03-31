@@ -10,6 +10,7 @@ import pp_fp06.PizzaRestaurant.Ingredients.*;
 import pp_fp06.PizzaRestaurant.Ingredients.Ingredient;
 import pp_fp06.PizzaRestaurant.Pizza;
 import pp_fp06.PizzaRestaurant.PizzaIngredients;
+import pp_fp06.PizzaRestaurant.enums.CheeseType;
 import pp_fp06.PizzaRestaurant.enums.OriginType;
 import pp_fp06.PizzaRestaurant.enums.PizzaBaseType;
 import static pp_fp06.PizzaRestaurant.enums.PizzaSize.*;
@@ -28,10 +29,10 @@ public class Ex2 {
         // TODO code application logic here
         
         Base base = new Base(1, "Base Da Pizza", 200, PizzaBaseType.MFINA , "Ola");
-        Topping top1 = new Topping(OriginType.NACIONAL, 1 , "Chouriço", GRAMAS, 200);
+        Cheese top = new Cheese(CheeseType.SERRA, OriginType.NACIONAL, 1, "Queijo da Serra", LITROS, 300);
         Pizza n1 = new Pizza(1, "Pizza PERIGRINI", "PERIGRINI", BIG);
         n1.addBase(base);
-        n1.addTopping(top1, 200);
+        n1.addTopping(top, 200);
         
     }
     

@@ -1,6 +1,7 @@
 package pp_fp06.PizzaRestaurant;
 
 import pp_fp06.PizzaRestaurant.Ingredients.Base;
+import pp_fp06.PizzaRestaurant.Ingredients.Cheese;
 import pp_fp06.PizzaRestaurant.Ingredients.Ingredient;
 import pp_fp06.PizzaRestaurant.Ingredients.Topping;
 import pp_fp06.PizzaRestaurant.enums.PizzaSize;
@@ -31,6 +32,9 @@ public class Pizza {
     private final float defaultPrice = (float) 5.00;
     private int counterTop = 0;
     private int counterBase = 0;
+    private int meatType = 0;
+    private int vegetalType = 0;
+    private int seaFoodType = 0;
 
     /**
      * Método construtor para a criação de uma instância de {@link Pizza pizza}.
@@ -57,7 +61,7 @@ public class Pizza {
         }
     }
 
-    public void addTopping(Topping top, float quantity) {
+    public void addTopping(Cheese top, float quantity) {
         if (counterBase == 1) {
             if (counterTop < MAX_INGREDIENTS) {
                 Ingredient ingrediente = (Ingredient) top;
