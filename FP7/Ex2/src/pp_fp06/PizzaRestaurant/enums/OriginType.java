@@ -12,7 +12,7 @@ package pp_fp06.PizzaRestaurant.enums;
 public enum OriginType {
     NACIONAL, IMPORTADO;
 
-    public String OriginTypeToString(OriginType origin) {
+    public static String OriginTypeToString(OriginType origin) {
         switch (origin) {
             case NACIONAL:
                 return "Produto Nacional";

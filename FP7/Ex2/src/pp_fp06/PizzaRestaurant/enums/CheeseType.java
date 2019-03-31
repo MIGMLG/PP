@@ -12,7 +12,7 @@ package pp_fp06.PizzaRestaurant.enums;
 public enum CheeseType {
     MOZZARELA , SERRA ;
     
-    public String CheeseTypeToString(CheeseType cheese) {
+    public static String CheeseTypeToString(CheeseType cheese) {
         switch (cheese) {
             case MOZZARELA:
                 return "Mozzarela";

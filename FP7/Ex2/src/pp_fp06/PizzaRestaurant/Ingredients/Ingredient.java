@@ -6,6 +6,7 @@
 package pp_fp06.PizzaRestaurant.Ingredients;
 
 import pp_fp06.PizzaRestaurant.enums.UnitOfMeasure;
+import static pp_fp06.PizzaRestaurant.enums.UnitOfMeasure.*;
 
 /**
  * Classe que representa a estrutura de Ingrediente
@@ -28,7 +29,10 @@ public class Ingredient {
 
     @Override
     public String toString() {
-        String text = " " + name + ",";
+        String text = "- ID : " + id + "\n"
+                + "- Nome : " + name + "\n"
+                + "- Unidade : " + UnitOfMeasureToString(unit) + "\n"
+                + "- Calorias : " + calories + "\n";
         return text;
     }
 

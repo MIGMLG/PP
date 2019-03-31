@@ -3,7 +3,10 @@ package pp_fp06.PizzaRestaurant;
 import pp_fp06.PizzaRestaurant.Ingredients.Base;
 import pp_fp06.PizzaRestaurant.Ingredients.Cheese;
 import pp_fp06.PizzaRestaurant.Ingredients.Ingredient;
+import pp_fp06.PizzaRestaurant.Ingredients.Meat;
+import pp_fp06.PizzaRestaurant.Ingredients.SeaFood;
 import pp_fp06.PizzaRestaurant.Ingredients.Topping;
+import pp_fp06.PizzaRestaurant.Ingredients.Vegetable;
 import pp_fp06.PizzaRestaurant.enums.PizzaSize;
 import static pp_fp06.PizzaRestaurant.enums.PizzaSize.*;
 
@@ -75,5 +78,68 @@ public class Pizza {
         }
 
     }
+    
+    public void addTopping(Meat top, float quantity) {
+        if (counterBase == 1) {
+            if (counterTop < MAX_INGREDIENTS) {
+                meatType +=1;
+                Ingredient ingrediente = (Ingredient) top;
+                ingredients[counterTop] = new PizzaIngredients(ingrediente, quantity);
+                counterTop += 1;
+            } else {
+                System.out.println("Ja tem 5 ingredientes.");
+            }
+        }else {
+            System.out.println("Ainda não tem uma base selecionada.");
+        }
 
+    }
+    
+    public void addTopping(Vegetable top, float quantity) {
+        if (counterBase == 1) {
+            if (counterTop < MAX_INGREDIENTS) {
+                vegetalType +=1;
+                Ingredient ingrediente = (Ingredient) top;
+                ingredients[counterTop] = new PizzaIngredients(ingrediente, quantity);
+                counterTop += 1;
+            } else {
+                System.out.println("Ja tem 5 ingredientes.");
+            }
+        }else {
+            System.out.println("Ainda não tem uma base selecionada.");
+        }
+
+    }
+    
+    public void addTopping(SeaFood top, float quantity) {
+        if (counterBase == 1) {
+            if (counterTop < MAX_INGREDIENTS) {
+                seaFoodType +=1;
+                Ingredient ingrediente = (Ingredient) top;
+                ingredients[counterTop] = new PizzaIngredients(ingrediente, quantity);
+                counterTop += 1;
+            } else {
+                System.out.println("Ja tem 5 ingredientes.");
+            }
+        }else {
+            System.out.println("Ainda não tem uma base selecionada.");
+        }
+
+    }
+    
+    @Override
+    public String toString(){
+        String text = "--------------------------------------------------------" + "\n"
+                + "ID da Pizza : " + id + "\n"
+                + "Nome da Pizza : " + name + "\n"
+                + base.toString();
+        
+        for(int i = 0; i < counterTop; i++){
+            text += "Ingrediente " + (i+1) + " :" + "\n"
+                    + ingredients[i].toString();
+        }
+        
+        return text;
+    }
+    
 }

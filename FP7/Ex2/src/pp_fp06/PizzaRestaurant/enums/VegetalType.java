@@ -13,7 +13,7 @@ public enum VegetalType {
     
     TOMATE, CEBOLA, COGUMELOS ;
     
-    public String VegetalTypeToString(VegetalType vegetal) {
+    public static String VegetalTypeToString(VegetalType vegetal) {
         switch (vegetal) {
             case TOMATE:
                 return "Tomate";

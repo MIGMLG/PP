@@ -6,7 +6,7 @@
 package pp_fp06.PizzaRestaurant.Ingredients;
 
 import pp_fp06.PizzaRestaurant.enums.PizzaBaseType;
-import pp_fp06.PizzaRestaurant.enums.UnitOfMeasure;
+import static pp_fp06.PizzaRestaurant.enums.PizzaBaseType.PizzaBaseTypeToString;
 import static pp_fp06.PizzaRestaurant.enums.UnitOfMeasure.GRAMAS;
 
 /**
@@ -23,4 +23,11 @@ public class Base extends Ingredient{
         this.description = description;
     }
     
+    @Override
+    public String toString(){
+        String text = "Base : " + "\n"
+                + "- Tipo de Base : " + PizzaBaseTypeToString(baseType)+ "\n"
+                + super.toString();
+        return text;
+    }    
 }

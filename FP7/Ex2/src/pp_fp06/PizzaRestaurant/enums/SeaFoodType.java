@@ -13,7 +13,7 @@ public enum SeaFoodType {
     
     CAMARAO, LAGOSTA ;
     
-    public String SeaFoodTypeToString(SeaFoodType seaFood) {
+    public static String SeaFoodTypeToString(SeaFoodType seaFood) {
         switch (seaFood) {
             case CAMARAO:
                 return "Camarao";

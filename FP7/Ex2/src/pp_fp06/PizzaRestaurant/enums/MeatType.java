@@ -12,7 +12,7 @@ package pp_fp06.PizzaRestaurant.enums;
 public enum MeatType {
     PORCO, VACA, SALAME ;
     
-    public String MeatTypeToString(MeatType meat) {
+    public static String MeatTypeToString(MeatType meat) {
         switch (meat) {
             case PORCO:
                 return "Porco";

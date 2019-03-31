@@ -13,7 +13,7 @@ public enum PizzaBaseType {
     
     MFINA, MALTA;
     
-    public String PizzaBaseTypeToString(PizzaBaseType base){
+    public static String PizzaBaseTypeToString(PizzaBaseType base){
         switch(base){
             case MFINA :
                 return "Massa Fina";

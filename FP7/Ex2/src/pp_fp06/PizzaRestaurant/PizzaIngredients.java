@@ -36,6 +36,10 @@ public class PizzaIngredients {
         this.quantity = quantity;
     }
     
-    
+    @Override
+    public String toString(){
+        String text = ingredient.toString();
+        return text;
+    }
     
 }
