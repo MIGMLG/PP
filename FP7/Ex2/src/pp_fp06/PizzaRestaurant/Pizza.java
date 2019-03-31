@@ -131,13 +131,35 @@ public class Pizza {
     public String toString(){
         String text = "--------------------------------------------------------" + "\n"
                 + "ID da Pizza : " + id + "\n"
-                + "Nome da Pizza : " + name + "\n"
-                + base.toString();
+                + "Nome da Pizza : " + name + "\n";
+        
+        if(meatType > 0){
+            if( seaFoodType == 0 && vegetalType == 0){
+                text += "Tipo de Pizza : Carne" + "\n"; 
+            }else {
+                text += "Tipo de Pizza : Mixed" + "\n";
+            }
+        }else if( vegetalType > 0){
+            if( seaFoodType == 0 && meatType == 0){
+                text += "Tipo de Pizza : Vegetal" + "\n"; 
+            }else {
+                text += "Tipo de Pizza : Mixed" + "\n";
+            }
+        }else if(seaFoodType > 0){
+            if( vegetalType == 0 && meatType == 0){
+                text += "Tipo de Pizza : Peixe" + "\n"; 
+            }else {
+                text += "Tipo de Pizza : Mixed" + "\n";
+            }
+        }
+        
+        text += base.toString();
         
         for(int i = 0; i < counterTop; i++){
             text += "Ingrediente " + (i+1) + " :" + "\n"
                     + ingredients[i].toString();
         }
+        
         
         return text;
     }
