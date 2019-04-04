@@ -29,7 +29,7 @@ public class Demo {
         teste.addObjects(obj4);
         teste.addObjects(obj5);
         
-        teste.removeObjects(1);
+        teste.removeObjects(4);
         System.out.println("Hello World!");
     }
     
