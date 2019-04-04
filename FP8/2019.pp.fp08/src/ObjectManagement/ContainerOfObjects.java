@@ -62,24 +62,22 @@ public class ContainerOfObjects {
                 System.out.println("Objecto não existe");
                 return null;
             } else {
-                Object[] tmp = new Object[object.length];
                 Object delete = object[position];
-                int tmpPosition = 0;
-                for (int i = 0; i <= counter; i++) {
-                    if (i != position) {
-                        tmp[tmpPosition] = object[i];
-                        tmpPosition += 1;
-                    }
+                object[position] = null;
+                for (int i = position; i < (counter - 1); i++) {
+                    object[i] = object[i + 1];
                 }
-                object = tmp;
                 counter -= 1;
+                object[counter] = null;
                 return delete;
             }
         } else {
             System.out.println("Posição Inexistente");
             return null;
         }
-        
+
     }
+    
+    //protected 
 
 }

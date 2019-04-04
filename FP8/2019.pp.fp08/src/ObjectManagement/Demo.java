@@ -24,13 +24,18 @@ public class Demo {
         
         ContainerOfObjects teste = new ContainerOfObjects();
         teste.addObjects(obj1);
+        System.out.println("1- " + obj1.toString());
         teste.addObjects(obj2);
+        System.out.println("2- " + obj2.toString());
         teste.addObjects(obj3);
+        System.out.println("3- " + obj3.toString());
         teste.addObjects(obj4);
+        System.out.println("4- " + obj4.toString());
         teste.addObjects(obj5);
+        System.out.println("5- " + obj5.toString());
         
-        teste.removeObjects(4);
-        System.out.println("Hello World!");
+        System.out.println("Eliminado- " + teste.removeObjects(1).toString());
+
     }
     
 }
