@@ -9,3 +9,6 @@ git.pdf
 /FP7/Ex2/nbproject/private/
 /FP7/Ex2/build/
 /FP7/Ex2/dist/
+/FP7/2019.pp.fp08/nbproject/private/
+*.jar
+*.class
