@@ -44,17 +44,30 @@ public class ContainerOfObjects {
         this.object = new Object[maxSize];
     }
 
-    protected boolean addObjects(Object newobject) {
+    /**
+     * Metodo para adicionar objetos ao array
+     * Retorna true se a operação foi um sucesso/false se falhou
+     * @param newObject
+     * @return
+     */
+    protected boolean addObjects(Object newObject) {
         if (counter < object.length) {
-            object[counter] = newobject;
+            object[counter] = newObject;
             counter += 1;
             return true;
         } else {
+            System.out.println("Array cheio.");
             return false;
         }
 
     }
 
+    /**
+     * Metodo para remover objeto do array
+     * Retorna o objeto eliminado
+     * @param position
+     * @return
+     */
     protected Object removeObjects(int position) {
 
         if (position < object.length) {
@@ -77,7 +90,47 @@ public class ContainerOfObjects {
         }
 
     }
-    
-    //protected 
 
+    /**
+     * Metodo que substitui um objeto no array por um novo recebido
+     * Retorna true se a operação foi um sucesso/false se falhou
+     * @param position
+     * @param newObject
+     * @return
+     */
+    protected boolean setObject(int position, Object newObject) {
+        if (position < object.length) {
+            if (object[position] == null) {
+                System.out.println("Não existe nenhum objeto nesta postição.");
+                return false;
+            } else {
+                object[position] = newObject;
+                return true;
+            }
+
+        } else {
+            System.out.println("Posição Inexistente");
+            return false;
+        }
+
+    }
+    
+    /**
+     * Metodo para procurar um objeto no array
+     * Se existir o metodo irá retornar a posição do objeto no array
+     * Se não existir retorna um -1
+     * @param object
+     * @return
+     */
+    protected int findObject(Object object){
+        
+        for(int i = 0; i < this.object.length; i++){
+            if(this.object[i] == object){
+                return i;
+            }
+        }
+        
+        return -1;
+        
+    }
 }
