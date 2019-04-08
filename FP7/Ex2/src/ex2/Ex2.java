@@ -38,6 +38,7 @@ public class Ex2 {
         n1.addTopping(top1, 200);
         n1.addTopping(top1, 200);
         n1.addTopping(top1, 200);
+        n1.addTopping(top1, 200);
         
         System.out.println(n1.toString());
         

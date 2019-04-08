@@ -71,23 +71,28 @@ public class Pizza {
     }
 
     /**
-     * Metodo para adicionar ingredientes á pizza 
+     * Metodo para adicionar ingredientes á pizza
+     *
      * @param top
      * @param quantity
      */
     public void addTopping(Ingredient top, float quantity) {
         if (counterBase == 1) {
-            if (top instanceof Meat) {
-                meatType += 1;
-            } else if (top instanceof Vegetable) {
-                vegetalType += 1;
-            } else if (top instanceof SeaFood) {
-                seaFoodType += 1;
-            } else if (top instanceof Cheese) {
-                cheeseType += 1 ;
+            if (counterTop < MAX_INGREDIENTS) {
+                if (top instanceof Meat) {
+                    meatType += 1;
+                } else if (top instanceof Vegetable) {
+                    vegetalType += 1;
+                } else if (top instanceof SeaFood) {
+                    seaFoodType += 1;
+                } else if (top instanceof Cheese) {
+                    cheeseType += 1;
+                }
+                ingredients[counterTop] = new PizzaIngredients(top, quantity);
+                counterTop += 1;
+            } else {
+                System.out.println("Ja tem 5 ingredientes.");
             }
-            ingredients[counterTop] = new PizzaIngredients(top, quantity);
-            counterTop += 1;
         } else {
             System.out.println("Ainda não tem uma base selecionada.");
         }
