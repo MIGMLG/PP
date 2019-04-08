@@ -62,9 +62,15 @@ public class Ex2 {
         System.out.println(lista.toString());
         Bike[] bikes = {n1, n2};
         BikeSalesManagement sale1 = new BikeSalesManagement(bikes, 1, LocalDateTime.now());
-        
+       
+        // Ficha 8 Ex2
         System.out.println(sale1.addBike(n2));
+        System.out.println("---------------------------------------------------");
         System.out.println(sale1.removeBike(n1));
+        System.out.println(sale1.findBike(n2));
+        System.out.println(sale1.setBike(1, n1));
+        System.out.println(sale1.addBike(n1));
+        System.out.println(sale1.setBike(1, n1));
         
     }
     

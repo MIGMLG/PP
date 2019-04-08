@@ -42,6 +42,6 @@ public class BikeSalesManagement extends ContainerOfObjects{
     }
     
     public int findBike(Bike newBike){
-        return super.findObject(saleID);
+        return super.findObject(newBike);
     }
 }
