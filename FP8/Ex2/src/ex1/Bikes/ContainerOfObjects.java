@@ -24,6 +24,7 @@ public class ContainerOfObjects {
      */
     public ContainerOfObjects(Object[] object) {
         this.object = object;
+        this.counter = this.object.length;
     }
 
     /**
