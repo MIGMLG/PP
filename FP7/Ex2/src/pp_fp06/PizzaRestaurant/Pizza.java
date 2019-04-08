@@ -38,6 +38,7 @@ public class Pizza {
     private int meatType = 0;
     private int vegetalType = 0;
     private int seaFoodType = 0;
+    private int cheeseType = 0;
 
     /**
      * Método construtor para a criação de uma instância de {@link Pizza pizza}.
@@ -57,6 +58,7 @@ public class Pizza {
 
     /**
      * Metodo para adicionar uma base há pizza
+     *
      * @param base
      */
     public void addBase(Base base) {
@@ -69,123 +71,63 @@ public class Pizza {
     }
 
     /**
-     * Metodo que premite adicionar um ingrediente do tipo Cheese
+     * Metodo para adicionar ingredientes á pizza 
      * @param top
      * @param quantity
      */
-    public void addTopping(Cheese top, float quantity) {
+    public void addTopping(Ingredient top, float quantity) {
         if (counterBase == 1) {
-            if (counterTop < MAX_INGREDIENTS) {
-                Ingredient ingrediente = (Ingredient) top;
-                ingredients[counterTop] = new PizzaIngredients(ingrediente, quantity);
-                counterTop += 1;
-            } else {
-                System.out.println("Ja tem 5 ingredientes.");
+            if (top instanceof Meat) {
+                meatType += 1;
+            } else if (top instanceof Vegetable) {
+                vegetalType += 1;
+            } else if (top instanceof SeaFood) {
+                seaFoodType += 1;
+            } else if (top instanceof Cheese) {
+                cheeseType += 1 ;
             }
-        }else {
+            ingredients[counterTop] = new PizzaIngredients(top, quantity);
+            counterTop += 1;
+        } else {
             System.out.println("Ainda não tem uma base selecionada.");
         }
 
     }
-    
-    /**
-     * Metodo que premite adicionar um ingrediente do tipo Meat
-     * @param top
-     * @param quantity
-     */
-    public void addTopping(Meat top, float quantity) {
-        if (counterBase == 1) {
-            if (counterTop < MAX_INGREDIENTS) {
-                meatType +=1;
-                Ingredient ingrediente = (Ingredient) top;
-                ingredients[counterTop] = new PizzaIngredients(ingrediente, quantity);
-                counterTop += 1;
-            } else {
-                System.out.println("Ja tem 5 ingredientes.");
-            }
-        }else {
-            System.out.println("Ainda não tem uma base selecionada.");
-        }
 
-    }
-    
-    /**
-     * Metodo que premite adicionar um ingrediente do tipo Vegetable
-     * @param top
-     * @param quantity
-     */
-    public void addTopping(Vegetable top, float quantity) {
-        if (counterBase == 1) {
-            if (counterTop < MAX_INGREDIENTS) {
-                vegetalType +=1;
-                Ingredient ingrediente = (Ingredient) top;
-                ingredients[counterTop] = new PizzaIngredients(ingrediente, quantity);
-                counterTop += 1;
-            } else {
-                System.out.println("Ja tem 5 ingredientes.");
-            }
-        }else {
-            System.out.println("Ainda não tem uma base selecionada.");
-        }
-
-    }
-    
-    /**
-     * Metodo que premite adicionar um ingrediente do tipo SeaFood
-     * @param top
-     * @param quantity
-     */
-    public void addTopping(SeaFood top, float quantity) {
-        if (counterBase == 1) {
-            if (counterTop < MAX_INGREDIENTS) {
-                seaFoodType +=1;
-                Ingredient ingrediente = (Ingredient) top;
-                ingredients[counterTop] = new PizzaIngredients(ingrediente, quantity);
-                counterTop += 1;
-            } else {
-                System.out.println("Ja tem 5 ingredientes.");
-            }
-        }else {
-            System.out.println("Ainda não tem uma base selecionada.");
-        }
-
-    }
-    
     @Override
-    public String toString(){
+    public String toString() {
         String text = "--------------------------------------------------------" + "\n"
                 + "ID da Pizza : " + id + "\n"
                 + "Nome da Pizza : " + name + "\n";
-        
-        if(meatType > 0){
-            if( seaFoodType == 0 && vegetalType == 0){
-                text += "Tipo de Pizza : Carne" + "\n"; 
-            }else {
+
+        if (meatType > 0) {
+            if (seaFoodType == 0 && vegetalType == 0) {
+                text += "Tipo de Pizza : Carne" + "\n";
+            } else {
                 text += "Tipo de Pizza : Mixed" + "\n";
             }
-        }else if( vegetalType > 0){
-            if( seaFoodType == 0 && meatType == 0){
-                text += "Tipo de Pizza : Vegetal" + "\n"; 
-            }else {
+        } else if (vegetalType > 0) {
+            if (seaFoodType == 0 && meatType == 0) {
+                text += "Tipo de Pizza : Vegetal" + "\n";
+            } else {
                 text += "Tipo de Pizza : Mixed" + "\n";
             }
-        }else if(seaFoodType > 0){
-            if( vegetalType == 0 && meatType == 0){
-                text += "Tipo de Pizza : Peixe" + "\n"; 
-            }else {
+        } else if (seaFoodType > 0) {
+            if (vegetalType == 0 && meatType == 0) {
+                text += "Tipo de Pizza : Peixe" + "\n";
+            } else {
                 text += "Tipo de Pizza : Mixed" + "\n";
             }
         }
-        
+
         text += base.toString();
-        
-        for(int i = 0; i < counterTop; i++){
-            text += "Ingrediente " + (i+1) + " :" + "\n"
+
+        for (int i = 0; i < counterTop; i++) {
+            text += "Ingrediente " + (i + 1) + " :" + "\n"
                     + ingredients[i].toString();
         }
-        
-        
+
         return text;
     }
-    
+
 }
