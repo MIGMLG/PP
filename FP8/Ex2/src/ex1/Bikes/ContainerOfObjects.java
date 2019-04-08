@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ObjectManagement;
+package ex1.Bikes;
 
 /**
  * Qualquer Objeto é uma extensão de Object por isso esta classe pode receber

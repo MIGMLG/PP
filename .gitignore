@@ -13,3 +13,5 @@ git.pdf
 *.jar
 *.class
 /FP8/2019.pp.fp08/build/
+/FP8/Ex2/nbproject/private/
+/FP8/Ex2/build/
