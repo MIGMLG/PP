@@ -6,7 +6,7 @@
 package ex1.Bikes;
 
 /**
- *
+ * Classe da gestão de ferramentas das bikes
  * @author NERD-X
  */
 public class BikeToolsManagement extends ContainerOfObjects {
