@@ -10,6 +10,7 @@ import static ex1.enums.Material.*;
 
 /**
  * Definição do Objeto RoadBike
+ *
  * @author NERD-X
  */
 public class RoadBike extends Bike {
@@ -17,11 +18,12 @@ public class RoadBike extends Bike {
     private final int MAX_OBS = 10;
     private String handlebelt;
     private float frameSize;
-    private String[] observations = new String[MAX_OBS];
+    private CommentsManagement observations = new CommentsManagement(MAX_OBS);
     private int counterObs = 0;
 
     /**
      * Metodo Constructor para RoadBike
+     *
      * @param handlebelt
      * @param frameSize
      * @param id
@@ -38,77 +40,33 @@ public class RoadBike extends Bike {
     }
 
     /**
-     * Metodo que permite adicionar observações
-     * @param observation
-     */
-    public void addObservations(String observation) {
-        if (counterObs < MAX_OBS ) {
-            observations[counterObs] = observation;
-            counterObs += 1;
-        }
-        else {
-            System.out.println("Já antigiu o numero máximo de Observações.");
-        }
-
-    }
-
-    /**
-     * Metodo que permite remover observações
-     * @param position
-     */
-    public void removeObservations(int position) {
-        String[] tmp = new String[MAX_OBS];
-        int found = 0;
-
-        for (int i = 0; i < counterObs; i++) {
-            if (position == i) {
-                found += 1;
-                counterObs -= 1;
-                continue;
-            }
-            tmp[i] = observations[i];
-        }
-
-        if (found > 0) {
-            observations = tmp;
-        } else {
-            System.out.println("Não foi encontrado.");
-        }
-    }
-
-    /**
-     * Metodo que permite editar observações
-     * @param position
-     * @param obs
-     */
-    public void editObservations(int position, String obs) {
-        int found = 0;
-
-        for (int i = 0; i < counterObs; i++) {
-            if (position == i) {
-                observations[i] = obs;
-                found += 1;
-                break;
-            }
-        }
-
-        if (found > 0) {
-            System.out.println("Foi alterado com sucesso.");
-        } else {
-            System.out.println("Não foi encontrado.");
-        }
-    }
-
-    /**
-     * Metodo que retorna uma lista das observações
+     * Metodo para adicionar comentarios á bicicleta
+     * @param comment
      * @return
      */
-    public String printObservations() {
-        String text = "";
-        for (int i = 0; i < counterObs; i++) {
-            text += "Observação " + (i + 1) + " : " + observations[i] + "\n";
+    public boolean addComment(String comment) {
+        if (comment.length() <= 60 ) {
+            return observations.addComment(comment);
+        }else {
+            return false;
         }
-        return text;
-
     }
+
+    /**
+     * Metodo para remover comentarios á bicicleta
+     * @param position
+     * @return
+     */
+    public String removeComment(int position) {
+        return (String) observations.removeComment(position);
+    }
+
+    /**
+     * Metodo para imprimir todos os comentarios da bicicleta
+     * @return
+     */
+    public String getAllComments() {
+        return observations.getAllComments();
+    }
+
 }

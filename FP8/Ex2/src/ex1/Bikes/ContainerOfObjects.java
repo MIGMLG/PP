@@ -125,13 +125,45 @@ public class ContainerOfObjects {
      */
     protected int findObject(Object object){
         
-        for(int i = 0; i < this.object.length; i++){
+        for(int i = 0; i < counter; i++){
             if(this.object[i].equals(object)){
                 return i;
             }
         }
         
         return -1;
+        
+    }
+    
+    /**
+     * Metodo para saber se o objeto existe no array
+     * @param object
+     * @return
+     */
+    public boolean hasObject(Object object){
+        
+        for (int i = 0; i < counter; i++) {
+            if (this.object[i].equals(object)) {
+                return true;
+            }
+        }
+        
+        return false;
+        
+    }
+    
+    /**
+     * Metodo para imprimir a infromação dos Objectos
+     * @return
+     */
+    public String printAll(){
+        String text = new String();
+        
+        for(int i = 0; i < counter; i++){
+            text += object[i].toString();
+        }
+        
+        return text;
         
     }
 }

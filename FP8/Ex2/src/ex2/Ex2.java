@@ -31,29 +31,18 @@ public class Ex2 {
         BikeTools tool = new BikeTools(1, "Garrafa");
         BikeTools tool1 = new BikeTools(2, "Kit de Troca de Pneus");
         
-        n1.setTools(tool);
-        n1.setTools(tool1);
+        n1.addTool(tool);
+        n1.addTool(tool1);
         
         System.out.println(n1.toString());
-        System.out.println(n1.printTools());
+        System.out.println(n1.getAllTools());
         System.out.println("--------------------------------------------------");
-        n1.removeTools(2);
-        n1.editTools(1, tool1);
-        System.out.println(n1.printTools());
+        n1.removeTool(1);
+        System.out.println(n1.getAllTools());
         System.out.println("--------------------------------------------------");
         
         RoadBike n2 = new RoadBike("Fita Cola", 4, 2, 10, "Preto", 23, 200, 2);
         System.out.println(n2.toString());
-        
-        n2.addObservations("Ola");
-        n2.addObservations("Adeus");
-        
-        System.out.println(n2.printObservations());
-        
-        n2.removeObservations(1);
-        n2.editObservations(0, "Adeus");
-        
-        System.out.println(n2.printObservations());
         System.out.println("--------------------------------------------------");
         
         BikeManagment lista = new BikeManagment();
@@ -63,6 +52,7 @@ public class Ex2 {
         Bike[] bikes = {n1, n2};
         BikeSalesManagement sale1 = new BikeSalesManagement(bikes, 1, LocalDateTime.now());
        
+        
         // Ficha 8 Ex2
         System.out.println(sale1.addBike(n2));
         System.out.println("---------------------------------------------------");
@@ -71,7 +61,8 @@ public class Ex2 {
         System.out.println(sale1.setBike(1, n1));
         System.out.println(sale1.addBike(n1));
         System.out.println(sale1.setBike(1, n1));
-        
+        System.out.println("---------------------------------------------------");
+        System.out.println(sale1.printAllBikes());        
     }
     
 }

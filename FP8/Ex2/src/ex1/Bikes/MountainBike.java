@@ -11,6 +11,7 @@ import ex1.enums.MountainBikeSuspension;
 
 /**
  * Definição do Objecto MountainBike
+ *
  * @author NERD-X
  */
 public class MountainBike extends Bike {
@@ -19,10 +20,11 @@ public class MountainBike extends Bike {
     private int counterTools = 0;
     private int numberOfLights;
     private MountainBikeSuspension suspension;
-    private BikeTools[] tools = new BikeTools[MAX_TOOLS];
+    private BikeToolsManagement tools = new BikeToolsManagement(MAX_TOOLS);
 
     /**
      * Metodo Construtor para a MountainBike
+     *
      * @param numberOfLights
      * @param suspension
      * @param id
@@ -41,77 +43,34 @@ public class MountainBike extends Bike {
     }
 
     /**
-     * Permite adicionar ferramentas
-     * @param tools
-     */
-    public void setTools(BikeTools tools) {
-        if (counterTools < MAX_TOOLS) {
-            this.tools[counterTools] = tools;
-            counterTools += 1;
-        } else {
-            System.out.println("Já antigiu o máximo de ferramentas.");
-        }
-
-    }
-
-    /**
-     * Permite Editar a informação da ferramenta pelo seu ID
-     * @param id
+     * Metodo para adicionar ferramentas á bicicleta
      * @param tool
-     */
-    public void editTools(int id, BikeTools tool) {
-        int found = 0;
-
-        for (int i = 0; i < counterTools; i++) {
-            if (id == tools[i].getId()) {
-                tools[i] = tool;
-                found += 1;
-                break;
-            }
-        }
-
-        if (found > 0) {
-            System.out.println("Foi alterado com sucesso.");
-        } else {
-            System.out.println("Não foi encontrado.");
-        }
-    }
-
-    /**
-     * Permite remover ferramentas através do ID 
-     * @param id
-     */
-    public void removeTools(int id) {
-        BikeTools[] tmp = new BikeTools[MAX_TOOLS];
-        int found = 0;
-
-        for (int i = 0; i < counterTools; i++) {
-            if (id == tools[i].getId()) {
-                found += 1;
-                counterTools -= 1;
-                continue;
-            }
-            tmp[i] = tools[i];
-        }
-
-        if (found > 0) {
-            tools = tmp;
-        } else {
-            System.out.println("Não foi encontrado.");
-        }
-    }
-
-    /**
-     * Retorna uma String com uma lista das ferramentas 
      * @return
      */
-    public String printTools() {
-        String text = "";
-        for (int i = 0; i < counterTools; i++) {
-            text += tools[i].toString();
+    public boolean addTool(BikeTools tool) {
+        if (tools.hasObject(tool)) {
+            return false;
+        } else {
+            return tools.addTool(tool);
         }
-        return text;
+    }
 
+    /**
+     * Metodo para remover ferramentas á bicicleta
+     * @param position
+     * @return
+     */
+    public BikeTools removeTool(int position) {
+        return (BikeTools) tools.removeTool(position);
+    }
+
+    /**
+     * Metodo para imprimir todas as ferramentas da bicicleta
+     *
+     * @return
+     */
+    public String getAllTools() {
+        return tools.getAllTools();
     }
 
 }
