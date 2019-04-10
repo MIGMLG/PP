@@ -153,7 +153,7 @@ public class ContainerOfObjects {
     }
     
     /**
-     * Metodo para imprimir a infromação dos Objectos
+     * Metodo para imprimir a informação dos Objectos
      * @return
      */
     public String printAll(){

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ex2;
+package Demo;
 
 import ex1.Bikes.Bike;
 import ex1.Bikes.BikeManagment;
