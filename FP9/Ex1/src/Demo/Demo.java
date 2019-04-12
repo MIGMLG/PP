@@ -7,6 +7,9 @@ package Demo;
 
 import ex1.Animals.*;
 import ex1.Enums.*;
+import ex1.ReservationsManagement.Reservation;
+import ex1.ReservationsManagement.Service;
+import java.time.LocalDateTime;
 
 /**
  *
@@ -22,6 +25,10 @@ public class Demo {
         
         Cat n1 = new Cat(1, "Pintas", Sex.M, 8, CatType.INTERIOR);
         Dog n2 = new Dog(2, "Snoppy", Sex.M, 10, Weight.MEDIUM);
+        Service s1 = new Service(ServicesType.PASSEIO);
+        
+        Reservation r1 = new Reservation(LocalDateTime.now(), n2);
+        r1.addService(s1);
         
     }
     
