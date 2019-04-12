@@ -12,7 +12,7 @@ package ex1.Enums;
 public enum StateType {
     NOTFINISHED, OCCURRING, FINISHED;
     
-    public String StateTypeToString(StateType type){
+    public static String StateTypeToString(StateType type){
         switch(type){
             case NOTFINISHED :
                 return "Ainda não foi executada.";

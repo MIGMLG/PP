@@ -14,7 +14,8 @@ import java.time.LocalDateTime;
  *
  * @author NERD-X
  */
-public class Reservation extends ContainerOfObjects{
+public class Reservation extends ContainerOfObjects {
+
     private LocalDateTime date;
     private Animal animal;
 
@@ -22,9 +23,24 @@ public class Reservation extends ContainerOfObjects{
         this.date = date;
         this.animal = animal;
     }
-    
-    public boolean addService(Service service){
-        return super.addObjects(service);
+
+    public boolean addService(Service service) {
+        if (super.hasObject(service)) {
+            return false;
+        } else {
+            return super.addObjects(service);
+        }
     }
-    
+
+    public boolean removeService(Service service) {
+        int position = super.findObject(service);
+        if (position != -1) {
+            System.out.println("Removido : " + super.removeObjects(position).toString());
+            return true;
+        } else {
+            return false;
+        }
+
+    }
+
 }

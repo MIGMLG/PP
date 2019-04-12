@@ -6,6 +6,7 @@
 package ex1.ReservationsManagement;
 
 import ex1.Enums.ServicesType;
+import static ex1.Enums.ServicesType.ServicesTypeToString;
 import ex1.Enums.StateType;
 
 /**
@@ -33,6 +34,9 @@ public class Service {
         this.taskState = taskState;
     }
     
-    
+    @Override
+    public String toString(){
+        return ServicesTypeToString(service);
+    }
 
 }

@@ -26,9 +26,11 @@ public class Demo {
         Cat n1 = new Cat(1, "Pintas", Sex.M, 8, CatType.INTERIOR);
         Dog n2 = new Dog(2, "Snoppy", Sex.M, 10, Weight.MEDIUM);
         Service s1 = new Service(ServicesType.PASSEIO);
-        
+        Service s2 = new Service(ServicesType.BANHO);
         Reservation r1 = new Reservation(LocalDateTime.now(), n2);
         r1.addService(s1);
+        r1.addService(s2);
+        r1.removeService(s2);
         
     }
     

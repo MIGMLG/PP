@@ -12,7 +12,7 @@ package ex1.Enums;
 public enum ServicesType {
     PASSEIO, ALOJAMENTO, TRANSPORTE, BANHO, TOSQUIA, SESSAOFOTO;
     
-    public String ServicesTypeToString(ServicesType type){
+    public static String ServicesTypeToString(ServicesType type){
         switch(type){
             case ALOJAMENTO :
                     return "Alojamento";
