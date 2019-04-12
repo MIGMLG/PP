@@ -6,6 +6,7 @@
 package ex1.Animals;
 
 import ex1.Enums.CatType;
+import static ex1.Enums.CatType.CatTypeToString;
 import ex1.Enums.Sex;
 
 /**
@@ -28,6 +29,11 @@ public class Cat extends Animal{
         this.type = type;
     }
     
-    
+    @Override
+    public String toString(){
+        String text = super.toString() + "\n"
+                + "Tipo: " + CatTypeToString(type) + "\n";
+       return text;         
+    }
     
 }

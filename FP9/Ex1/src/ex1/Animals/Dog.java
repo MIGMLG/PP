@@ -7,6 +7,7 @@ package ex1.Animals;
 
 import ex1.Enums.Sex;
 import ex1.Enums.Weight;
+import static ex1.Enums.Weight.WeightToString;
 
 /**
  *
@@ -28,6 +29,11 @@ public class Dog extends Animal{
         this.weight = weight;
     }
     
-    
+    @Override
+    public String toString(){
+        String text = super.toString() + "\n"
+                + "Porte: " + WeightToString(weight) + "\n";
+       return text;         
+    }
     
 }

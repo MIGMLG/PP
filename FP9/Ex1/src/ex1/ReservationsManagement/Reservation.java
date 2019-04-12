@@ -18,6 +18,7 @@ public class Reservation extends ContainerOfObjects {
 
     private LocalDateTime date;
     private Animal animal;
+    private StateType state = StateType.NOTFINISHED;
 
     public Reservation(LocalDateTime date, Animal animal) {
         this.date = date;
@@ -41,6 +42,22 @@ public class Reservation extends ContainerOfObjects {
             return false;
         }
 
+    }
+
+    public StateType getState() {
+        return state;
+    }
+
+    public void setState(StateType state) {
+        this.state = state;
+    }
+    
+    @Override
+    public String toString(){
+        String text = "Animal : " + "\n" + animal.toString() + "\n"
+                + "Data : " + date.toString() + "\n"
+                + "Serviços : " + super.printAll() + "\n";
+        return text;
     }
 
 }

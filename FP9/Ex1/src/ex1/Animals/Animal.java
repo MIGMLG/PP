@@ -6,6 +6,7 @@
 package ex1.Animals;
 
 import ex1.Enums.Sex;
+import static ex1.Enums.Sex.SexToString;
 
 /**
  *
@@ -24,5 +25,12 @@ public class Animal {
         this.age = age;
     }
     
-    
+    @Override
+    public String toString(){
+        String text = "ID: " + id + "\n"
+                + "Nome: " + name + "\n" 
+                + "Idade: " + age + "\n"
+                + "Sexo: " + SexToString(sex);
+        return text;
+    }
 }

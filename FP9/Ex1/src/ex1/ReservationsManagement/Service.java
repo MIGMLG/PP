@@ -36,7 +36,8 @@ public class Service {
     
     @Override
     public String toString(){
-        return ServicesTypeToString(service);
+        String text = ServicesTypeToString(service) + ", ";
+        return text;
     }
 
 }
