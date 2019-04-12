@@ -140,7 +140,7 @@ public class ContainerOfObjects {
      * @param object
      * @return
      */
-    public boolean hasObject(Object object){
+    protected boolean hasObject(Object object){
         
         for (int i = 0; i < counter; i++) {
             if (this.object[i].equals(object)) {
@@ -156,7 +156,7 @@ public class ContainerOfObjects {
      * Metodo para imprimir a informação dos Objectos
      * @return
      */
-    public String printAll(){
+    protected String printAll(){
         String text = new String();
         
         for(int i = 0; i < counter; i++){
@@ -166,4 +166,6 @@ public class ContainerOfObjects {
         return text;
         
     }
+    
+    //Duvidas acerca do Ultimo ponto
 }

@@ -38,10 +38,13 @@ public class Demo {
         r1.addService(s1);
         r1.addService(s2);
         System.out.println(r1.toString());
+        System.out.println("-------------------------------------------------");
         r1.removeService(s2);
-        
+        System.out.println("-------------------------------------------------");
         ReservationManagement test = new ReservationManagement();
         test.addReservation(r1);
+        test.removeReservation(r1);
+        System.out.println("-------------------------------------------------");
         
     }
     

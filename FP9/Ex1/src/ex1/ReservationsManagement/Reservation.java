@@ -8,6 +8,7 @@ package ex1.ReservationsManagement;
 import containerofobjectsapi.ContainerOfObjects;
 import ex1.Animals.Animal;
 import ex1.Enums.StateType;
+import static ex1.Enums.StateType.StateTypeToString;
 import java.time.LocalDateTime;
 
 /**
@@ -55,8 +56,9 @@ public class Reservation extends ContainerOfObjects {
     @Override
     public String toString(){
         String text = "Animal : " + "\n" + animal.toString() + "\n"
-                + "Data : " + date.toString() + "\n"
-                + "Serviços : " + super.printAll() + "\n";
+                + "Data: " + date.toString() + "\n"
+                + "Serviços: " + super.printAll() + "\n"
+                + "Estado: " + StateTypeToString(state) +"\n";
         return text;
     }
 

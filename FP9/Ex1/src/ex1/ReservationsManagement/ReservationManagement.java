@@ -6,6 +6,7 @@
 package ex1.ReservationsManagement;
 
 import containerofobjectsapi.ContainerOfObjects;
+import ex1.Enums.StateType;
 
 /**
  *
@@ -24,7 +25,9 @@ public class ReservationManagement extends ContainerOfObjects {
     public boolean removeReservation(Reservation reservation) {
         int position = super.findObject(reservation);
         if (position != 1) {
-            System.out.println("Removido : " + super.removeObjects(position).toString());
+            Reservation removed = (Reservation) super.removeObjects(position);
+            removed.setState(StateType.FINISHED);
+            System.out.println(removed.toString());
             return true;
         } else {
             return false;
