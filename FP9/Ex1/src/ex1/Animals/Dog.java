@@ -10,14 +10,14 @@ import ex1.Enums.Weight;
 import static ex1.Enums.Weight.WeightToString;
 
 /**
- *
+ * Definição do Objeto Cão
  * @author NERD-X
  */
 public class Dog extends Animal{
     private Weight weight;
 
     /**
-     *
+     * Metodo Constructor de Dog
      * @param id
      * @param name
      * @param sex

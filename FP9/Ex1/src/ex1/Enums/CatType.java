@@ -6,11 +6,20 @@
 package ex1.Enums;
 
 /**
- *
+ * Enumação do Tipo de Gato
  * @author NERD-X
  */
 public enum CatType {
-    INTERIOR, EXTERIOR;
+
+    /**
+     * Gato do tipo interior
+     */
+    INTERIOR,
+
+    /**
+     * Gato do tipo exterior
+     */
+    EXTERIOR;
 
     /**
      * Metodo para retornar uma string com o tipo de gato

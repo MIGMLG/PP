@@ -9,11 +9,16 @@ import containerofobjectsapi.ContainerOfObjects;
 import ex1.Enums.StateType;
 
 /**
- *
+ * Classe De Gestão das Reservas
  * @author NERD-X
  */
 public class ReservationManagement extends ContainerOfObjects {
 
+    /**
+     * Metodo para adicionar reservas 
+     * @param reservation
+     * @return
+     */
     public boolean addReservation(Reservation reservation) {
         if (super.hasObject(reservation)) {
             return false;
@@ -22,6 +27,11 @@ public class ReservationManagement extends ContainerOfObjects {
         }
     }
 
+    /**
+     * Metodo para remover e concluir reservas
+     * @param reservation
+     * @return
+     */
     public boolean removeReservation(Reservation reservation) {
         int position = super.findObject(reservation);
         if (position != 1) {

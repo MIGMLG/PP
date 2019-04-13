@@ -13,7 +13,7 @@ import ex1.ReservationsManagement.Service;
 import java.time.LocalDateTime;
 
 /**
- *
+ * Classe para testes
  * @author NERD-X
  */
 public class Demo {

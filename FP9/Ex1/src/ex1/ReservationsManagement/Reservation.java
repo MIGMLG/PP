@@ -12,7 +12,7 @@ import static ex1.Enums.StateType.StateTypeToString;
 import java.time.LocalDateTime;
 
 /**
- *
+ * Definição do Objeto Reservation
  * @author NERD-X
  */
 public class Reservation extends ContainerOfObjects {
@@ -21,11 +21,21 @@ public class Reservation extends ContainerOfObjects {
     private Animal animal;
     private StateType state = StateType.NOTFINISHED;
 
+    /**
+     * Metodo Constructor da Reserva
+     * @param date
+     * @param animal
+     */
     public Reservation(LocalDateTime date, Animal animal) {
         this.date = date;
         this.animal = animal;
     }
 
+    /**
+     * Metodo para adicionar um serviço á reserva
+     * @param service
+     * @return
+     */
     public boolean addService(Service service) {
         if (super.hasObject(service)) {
             return false;
@@ -34,6 +44,11 @@ public class Reservation extends ContainerOfObjects {
         }
     }
 
+    /**
+     * Metodo para remover um serviço da reserva
+     * @param service
+     * @return
+     */
     public boolean removeService(Service service) {
         int position = super.findObject(service);
         if (position != -1) {
@@ -45,10 +60,18 @@ public class Reservation extends ContainerOfObjects {
 
     }
 
+    /**
+     * Metodo para obter o estado da reserva
+     * @return
+     */
     public StateType getState() {
         return state;
     }
 
+    /**
+     * Metodo para definir o estado da reserva
+     * @param state
+     */
     public void setState(StateType state) {
         this.state = state;
     }

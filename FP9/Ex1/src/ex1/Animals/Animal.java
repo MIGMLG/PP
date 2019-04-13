@@ -9,7 +9,7 @@ import ex1.Enums.Sex;
 import static ex1.Enums.Sex.SexToString;
 
 /**
- *
+ * Definição do Objeto Animal
  * @author NERD-X
  */
 public class Animal {
@@ -18,6 +18,13 @@ public class Animal {
     private Sex sex;
     private int age;
 
+    /**
+     * Metodo constructor de animal
+     * @param id
+     * @param name
+     * @param sex
+     * @param age
+     */
     public Animal(int id, String name, Sex sex, int age) {
         this.id = id;
         this.name = name;

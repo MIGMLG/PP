@@ -10,14 +10,14 @@ import static ex1.Enums.CatType.CatTypeToString;
 import ex1.Enums.Sex;
 
 /**
- *
+ * Definição do Objeto Gato
  * @author NERD-X
  */
 public class Cat extends Animal{
     private CatType type;
 
     /**
-     *
+     * Metodo Constructor de Cat
      * @param id
      * @param name
      * @param sex

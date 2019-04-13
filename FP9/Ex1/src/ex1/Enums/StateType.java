@@ -6,12 +6,31 @@
 package ex1.Enums;
 
 /**
- *
+ * Enumeração com o tipo de estado da tarefa
  * @author NERD-X
  */
 public enum StateType {
-    NOTFINISHED, OCCURRING, FINISHED;
+
+    /**
+     * Não Terminado
+     */
+    NOTFINISHED,
+
+    /**
+     * A ocorrer
+     */
+    OCCURRING,
+
+    /**
+     * Terminado
+     */
+    FINISHED;
     
+    /**
+     * Metodo para retornar uma string com o estado da tarefa
+     * @param type
+     * @return
+     */
     public static String StateTypeToString(StateType type){
         switch(type){
             case NOTFINISHED :

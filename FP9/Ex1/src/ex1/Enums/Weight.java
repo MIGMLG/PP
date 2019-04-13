@@ -6,11 +6,25 @@
 package ex1.Enums;
 
 /**
- *
+ * Enumeração do Porte do animal
  * @author NERD-X
  */
 public enum Weight {
-    SMALL, MEDIUM, LARGE;
+
+    /**
+     * Pequeno
+     */
+    SMALL,
+
+    /**
+     * Médio
+     */
+    MEDIUM,
+
+    /**
+     * Grande
+     */
+    LARGE;
     
     /**
      * Metodo para retornar uma string com o tipo de porte

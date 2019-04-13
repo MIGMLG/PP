@@ -6,11 +6,20 @@
 package ex1.Enums;
 
 /**
- *
+ * Enumeração do tipo de sexo do animal
  * @author NERD-X
  */
 public enum Sex {
-    M, F;
+
+    /**
+     * Sexo Masculino
+     */
+    M,
+
+    /**
+     * Sexo Feminino
+     */
+    F;
 
     /**
      * Metodo para retornar uma string com o tipo de Sexo

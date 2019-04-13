@@ -10,7 +10,7 @@ import static ex1.Enums.ServicesType.ServicesTypeToString;
 import ex1.Enums.StateType;
 
 /**
- *
+ * Definição do Objeto Service
  * @author NERD-X
  */
 public class Service {
@@ -18,18 +18,34 @@ public class Service {
     private ServicesType service;
     private StateType taskState = StateType.NOTFINISHED;
 
+    /**
+     * Metodo Constructor do Serviço
+     * @param service
+     */
     public Service(ServicesType service) {
         this.service = service;
     }
 
+    /**
+     * Metodo para obter o tipo de serviço
+     * @return
+     */
     public ServicesType getService() {
         return service;
     }
 
+    /**
+     * Metodo para obter o estado do serviço
+     * @return
+     */
     public StateType getTaskState() {
         return taskState;
     }
 
+    /**
+     * Metodo para definir o estado do serviço
+     * @param taskState
+     */
     public void setTaskState(StateType taskState) {
         this.taskState = taskState;
     }

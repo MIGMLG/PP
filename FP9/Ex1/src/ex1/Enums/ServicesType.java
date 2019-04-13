@@ -6,12 +6,46 @@
 package ex1.Enums;
 
 /**
- *
+ * Enumeração do tipo de serviço
  * @author NERD-X
  */
 public enum ServicesType {
-    PASSEIO, ALOJAMENTO, TRANSPORTE, BANHO, TOSQUIA, SESSAOFOTO;
+
+    /**
+     * Serviço do tipo Passeio
+     */
+    PASSEIO,
+
+    /**
+     * Serviço do tipo Alojamento
+     */
+    ALOJAMENTO,
+
+    /**
+     * Serviço do tipo Transporte
+     */
+    TRANSPORTE,
+
+    /**
+     * Serviço do tipo Banho
+     */
+    BANHO,
+
+    /**
+     * Serviço do tipo Tosquia
+     */
+    TOSQUIA,
+
+    /**
+     * Serviço do Tipo Sessao Fotografica
+     */
+    SESSAOFOTO;
     
+    /**
+     * Metodo para retornar uma string com o tipo de serviço
+     * @param type
+     * @return
+     */
     public static String ServicesTypeToString(ServicesType type){
         switch(type){
             case ALOJAMENTO :
