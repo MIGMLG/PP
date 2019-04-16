@@ -11,6 +11,8 @@ import ex1.ReservationsManagement.Reservation;
 import ex1.ReservationsManagement.ReservationManagement;
 import ex1.ReservationsManagement.Service;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.time.Month;
 
 /**
  * Classe para testes
@@ -34,7 +36,7 @@ public class Demo {
         
         Service s1 = new Service(ServicesType.PASSEIO);
         Service s2 = new Service(ServicesType.BANHO);
-        Reservation r1 = new Reservation(LocalDateTime.now(), n2);
+        Reservation r1 = new Reservation(LocalDateTime.of(2019, Month.MARCH, 2, 14, 0), n2);
         r1.addService(s1);
         r1.addService(s2);
         System.out.println(r1.toString());
@@ -43,8 +45,9 @@ public class Demo {
         System.out.println("-------------------------------------------------");
         ReservationManagement test = new ReservationManagement();
         test.addReservation(r1);
-        test.removeReservation(r1);
+        //test.removeReservation(r1);
         System.out.println("-------------------------------------------------");
+        System.out.println(test.printCompletedByDate(LocalDateTime.of(2019, Month.MARCH, 2, 14, 0)));
         
     }
     

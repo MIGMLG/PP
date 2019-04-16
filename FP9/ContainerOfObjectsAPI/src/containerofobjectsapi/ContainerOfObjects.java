@@ -167,5 +167,14 @@ public class ContainerOfObjects {
         
     }
     
+    /**
+     * Metodo para obter todo o array para se for necessário filtrar algo
+     * @return
+     */
+    protected Object[] getObjects(){
+        Object[] out = new Object[counter];
+        System.arraycopy(object, 0, out, 0, counter);
+        return out;   
+    }
     //Duvidas acerca do Ultimo ponto
 }

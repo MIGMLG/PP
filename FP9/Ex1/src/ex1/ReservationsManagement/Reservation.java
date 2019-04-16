@@ -75,6 +75,14 @@ public class Reservation extends ContainerOfObjects {
     public void setState(StateType state) {
         this.state = state;
     }
+
+    /**
+     * Metodo de acesso para a Data
+     * @return
+     */
+    public LocalDateTime getDate() {
+        return date;
+    }
     
     @Override
     public String toString(){

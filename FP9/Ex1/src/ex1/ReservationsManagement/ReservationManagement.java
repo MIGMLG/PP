@@ -1,17 +1,19 @@
-
 package ex1.ReservationsManagement;
 
 import containerofobjectsapi.ContainerOfObjects;
 import ex1.Enums.StateType;
+import java.time.LocalDateTime;
 
 /**
  * Classe De Gestão das Reservas
+ *
  * @author NERD-X
  */
 public class ReservationManagement extends ContainerOfObjects {
 
     /**
-     * Metodo para adicionar reservas 
+     * Metodo para adicionar reservas
+     *
      * @param reservation
      * @return
      */
@@ -25,6 +27,7 @@ public class ReservationManagement extends ContainerOfObjects {
 
     /**
      * Metodo para remover e concluir reservas
+     *
      * @param reservation
      * @return
      */
@@ -38,6 +41,25 @@ public class ReservationManagement extends ContainerOfObjects {
         } else {
             return false;
         }
+    }
+
+    /**
+     * Metodo para imprimir todas as reservas nao concluidas numa determinada
+     * data
+     *
+     * @param date
+     * @return
+     */
+    public String printCompletedByDate(LocalDateTime date) {
+        String text = "";
+        Object[] object = super.getObjects();
+        for (Object output : object) {
+            Reservation tmp = (Reservation) output;
+            if (date.equals(tmp.getDate()) & tmp.getState() == StateType.NOTFINISHED) {
+                text += output.toString();
+            }
+        }
+        return text;
     }
 
 }
