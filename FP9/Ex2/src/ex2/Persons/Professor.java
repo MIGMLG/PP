@@ -3,22 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Persons;
+package ex2.Persons;
 
 /**
  *
  * @author NERD-X
  */
 public class Professor extends Person{
-    private int id;
 
-    public Professor(int id, String nome, int nif, String morada, int tele) {
-        super(nome, nif, morada, tele);
-        this.id = id;
+    public Professor(int id, String name, int nif, String address, int phone) {
+        super(id, name, nif, address, phone);
     }
     
-    
-
     @Override
     float cacularHoras() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.

@@ -3,26 +3,27 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Persons;
+package ex2.Persons;
 
 /**
  *
  * @author NERD-X
  */
 abstract class Person {
-    private String nome;
+    private int id;
+    private String name;
     private int nif;
-    private String morada;
-    private int tele;
+    private String address;
+    private int phone;
 
-    public Person(String nome, int nif, String morada, int tele) {
-        this.nome = nome;
+    public Person(int id, String name, int nif, String address, int phone) {
+        this.id = id;
+        this.name = name;
         this.nif = nif;
-        this.morada = morada;
-        this.tele = tele;
+        this.address = address;
+        this.phone = phone;
     }
     
     abstract float cacularHoras();
-    
     
 }
