@@ -9,7 +9,7 @@ package ex1.Enums;
  * Enumeração com o tipo de estado da tarefa
  * @author NERD-X
  */
-public enum StateType {
+public enum State {
 
     /**
      * Não Terminado
@@ -31,7 +31,7 @@ public enum StateType {
      * @param type
      * @return
      */
-    public static String StateTypeToString(StateType type){
+    public static String StateToString(State type){
         switch(type){
             case NOTFINISHED :
                 return "Ainda não foi executada.";

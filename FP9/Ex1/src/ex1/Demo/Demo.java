@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Demo;
+package ex1.Demo;
 
 import ex1.Animals.*;
 import ex1.Enums.*;
@@ -34,8 +34,8 @@ public class Demo {
         System.out.println(n2.toString());
         System.out.println("-------------------------------------------------");
         
-        Service s1 = new Service(ServicesType.PASSEIO);
-        Service s2 = new Service(ServicesType.BANHO);
+        Service s1 = new Service(Services.PASSEIO);
+        Service s2 = new Service(Services.BANHO);
         Reservation r1 = new Reservation(LocalDateTime.of(2019, Month.MARCH, 2, 14, 0), n2);
         r1.addService(s1);
         r1.addService(s2);

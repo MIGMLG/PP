@@ -9,7 +9,7 @@ package ex1.Enums;
  * Enumeração do tipo de serviço
  * @author NERD-X
  */
-public enum ServicesType {
+public enum Services {
 
     /**
      * Serviço do tipo Passeio
@@ -46,7 +46,7 @@ public enum ServicesType {
      * @param type
      * @return
      */
-    public static String ServicesTypeToString(ServicesType type){
+    public static String ServicesToString(Services type){
         switch(type){
             case ALOJAMENTO :
                     return "Alojamento";

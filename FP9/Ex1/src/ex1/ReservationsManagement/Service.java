@@ -5,9 +5,9 @@
  */
 package ex1.ReservationsManagement;
 
-import ex1.Enums.ServicesType;
-import static ex1.Enums.ServicesType.ServicesTypeToString;
-import ex1.Enums.StateType;
+import ex1.Enums.Services;
+import static ex1.Enums.Services.ServicesToString;
+import ex1.Enums.State;
 
 /**
  * Definição do Objeto Service
@@ -15,14 +15,14 @@ import ex1.Enums.StateType;
  */
 public class Service {
 
-    private ServicesType service;
-    private StateType taskState = StateType.NOTFINISHED;
+    private Services service;
+    private State taskState = State.NOTFINISHED;
 
     /**
      * Metodo Constructor do Serviço
      * @param service
      */
-    public Service(ServicesType service) {
+    public Service(Services service) {
         this.service = service;
     }
 
@@ -30,7 +30,7 @@ public class Service {
      * Metodo para obter o tipo de serviço
      * @return
      */
-    public ServicesType getService() {
+    public Services getService() {
         return service;
     }
 
@@ -38,7 +38,7 @@ public class Service {
      * Metodo para obter o estado do serviço
      * @return
      */
-    public StateType getTaskState() {
+    public State getTaskState() {
         return taskState;
     }
 
@@ -46,13 +46,13 @@ public class Service {
      * Metodo para definir o estado do serviço
      * @param taskState
      */
-    public void setTaskState(StateType taskState) {
+    public void setTaskState(State taskState) {
         this.taskState = taskState;
     }
     
     @Override
     public String toString(){
-        String text = ServicesTypeToString(service) + ", ";
+        String text = ServicesToString(service) + ", ";
         return text;
     }
 

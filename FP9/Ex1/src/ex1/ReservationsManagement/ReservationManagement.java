@@ -1,7 +1,7 @@
 package ex1.ReservationsManagement;
 
 import containerofobjectsapi.ContainerOfObjects;
-import ex1.Enums.StateType;
+import ex1.Enums.State;
 import java.time.LocalDateTime;
 
 /**
@@ -35,7 +35,7 @@ public class ReservationManagement extends ContainerOfObjects {
         int position = super.findObject(reservation);
         if (position != 1) {
             Reservation removed = (Reservation) super.removeObjects(position);
-            removed.setState(StateType.FINISHED);
+            removed.setState(State.FINISHED);
             System.out.println(removed.toString());
             return true;
         } else {
@@ -55,7 +55,7 @@ public class ReservationManagement extends ContainerOfObjects {
         Object[] object = super.getObjects();
         for (Object output : object) {
             Reservation tmp = (Reservation) output;
-            if (date.equals(tmp.getDate()) & tmp.getState() == StateType.NOTFINISHED) {
+            if (date.equals(tmp.getDate()) & tmp.getState() == State.NOTFINISHED) {
                 text += output.toString();
             }
         }

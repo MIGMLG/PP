@@ -7,8 +7,8 @@ package ex1.ReservationsManagement;
 
 import containerofobjectsapi.ContainerOfObjects;
 import ex1.Animals.Animal;
-import ex1.Enums.StateType;
-import static ex1.Enums.StateType.StateTypeToString;
+import ex1.Enums.State;
+import static ex1.Enums.State.StateToString;
 import java.time.LocalDateTime;
 
 /**
@@ -19,7 +19,7 @@ public class Reservation extends ContainerOfObjects {
 
     private LocalDateTime date;
     private Animal animal;
-    private StateType state = StateType.NOTFINISHED;
+    private State state = State.NOTFINISHED;
 
     /**
      * Metodo Constructor da Reserva
@@ -64,7 +64,7 @@ public class Reservation extends ContainerOfObjects {
      * Metodo para obter o estado da reserva
      * @return
      */
-    public StateType getState() {
+    public State getState() {
         return state;
     }
 
@@ -72,7 +72,7 @@ public class Reservation extends ContainerOfObjects {
      * Metodo para definir o estado da reserva
      * @param state
      */
-    public void setState(StateType state) {
+    public void setState(State state) {
         this.state = state;
     }
 
@@ -89,7 +89,7 @@ public class Reservation extends ContainerOfObjects {
         String text = "Animal : " + "\n" + animal.toString() + "\n"
                 + "Data: " + date.toString() + "\n"
                 + "Serviços: " + super.printAll() + "\n"
-                + "Estado: " + StateTypeToString(state) +"\n";
+                + "Estado: " + StateToString(state) +"\n";
         return text;
     }
 
