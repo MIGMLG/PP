@@ -6,7 +6,7 @@
 package ex2.Persons;
 
 /**
- *
+ * Definição do Objeto Pessoa
  * @author NERD-X
  */
 abstract class Person {
@@ -26,4 +26,14 @@ abstract class Person {
     
     abstract float cacularHoras();
     
+    @Override
+    public String toString(){
+        String text = "\n" + "------------------------------------" + "\n"
+                + "ID: " + this.id + "\n"
+                + "Nome: " + this.name + "\n"
+                + "NIF: " + this.nif + "\n"
+                + "Endereço: " + this.address + "\n"
+                + "Telemóvel: " + this.phone + "\n";
+        return text;
+    }
 }

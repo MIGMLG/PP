@@ -15,16 +15,31 @@ public class Course extends ContainerOfObjects {
     private int id;
     private String name;
 
+    /**
+     *
+     * @param id
+     * @param name
+     */
     public Course(int id, String name) {
         super(36);
         this.id = id;
         this.name = name;
     }
 
+    /**
+     *
+     * @param discipline
+     * @return
+     */
     public boolean addDiscipline(Discipline discipline) {
         return super.addObjects(discipline);
     }
     
+    /**
+     *
+     * @param discipline
+     * @return
+     */
     public boolean removeDiscipline(Discipline discipline) {
         int position = super.findObject(discipline);
         System.out.println(super.removeObjects(position));

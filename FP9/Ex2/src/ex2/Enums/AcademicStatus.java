@@ -10,8 +10,27 @@ package ex2.Enums;
  * @author NERD-X
  */
 public enum AcademicStatus {
-    LICENCIATURA , MESTRADO, DOUTORAMENTO;
+
+    /**
+     *Licenciatura
+     */
+    LICENCIATURA ,
+
+    /**
+     * Mestrado
+     */
+    MESTRADO,
+
+    /**
+     * Doutoramento
+     */
+    DOUTORAMENTO;
     
+    /**
+     * Metodo para retornar as habilidades academicas numa string
+     * @param status
+     * @return
+     */
     public static String AcademicStatusToString(AcademicStatus status){
         switch(status){
             case LICENCIATURA :

@@ -16,12 +16,22 @@ public class Discipline extends ContainerOfObjects{
     private int id;
     private String name;
 
+    /**
+     *
+     * @param id
+     * @param name
+     */
     public Discipline(int id, String name) {
         super(5);
         this.id = id;
         this.name = name;
     }
 
+    /**
+     *
+     * @param teacher
+     * @return
+     */
     public boolean addTeacher(Teacher teacher){
        return super.addObjects(teacher);
     }

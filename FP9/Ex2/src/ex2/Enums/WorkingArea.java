@@ -7,13 +7,27 @@ package ex2.Enums;
  */
 
 /**
- *
+ * Enumeração da Áreas de Trabalho
  * @author NERD-X
  */
 public enum WorkingArea {
-    RECURSOSHUMANOS, SECRETARIA;
+
+    /**
+     * Recursos Humanos
+     */
+    RECURSOSHUMANOS,
+
+    /**
+     * Secretaria
+     */
+    SECRETARIA;
     
-        public static String WorkingAreaToString(WorkingArea area){
+    /**
+     * Metodo para retornar a area numa String
+     * @param area
+     * @return
+     */
+    public static String WorkingAreaToString(WorkingArea area){
         switch(area){
             case RECURSOSHUMANOS :
                 return "Recursos Humanos";

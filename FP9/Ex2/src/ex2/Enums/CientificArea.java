@@ -6,12 +6,26 @@
 package ex2.Enums;
 
 /**
- *
+ * Enumeração das Áreas Cientificas
  * @author NERD-X
  */
 public enum CientificArea {
-    INFORMATICA, BIOMEDICINA;
+
+    /**
+     * Área Informática
+     */
+    INFORMATICA,
+
+    /**
+     * Área Informática
+     */
+    BIOMEDICINA;
     
+    /**
+     * Metodo para retornar a area de estudo numa String
+     * @param area
+     * @return
+     */
     public static String CientificAreaToString(CientificArea area){
         switch(area){
             case INFORMATICA :
