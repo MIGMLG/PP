@@ -13,13 +13,13 @@ import java.time.LocalDate;
  * Definição do Objecto Professor
  * @author NERD-X
  */
-public class Professor extends Person{
+public class Teacher extends Person{
     private AcademicStatus status;
     private CientificArea area;
     private LocalDate dateBegin;
     private LocalDate dateEnd;
 
-    public Professor(int id, String name, int nif, String address, int phone) {
+    public Teacher(int id, String name, int nif, String address, int phone) {
         super(id, name, nif, address, phone);
     }
     

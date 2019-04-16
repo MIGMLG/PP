@@ -5,6 +5,9 @@
  */
 package ex2.Demo;
 
+import ex2.Courses.Course;
+import ex2.Courses.Discipline;
+
 /**
  *
  * @author NERD-X
@@ -16,6 +19,9 @@ public class Demo {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        Course lei = new Course(1, "Licenciatura em Engenharia Informática");
+        Discipline paradigmas = new Discipline(1, "Paradigmas de Programação");
+        System.out.println(lei.addDiscipline(paradigmas));
     }
     
 }
