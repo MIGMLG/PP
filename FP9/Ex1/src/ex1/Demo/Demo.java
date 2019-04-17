@@ -11,7 +11,6 @@ import ex1.ReservationsManagement.Reservation;
 import ex1.ReservationsManagement.ReservationManagement;
 import ex1.ReservationsManagement.Service;
 import java.time.LocalDateTime;
-import java.time.LocalTime;
 import java.time.Month;
 
 /**
@@ -39,6 +38,9 @@ public class Demo {
         Reservation r1 = new Reservation(LocalDateTime.of(2019, Month.MARCH, 2, 14, 0), n2);
         r1.addService(s1);
         r1.addService(s2);
+        Reservation r2 = new Reservation(LocalDateTime.of(2019, Month.MARCH, 2, 14, 0), n1);
+        r2.addService(s1);
+        r2.addService(s2);
         System.out.println(r1.toString());
         System.out.println("-------------------------------------------------");
         r1.removeService(s2);
@@ -48,6 +50,9 @@ public class Demo {
         //test.removeReservation(r1);
         System.out.println("-------------------------------------------------");
         System.out.println(test.printCompletedByDate(LocalDateTime.of(2019, Month.MARCH, 2, 14, 0)));
+        System.out.println("-------------------------------------------------");
+
+        
         
     }
     

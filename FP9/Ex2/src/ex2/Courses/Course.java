@@ -5,45 +5,34 @@
  */
 package ex2.Courses;
 
-import containerofobjectsapi.ContainerOfObjects;
-
 /**
  * Definição do Objeto Curso
+ *
  * @author NERD-X
  */
-public class Course extends ContainerOfObjects {
+public class Course {
+
     private int id;
     private String name;
 
     /**
+     * Metodo Constructor do Course
      *
      * @param id
      * @param name
      */
     public Course(int id, String name) {
-        super(36);
         this.id = id;
         this.name = name;
     }
 
-    /**
-     *
-     * @param discipline
-     * @return
-     */
-    public boolean addDiscipline(Discipline discipline) {
-        return super.addObjects(discipline);
-    }
-    
-    /**
-     *
-     * @param discipline
-     * @return
-     */
-    public boolean removeDiscipline(Discipline discipline) {
-        int position = super.findObject(discipline);
-        System.out.println(super.removeObjects(position));
-        return true;
+    @Override
+    public String toString() {
+        String text = "\n" + "------------------------------------" + "\n"
+                + "ID: " + this.id + "\n"
+                + "Nome: " + this.name + "\n"
+                + "------------------------------------";
+        return text;
     }
 
 }

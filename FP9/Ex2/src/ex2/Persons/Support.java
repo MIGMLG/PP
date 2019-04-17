@@ -42,9 +42,13 @@ public class Support extends Person {
         this.contractPercentage = contractPercentage;
     }
 
+    /**
+     * Metodo para calcular horas
+     * @return
+     */
     @Override
-    float cacularHoras() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public float calculateHours() {
+        return (contractPercentage/100) * 40;
     }
 
     @Override

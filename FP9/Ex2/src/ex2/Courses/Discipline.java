@@ -5,35 +5,84 @@
  */
 package ex2.Courses;
 
-import containerofobjectsapi.ContainerOfObjects;
-import ex2.Persons.Teacher;
-
 /**
+ * Definição do Objeto de Disciplina
  *
  * @author NERD-X
  */
-public class Discipline extends ContainerOfObjects{
+public class Discipline {
+
     private int id;
     private String name;
+    private int hours;
+    private int workLoad;
 
     /**
+     * Metodo Constructor de Discipline
      *
      * @param id
      * @param name
+     * @param workLoad
      */
-    public Discipline(int id, String name) {
-        super(5);
+    public Discipline(int id, String name, int workLoad) {
         this.id = id;
         this.name = name;
+        this.workLoad = workLoad;
+    }
+
+    @Override
+    public String toString() {
+        String text = "\n" + "------------------------------------" + "\n"
+                + "ID: " + this.id + "\n"
+                + "Nome: " + this.name + "\n"
+                + "Carga Horária: " + this.workLoad + "\n";
+        if (hours != 0) {
+            text += "Horas: " + this.hours + "\n";
+        }
+        text += "------------------------------------";
+        return text;
     }
 
     /**
-     *
-     * @param teacher
+     * Metodo para obter o numero de horas que um professor tem obrigação de fazer
      * @return
      */
-    public boolean addTeacher(Teacher teacher){
-       return super.addObjects(teacher);
+    public int getHours() {
+        return hours;
+    }
+
+    /**
+     * Metodo para obter o numero de horas semanais da disciplina
+     * @return
+     */
+    public int getWorkLoad() {
+        return workLoad;
+    }
+
+    /**
+     * Metodo para definir o numero de horas que um professor tem obrigação de fazer
+     * @param hours
+     */
+    public void setHours(int hours) {
+        this.hours = hours;
+    }
+
+    /**
+     * Metodo para obter o ID da disciplina
+     * @return
+     */
+    public int getId() {
+        return id;
+    }
+
+    /**
+     * Metodo para obter o nome da disciplina
+     * @return
+     */
+    public String getName() {
+        return name;
     }
     
+    
+
 }

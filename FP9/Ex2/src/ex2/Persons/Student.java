@@ -5,6 +5,9 @@
  */
 package ex2.Persons;
 
+import ex2.Courses.Course;
+import ex2.Courses.CourseManagement;
+import ex2.Courses.Discipline;
 import ex2.Enums.StudentType;
 import java.time.LocalDate;
 
@@ -13,8 +16,11 @@ import java.time.LocalDate;
  * @author NERD-X
  */
 public class Student extends Person{
+    private final int MAX_DISCIPLINES = 10;
     private LocalDate dateM; //Data da primeira matricula
     private StudentType type;
+    private Course course;
+    private CourseManagement manage = new CourseManagement(MAX_DISCIPLINES);
     
     /**
      * Metodo Constructor de Student
@@ -25,16 +31,28 @@ public class Student extends Person{
      * @param phone
      * @param date
      * @param type
+     * @param course
      */
-    public Student(int id, String name, int nif, String address, int phone, LocalDate date, StudentType type) {
+    public Student(int id, String name, int nif, String address, int phone, LocalDate date, StudentType type, Course course) {
         super(id, name, nif, address, phone);
         this.dateM = date;
         this.type = type;
+        this.course = course;
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
-    float cacularHoras() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public float calculateHours() {
+        Object[] tmp = manage.getDisciplines();
+        float hours = 0;
+        for(Object out : tmp){
+            Discipline disc = (Discipline) out;
+            hours+= disc.getWorkLoad();
+        }
+        return hours;
     }
     
     @Override
@@ -43,5 +61,31 @@ public class Student extends Person{
                 + "Data do Primeira Matricula: " + this.dateM + "\n"
                 + "------------------------------------";
         return text;
+    }
+    
+    /**
+     * Metodo para adicionar disciplinas, retorna boolean
+     * @param discipline
+     * @return
+     */
+    public boolean addDiscipline(Discipline discipline){
+        return manage.addDiscipline(discipline);
+    }
+    
+    /**
+     * Metodo para remover disciplinas, retorna boolean
+     * @param discipline
+     * @return
+     */
+    public boolean removeDiscipline(Discipline discipline){
+        return manage.removeDiscipline(discipline);
+    }
+    
+    /**
+     * Metodo para imprimir as disciplinas, retorna String
+     * @return
+     */
+    public String printDisciplines(){
+        return manage.printAll();
     }
 }

@@ -46,8 +46,9 @@ public class ContainerOfObjects {
     }
 
     /**
-     * Metodo para adicionar objetos ao array
-     * Retorna true se a operação foi um sucesso/false se falhou
+     * Metodo para adicionar objetos ao array Retorna true se a operação foi um
+     * sucesso/false se falhou
+     *
      * @param newObject
      * @return
      */
@@ -64,8 +65,8 @@ public class ContainerOfObjects {
     }
 
     /**
-     * Metodo para remover objeto do array
-     * Retorna o objeto eliminado
+     * Metodo para remover objeto do array Retorna o objeto eliminado
+     *
      * @param position
      * @return
      */
@@ -93,8 +94,9 @@ public class ContainerOfObjects {
     }
 
     /**
-     * Metodo que substitui um objeto no array por um novo recebido
-     * Retorna true se a operação foi um sucesso/false se falhou
+     * Metodo que substitui um objeto no array por um novo recebido Retorna true
+     * se a operação foi um sucesso/false se falhou
+     *
      * @param position
      * @param newObject
      * @return
@@ -115,66 +117,87 @@ public class ContainerOfObjects {
         }
 
     }
-    
+
     /**
-     * Metodo para procurar um objeto no array
-     * Se existir o metodo irá retornar a posição do objeto no array
-     * Se não existir retorna um -1
+     * Metodo para procurar um objeto no array Se existir o metodo irá retornar
+     * a posição do objeto no array Se não existir retorna um -1
+     *
      * @param object
      * @return
      */
-    protected int findObject(Object object){
-        
-        for(int i = 0; i < counter; i++){
-            if(this.object[i].equals(object)){
+    protected int findObject(Object object) {
+
+        for (int i = 0; i < counter; i++) {
+            if (this.object[i].equals(object)) {
                 return i;
             }
         }
-        
+
         return -1;
-        
+
     }
-    
+
     /**
      * Metodo para saber se o objeto existe no array
+     *
      * @param object
      * @return
      */
-    protected boolean hasObject(Object object){
-        
+    protected boolean hasObject(Object object) {
+
         for (int i = 0; i < counter; i++) {
             if (this.object[i].equals(object)) {
                 return true;
             }
         }
-        
+
         return false;
-        
+
     }
-    
+
     /**
      * Metodo para imprimir a informação dos Objectos
+     *
      * @return
      */
-    protected String printAll(){
+    protected String printAll() {
         String text = new String();
-        
-        for(int i = 0; i < counter; i++){
+
+        for (int i = 0; i < counter; i++) {
             text += object[i].toString();
         }
-        
+
         return text;
-        
+
     }
-    
+
     /**
-     * Metodo para obter todo o array para se for necessário filtrar algo
+     * Metodo de acesso para obter a referencia do Array de objetos
+     *
      * @return
      */
-    protected Object[] getObjects(){
+    public Object[] getObject() {
+        return object;
+    }
+
+    /**
+     * Metodo de acesso para obter o contador de posições
+     *
+     * @return
+     */
+    public int getCounter() {
+        return counter;
+    }
+
+    /**
+     * Metodo para obter parte do array com informação
+     *
+     * @return
+     */
+    protected Object[] getObjects() {
         Object[] out = new Object[counter];
         System.arraycopy(object, 0, out, 0, counter);
-        return out;   
+        return out;
     }
-    //Duvidas acerca do Ultimo ponto
+
 }

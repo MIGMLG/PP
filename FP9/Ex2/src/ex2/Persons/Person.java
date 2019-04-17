@@ -24,7 +24,7 @@ abstract class Person {
         this.phone = phone;
     }
     
-    abstract float cacularHoras();
+    abstract float calculateHours();
     
     @Override
     public String toString(){

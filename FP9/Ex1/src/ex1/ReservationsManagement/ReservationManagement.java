@@ -52,13 +52,16 @@ public class ReservationManagement extends ContainerOfObjects {
      */
     public String printCompletedByDate(LocalDateTime date) {
         String text = "";
-        Object[] object = super.getObjects();
-        for (Object output : object) {
-            Reservation tmp = (Reservation) output;
-            if (date.equals(tmp.getDate()) & tmp.getState() == State.NOTFINISHED) {
-                text += output.toString();
+        //HACKY SHIT IM TIRED XD
+        int counter = super.getCounter();
+        Object[] obj = super.getObject();
+        for (int i = 0; i < counter; i++) {
+            Reservation reservation = (Reservation) obj[i];
+            if (date.equals(reservation.getDate()) & reservation.getState() == State.NOTFINISHED) {
+                text += reservation.toString();
             }
         }
+
         return text;
     }
 
