@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ex1.Companies;
+package fp10.Companies;
 
 /**
  * Classe que define uma empresa

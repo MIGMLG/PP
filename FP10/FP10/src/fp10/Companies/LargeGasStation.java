@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ex1.Companies;
+package fp10.Companies;
 
-import ex1.Services.CoffeeService;
+import fp10.Services.CoffeeService;
 
 /**
  * Classe da Definição de uma estação de abastecimento com serviço Café

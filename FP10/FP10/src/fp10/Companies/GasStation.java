@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ex1.Companies;
+package fp10.Companies;
 
-import ex1.Services.GasService;
+import fp10.Services.GasService;
 
 /**
  * Classe que define uma estação de abastecimento que extende empresa e implementa
