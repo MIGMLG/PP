@@ -5,6 +5,8 @@
  */
 package ex1.Companies;
 
+import ex1.Services.CoffeeService;
+
 /**
  * Classe da Definição de uma estação de abastecimento com serviço Café
  * @author NERD-X

@@ -5,6 +5,8 @@
  */
 package ex1.Companies;
 
+import ex1.Services.GasService;
+
 /**
  * Classe que define uma estação de abastecimento que extende empresa e implementa
  * o serviço de fornecimento de combustivel
