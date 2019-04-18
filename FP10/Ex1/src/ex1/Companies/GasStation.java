@@ -6,14 +6,24 @@
 package ex1.Companies;
 
 /**
+ * Classe que define uma estação de abastecimento que extende empresa e implementa
+ * o serviço de fornecimento de combustivel
  *
  * @author NERD-X
  */
-public class GasStation extends Company implements GasService{
-    private double gasPrice = 2.00;
-    
-    public GasStation(String name, int nc) {
+public class GasStation extends Company implements GasService {
+
+    private double gasPrice;
+
+    /**
+     * Metodo Constructor de GasStation
+     * @param name
+     * @param nc
+     * @param gasPrice
+     */
+    public GasStation(String name, int nc, double gasPrice) {
         super(name, nc);
+        this.gasPrice = gasPrice;
     }
 
     @Override
@@ -30,5 +40,5 @@ public class GasStation extends Company implements GasService{
     public double getGasTotal(double litres) {
         return litres * this.gasPrice;
     }
-    
+
 }

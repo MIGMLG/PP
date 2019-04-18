@@ -6,15 +6,33 @@
 package ex1.Companies;
 
 /**
+ * Classe que define a interface do serviço de fornecimento de combustivel
  *
  * @author NERD-X
  */
 public interface GasService {
-    
+
+    /**
+     * Metodo para obter o preço do combustivel
+     *
+     * @return
+     */
     public double getGasPrice();
-    
+
+    /**
+     * Metodo para definir o preço do combustivel
+     *
+     * @param p
+     */
     public void setGasPrice(double p);
-    
+
+    /**
+     * Metodo para obter o valor necessário a pagar para um x(double litres)
+     * numero de litros do combustivel
+     *
+     * @param litres
+     * @return
+     */
     public double getGasTotal(double litres);
-    
+
 }
