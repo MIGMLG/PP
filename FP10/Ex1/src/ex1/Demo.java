@@ -7,6 +7,7 @@ package ex1;
 
 import ex1.Companies.GasStation;
 import ex1.Companies.LargeGasStation;
+import ex1.Companies.SuperMarket;
 
 /**
  * Classe para testes
@@ -34,9 +35,18 @@ public class Demo {
         LargeGasStation test2 = new LargeGasStation("Sem Diesel", 87797466, 2.00, 1.00);
         System.out.println("Preço do Combustivel: " + test2.getGasPrice());
         System.out.println("Preço do Café: " + test2.getCoffeePrice());
+        test2.setCoffeePrice(2);
+        System.out.println("Preço do Café: " + test2.getCoffeePrice());
         System.out.println("Preço para abastecer o meu tanque: " + test2.getGasTotal(70));
         System.out.println("Preço para abastecer o meu Cérebro: " + test2.getCoffeeTotal(5));
+        //Ex3
         System.out.println("-------------------------------------------");
+        System.out.println("Ex3: ");
+        SuperMarket test3 = new SuperMarket("Its me Mario", 5464689, 100);
+        System.out.println("Preço da batata: " + test3.getPotatoesPrice());
+        test3.setPotatoesPrice(150);
+        System.out.println("Preço da batata: " + test3.getPotatoesPrice());
+        System.out.println("Preço para comer esta semana: " + test3.getMarketTotal(10));
         
     }
 
