@@ -6,8 +6,7 @@
 package containerofobjectsapi;
 
 /**
- * Qualquer Objeto é uma extensão de Object por isso esta classe pode receber
- * qualquer tipo de objecto
+ * Classe de gestão de objetos
  *
  * @author NERD-X
  */
