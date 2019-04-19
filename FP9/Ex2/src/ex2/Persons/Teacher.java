@@ -79,7 +79,7 @@ public class Teacher extends Person {
      * @return
      */
     public boolean addDiscipline(Discipline discipline, int hours) {
-        TeacherDiscipline myDiscipline = new TeacherDiscipline(this, hours, discipline.getId(), discipline.getName());
+        TeacherDiscipline myDiscipline = new TeacherDiscipline(hours, discipline.getId(), discipline.getName());
         return manage.addDiscipline(myDiscipline);
     }
 
