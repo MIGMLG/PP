@@ -7,12 +7,12 @@ package ex2.Persons;
 
 import ex2.Courses.Course;
 import ex2.Courses.CourseManagement;
-import ex2.Courses.Discipline;
+import ex2.Courses.StudentDiscipline;
 import ex2.Enums.StudentType;
 import java.time.LocalDate;
 
 /**
- * Deifnição do Objeto Aluno
+ * Defnição do Objeto Aluno
  * @author NERD-X
  */
 public class Student extends Person{
@@ -41,7 +41,7 @@ public class Student extends Person{
     }
 
     /**
-     *
+     * Metodo para calcular a carga semanal de um aluno
      * @return
      */
     @Override
@@ -49,8 +49,8 @@ public class Student extends Person{
         Object[] tmp = manage.getDisciplines();
         float hours = 0;
         for(Object out : tmp){
-            Discipline disc = (Discipline) out;
-            hours+= disc.getWorkLoad();
+            StudentDiscipline disc = (StudentDiscipline) out;
+            hours+= disc.getHours();
         }
         return hours;
     }
@@ -68,7 +68,7 @@ public class Student extends Person{
      * @param discipline
      * @return
      */
-    public boolean addDiscipline(Discipline discipline){
+    public boolean addDiscipline(StudentDiscipline discipline){
         return manage.addDiscipline(discipline);
     }
     
@@ -77,7 +77,7 @@ public class Student extends Person{
      * @param discipline
      * @return
      */
-    public boolean removeDiscipline(Discipline discipline){
+    public boolean removeDiscipline(StudentDiscipline discipline){
         return manage.removeDiscipline(discipline);
     }
     
