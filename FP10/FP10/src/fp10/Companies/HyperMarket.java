@@ -21,7 +21,7 @@ public class HyperMarket extends Company implements HyperMarketService {
     private double annualRate;
 
     /**
-     * Metodo COnstructor de um Hyper mercado
+     * Metodo Constructor de um Hyper mercado
      * @param name
      * @param nc
      * @param gasPrice

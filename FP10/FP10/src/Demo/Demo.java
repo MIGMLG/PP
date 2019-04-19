@@ -67,10 +67,10 @@ public class Demo {
         double bills = test4.getGasTotal(70) + test4.getCoffeeTotal(5) + test4.getMarketTotal(10);
         System.out.println("Despesas: " + bills);
         System.out.println("Taxa Anual: " + test4.getAnnualRate());
-        test4.setAnnualRate(23.0);
+        test4.setAnnualRate(0.5);
         System.out.println("Taxa Anual: " + test4.getAnnualRate());
         System.out.println("Pagamento Mensal: " + test4.computeMonthlyPayment(bills, 12));
-        
+        System.out.println("-------------------------------------------");
         
     }
 

@@ -15,7 +15,7 @@ public class LargeGasStation extends GasStation implements CoffeeService {
     private double coffeePrice;
     
     /**
-     *
+     * Metodo Constuctor de uma estação de combustivel grande
      * @param name
      * @param nc
      * @param gasPrice

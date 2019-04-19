@@ -6,7 +6,10 @@
 package fp10.Services;
 
 /**
- * Classe que define a interface que 
+ * Classe que define a interface de um Hyper mercado, sendo esta uma extensão
+ * dos outros serviços
+ *
  * @author NERD-X
  */
-public interface HyperMarketService extends GasService, CoffeeService, MarketService, CreditService{}
+public interface HyperMarketService extends GasService, CoffeeService, MarketService, CreditService {
+}
