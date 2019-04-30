@@ -16,6 +16,7 @@ public class CourseManagement extends ContainerOfObjects {
 
     /**
      * Metodo Constructor de CourseManagement
+     *
      * @param maxSize
      */
     public CourseManagement(int maxSize) {
@@ -36,7 +37,20 @@ public class CourseManagement extends ContainerOfObjects {
         }
     }
 
-    
+    /**
+     * Metodo para adicionar Disciplinas
+     *
+     * @param discipline
+     * @return
+     */
+    public boolean addDiscipline(TeacherDiscipline discipline) {
+        if (super.hasObject(discipline)) {
+            return false;
+        } else {
+            return super.addObjects(discipline);
+        }
+    }
+
     /**
      * Metodo para remover disciplinas, retorna uma boolean
      *
@@ -53,6 +67,22 @@ public class CourseManagement extends ContainerOfObjects {
         }
     }
 
+    /**
+     * Metodo para remover disciplinas, retorna uma boolean
+     *
+     * @param discipline
+     * @return
+     */
+    public boolean removeDiscipline(TeacherDiscipline discipline) {
+        int position = super.findObject(discipline);
+        if (position != -1) {
+            System.out.println("Removido: " + super.removeObjects(position));
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     @Override
     public String printAll() {
         return super.printAll();
@@ -60,6 +90,7 @@ public class CourseManagement extends ContainerOfObjects {
 
     /**
      * Metodo para obter as disciplinas do utilizador
+     *
      * @return
      */
     public Object[] getDisciplines() {

@@ -7,6 +7,7 @@ package ex2.Persons;
 
 import ex2.Courses.Course;
 import ex2.Courses.CourseManagement;
+import ex2.Courses.Discipline;
 import ex2.Courses.StudentDiscipline;
 import ex2.Enums.StudentType;
 import java.time.LocalDate;
@@ -68,7 +69,7 @@ public class Student extends Person{
      * @param discipline
      * @return
      */
-    public boolean addDiscipline(StudentDiscipline discipline){
+    public boolean addDiscipline(Discipline discipline){
         return manage.addDiscipline(discipline);
     }
     

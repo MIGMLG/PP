@@ -11,26 +11,25 @@ import ex2.Persons.Teacher;
  * Classe da definição de uma disciplina para o professor
  * @author NERD-X
  */
-public class TeacherDiscipline extends Discipline {
-
+public class TeacherDiscipline{
+    private Discipline discipline;
     private int hours;
 
     /**
      * Metodo Constructor da Disciplina de um professor
+     * @param discipline
      * @param hours
-     * @param id
-     * @param name
      */
-    public TeacherDiscipline(int hours, int id, String name) {
-        super(id, name);
+    public TeacherDiscipline(Discipline discipline, int hours) {
+        this.discipline = discipline;
         this.hours = hours;
     }
 
     @Override
     public String toString() {
         String text = "\n" + "------------------------------------" + "\n"
-                + "ID: " + super.getId() + "\n"
-                + "Nome: " + super.getName() + "\n"
+                + "ID: " + discipline.getId() + "\n"
+                + "Nome: " + discipline.getName() + "\n"
                 + "Horas de aula: " + this.hours + "\n";
         text += "------------------------------------";
         return text;
