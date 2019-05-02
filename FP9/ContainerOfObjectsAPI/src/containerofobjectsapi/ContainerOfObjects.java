@@ -23,7 +23,14 @@ public class ContainerOfObjects {
      */
     public ContainerOfObjects(Object[] object) {
         this.object = object;
-        this.counter = this.object.length;
+
+        for (int i = 0; i < object.length; i++) {
+            if (object[i] == null) {
+                this.counter = i;
+                break;
+            }
+        }
+
     }
 
     /**
