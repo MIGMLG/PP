@@ -7,7 +7,6 @@ package ex2.Demo;
 
 import ex2.Courses.Course;
 import ex2.Courses.Discipline;
-import ex2.Courses.StudentDiscipline;
 import ex2.Enums.AcademicStatus;
 import ex2.Enums.CientificArea;
 import ex2.Enums.StudentType;
@@ -31,7 +30,6 @@ public class Demo {
         System.out.println("Testes: ");
         Course lei = new Course(1, "Licenciatura em Engenharia Informática");
         Discipline paradigmas = new Discipline(1, "Paradigmas de Programação");
-        StudentDiscipline paradigmasS = new StudentDiscipline(6, paradigmas.getId(), paradigmas.getName());
         Teacher n1 = new Teacher(1, "Miguel Costa", 19458463, "DONT KNOW", 255999666, 
                 AcademicStatus.MESTRADO, CientificArea.INFORMATICA, LocalDate.now());
         
@@ -41,24 +39,25 @@ public class Demo {
         
         Teacher n4 = new Teacher(2, "Miguel Costa", 19458462, "DONT KNOW", 255929666, 
                 AcademicStatus.MESTRADO, CientificArea.INFORMATICA, LocalDate.now());
-        System.out.println(n3.addDiscipline(paradigmasS));
-        System.out.println(n3.addDiscipline(paradigmasS)); // ja existe retorna false
-        System.out.println(n3.removeDiscipline(paradigmasS));
+        System.out.println(n3.addDiscipline(paradigmas));
+        System.out.println(n3.addDiscipline(paradigmas)); // ja existe retorna false
+        System.out.println(n3.setDisciplineWorkHours(paradigmas, 2));
+        System.out.println(n3.removeDiscipline(paradigmas));
         System.out.println(n3.printDisciplines());
-        System.out.println(n3.addDiscipline(paradigmasS));
-        System.out.println(n2.calculateHours());
-        System.out.println(n3.calculateHours());
+        System.out.println(n3.addDiscipline(paradigmas));
+//        System.out.println(n2.calculateHours());
+//        System.out.println(n3.calculateHours());
+//        
+//        //Testes Professor
         
-        //Testes Professor
-        
-        System.out.println(n4.addDiscipline(paradigmas,4));
-        System.out.println(n1.addDiscipline(paradigmas,2));
+        System.out.println(n4.addDiscipline(paradigmas));
+        System.out.println(n1.addDiscipline(paradigmas));
         System.out.println(n4.printDisciplines());
         System.out.println(n1.printDisciplines());
-        System.out.println(n1.calculateHours());
-        System.out.println(n4.calculateHours());
-        
-        
+//        System.out.println(n1.calculateHours());
+//        System.out.println(n4.calculateHours());
+//        
+//        
         System.out.println("FOR REAL: ");
         PersonManagement gestao = new PersonManagement();
         System.out.println(gestao.addPerson(n1));

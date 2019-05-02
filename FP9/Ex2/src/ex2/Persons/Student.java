@@ -8,7 +8,6 @@ package ex2.Persons;
 import ex2.Courses.Course;
 import ex2.Courses.CourseManagement;
 import ex2.Courses.Discipline;
-import ex2.Courses.StudentDiscipline;
 import ex2.Enums.StudentType;
 import java.time.LocalDate;
 
@@ -49,10 +48,10 @@ public class Student extends Person{
     public float calculateHours() {
         Object[] tmp = manage.getDisciplines();
         float hours = 0;
-        for(Object out : tmp){
-            StudentDiscipline disc = (StudentDiscipline) out;
-            hours+= disc.getHours();
-        }
+//        for(Object out : tmp){
+//            StudentDiscipline disc = (StudentDiscipline) out;
+//            hours+= disc.getHours();
+//        }
         return hours;
     }
     
@@ -73,12 +72,16 @@ public class Student extends Person{
         return manage.addDiscipline(discipline);
     }
     
+    public boolean setDisciplineWorkHours(Discipline discipline, int hours){
+        return false;
+    }
+    
     /**
      * Metodo para remover disciplinas, retorna boolean
      * @param discipline
      * @return
      */
-    public boolean removeDiscipline(StudentDiscipline discipline){
+    public boolean removeDiscipline(Discipline discipline){
         return manage.removeDiscipline(discipline);
     }
     

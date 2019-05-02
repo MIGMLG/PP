@@ -7,7 +7,6 @@ package ex2.Persons;
 
 import ex2.Courses.CourseManagement;
 import ex2.Courses.Discipline;
-import ex2.Courses.TeacherDiscipline;
 import ex2.Enums.AcademicStatus;
 import static ex2.Enums.AcademicStatus.AcademicStatusToString;
 import ex2.Enums.CientificArea;
@@ -20,6 +19,7 @@ import java.time.LocalDate;
  * @author NERD-X
  */
 public class Teacher extends Person {
+
     private final int MAX_DISCIPLINES = 5;
     private AcademicStatus status;
     private CientificArea area;
@@ -48,16 +48,17 @@ public class Teacher extends Person {
 
     /**
      * Metodo para calcular as horas de trabalho do Professor
+     *
      * @return
      */
     @Override
     public float calculateHours() {
         Object[] tmp = manage.getDisciplines();
         float hours = 0;
-        for(Object out : tmp){
-            TeacherDiscipline disc = (TeacherDiscipline) out;
-            hours+= disc.getHours();
-        }
+//        for(Object out : tmp){
+//            TeacherDiscipline disc = (TeacherDiscipline) out;
+//            hours+= disc.getHours();
+//        }
         return hours;
     }
 
@@ -78,9 +79,12 @@ public class Teacher extends Person {
      * @param hours
      * @return
      */
-    public boolean addDiscipline(Discipline discipline, int hours) {
-        TeacherDiscipline myDiscipline = new TeacherDiscipline(discipline, hours);
-        return manage.addDiscipline(myDiscipline);
+    public boolean addDiscipline(Discipline discipline) {
+        return manage.addDiscipline(discipline);
+    }
+
+    public boolean setDisciplineWorkHours(Discipline discipline, int hours) {
+        return false;
     }
 
     /**

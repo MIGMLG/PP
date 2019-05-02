@@ -14,6 +14,7 @@ public class Discipline {
 
     private int id;
     private String name;
+    private int hours = 0;
 
     /**
      * Metodo Constructor de Discipline
@@ -50,6 +51,16 @@ public class Discipline {
     public String getName() {
         return name;
     }
+
+    public int getHours() {
+        return hours;
+    }
+
+    public void setHours(int hours) {
+        this.hours = hours;
+    }
+    
+    
     
     
 }
