@@ -13,11 +13,10 @@ import fp10.Services.HyperMarketService;
  *
  * @author NERD-X
  */
-public class HyperMarket extends Company implements HyperMarketService {
+public class HyperMarket extends SuperMarket implements HyperMarketService {
 
     private double gasPrice;
     private double coffeePrice;
-    private double potatoePrice;
     private double annualRate;
 
     /**
@@ -27,12 +26,12 @@ public class HyperMarket extends Company implements HyperMarketService {
      * @param gasPrice
      * @param coffeePrice
      * @param potatoePrice
+     * @param annualRate
      */
     public HyperMarket(String name, int nc, double gasPrice, double coffeePrice, double potatoePrice, double annualRate) {
-        super(name, nc);
+        super(name, nc, potatoePrice);
         this.gasPrice = gasPrice;
         this.coffeePrice = coffeePrice;
-        this.potatoePrice = potatoePrice;
         this.annualRate = annualRate;
     }
 
@@ -64,21 +63,6 @@ public class HyperMarket extends Company implements HyperMarketService {
     @Override
     public double getCoffeeTotal(int coffees) {
         return this.coffeePrice * coffees;
-    }
-
-    @Override
-    public double getPotatoesPrice() {
-        return potatoePrice;
-    }
-
-    @Override
-    public void setPotatoesPrice(double p) {
-        this.potatoePrice = p;
-    }
-
-    @Override
-    public double getMarketTotal(double kilos) {
-        return this.potatoePrice * kilos;
     }
 
     @Override
