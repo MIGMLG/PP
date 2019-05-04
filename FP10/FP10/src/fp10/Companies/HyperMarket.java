@@ -93,8 +93,9 @@ public class HyperMarket extends Company implements HyperMarketService {
 
     @Override
     public double computeMonthlyPayment(double ammount, int months) {
+        double monthlyTax = Math.pow( 1 + this.annualRate , 1.0/12.0) - 1;
         double years = months/12;
-        return ((ammount/months) + (ammount*(this.annualRate/100))*years);
+        return ( (monthlyTax * ammount) / ( 1 - (Math.pow( (1.0 + monthlyTax), -months))));
     }
 
 }
