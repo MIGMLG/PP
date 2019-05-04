@@ -81,6 +81,11 @@ public class HyperMarket extends SuperMarket implements HyperMarketService { // 
         return ( (monthlyTax * ammount) / ( 1 - (Math.pow( (1.0 + monthlyTax), -months))));
     }
 
+    /**
+     * Metodo para obter os pontos dos clientes
+     * @param purchaseValue
+     * @return
+     */
     public int getPoints(double purchaseValue){
         return (int) purchaseValue *2;
     }

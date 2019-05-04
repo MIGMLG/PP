@@ -9,13 +9,13 @@ import java.time.DayOfWeek;
 import java.time.LocalDate;
 
 /**
- * Classe que define um supermercado da jumbo
+ * Classe que define um supermercado do continente
  * @author NERD-X
  */
-public class JumbHipermarket extends HyperMarket{
+public class ContinentHipermarket extends HyperMarket {
     
     /**
-     * Metodo Constructor de um supermercado da jumbo
+     * Metodo Constructor de um supermercado do continente
      * @param name
      * @param nc
      * @param gasPrice
@@ -23,7 +23,7 @@ public class JumbHipermarket extends HyperMarket{
      * @param potatoePrice
      * @param annualRate
      */
-    public JumbHipermarket(String name, int nc, double gasPrice, double coffeePrice, double potatoePrice, double annualRate) {
+    public ContinentHipermarket(String name, int nc, double gasPrice, double coffeePrice, double potatoePrice, double annualRate) {
         super(name, nc, gasPrice, coffeePrice, potatoePrice, annualRate);
     }
     
@@ -34,20 +34,21 @@ public class JumbHipermarket extends HyperMarket{
      */
     @Override
     public int getPoints(double purchaseValue){
-        if( LocalDate.now().getDayOfWeek() == DayOfWeek.SATURDAY || LocalDate.now().getDayOfWeek() == DayOfWeek.SUNDAY){
-            if(purchaseValue >= 10){
-                return (int) (1 * (purchaseValue/10));
+        if( LocalDate.now().getDayOfMonth() <= 20){
+            if(purchaseValue >= 5){
+                return (int) (1 * (purchaseValue/5));
             }
             else{
                 return 0;
             }
         }else {
-            if(purchaseValue >= 10){
-                return (int) (3 * (purchaseValue/10));
+            if(purchaseValue >= 20){
+                return (int) (3 * (purchaseValue/20));
             }
             else{
                 return 0;
             }
         }
     }
+    
 }

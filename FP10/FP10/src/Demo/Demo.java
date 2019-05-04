@@ -5,6 +5,7 @@
  */
 package Demo;
 
+import fp10.Companies.ContinentHipermarket;
 import fp10.Companies.GasStation;
 import fp10.Companies.HyperMarket;
 import fp10.Companies.JumbHipermarket;
@@ -79,7 +80,13 @@ public class Demo {
         System.out.println("-------------------------------------------");
         System.out.println("Ex5: ");
         JumbHipermarket jumbo = new JumbHipermarket("Jumbo", 2132423, 1.3 , 0.5, 5 , 23);
-        System.out.println("Pontos: " + jumbo.getPoints(19));
+        System.out.println("Pontos Jumbo: " + jumbo.getPoints(19));
+        ContinentHipermarket continente = new ContinentHipermarket("Continente", 234325, 1.3, 0.5, 5, 23);
+        System.out.println("Pontos Continente: " + continente.getPoints(19));
+        
+        //Ex6
+        System.out.println("-------------------------------------------");
+        System.out.println("Ex6: ");
         
     }
 
