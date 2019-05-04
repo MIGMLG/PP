@@ -13,8 +13,7 @@ import fp10.Services.HyperMarketService;
  *
  * @author NERD-X
  */
-public class HyperMarket extends SuperMarket implements HyperMarketService {
-
+public class HyperMarket extends SuperMarket implements HyperMarketService { // Descobri agora que era para ser abstract XD
     private double gasPrice;
     private double coffeePrice;
     private double annualRate;
@@ -82,4 +81,8 @@ public class HyperMarket extends SuperMarket implements HyperMarketService {
         return ( (monthlyTax * ammount) / ( 1 - (Math.pow( (1.0 + monthlyTax), -months))));
     }
 
+    public int getPoints(double purchaseValue){
+        return (int) purchaseValue *2;
+    }
+    
 }

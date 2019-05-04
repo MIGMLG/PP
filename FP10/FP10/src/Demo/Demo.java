@@ -7,6 +7,7 @@ package Demo;
 
 import fp10.Companies.GasStation;
 import fp10.Companies.HyperMarket;
+import fp10.Companies.JumbHipermarket;
 import fp10.Companies.LargeGasStation;
 import fp10.Companies.SuperMarket;
 
@@ -30,6 +31,7 @@ public class Demo {
         test.setGasPrice(5.00);
         System.out.println("Preço: " + test.getGasPrice());
         System.out.println("Preço para abastecer o meu tanque: " + test.getGasTotal(70));
+        
         //Ex2
         System.out.println("-------------------------------------------");
         System.out.println("Ex2: ");
@@ -40,6 +42,7 @@ public class Demo {
         System.out.println("Preço do Café: " + test2.getCoffeePrice());
         System.out.println("Preço para abastecer o meu tanque: " + test2.getGasTotal(70));
         System.out.println("Preço para abastecer o meu Cérebro: " + test2.getCoffeeTotal(5));
+        
         //Ex3
         System.out.println("-------------------------------------------");
         System.out.println("Ex3: ");
@@ -48,6 +51,7 @@ public class Demo {
         test3.setPotatoesPrice(150);
         System.out.println("Preço da batata: " + test3.getPotatoesPrice());
         System.out.println("Preço para comer esta semana: " + test3.getMarketTotal(10));
+        
         //Ex4
         System.out.println("-------------------------------------------");
         System.out.println("Ex4: ");
@@ -70,7 +74,12 @@ public class Demo {
         test4.setAnnualRate(23);
         System.out.println("Taxa Anual: " + test4.getAnnualRate());
         System.out.println("Pagamento Mensal: " + test4.computeMonthlyPayment(bills, 12));
+        
+        //Ex5
         System.out.println("-------------------------------------------");
+        System.out.println("Ex5: ");
+        JumbHipermarket jumbo = new JumbHipermarket("Jumbo", 2132423, 1.3 , 0.5, 5 , 23);
+        System.out.println("Pontos: " + jumbo.getPoints(19));
         
     }
 
