@@ -42,5 +42,22 @@ public class GasStation extends Company implements GasService {
     public double getGasTotal(double litres) {
         return litres * this.gasPrice;
     }
+    
+    /**
+     * Metodo para obter as bombas de gasolina onde o preço é mais barato
+     * @param gasStations
+     * @return
+     */
+    public int compareGasStations(GasStation[] gasStations){
+        double price = gasStations[0].getGasPrice();
+        int position = 0;
+        for (int i = 1; i < gasStations.length; i++) {
+            if(gasStations[i].getGasPrice()< price){
+                price = gasStations[i].getGasPrice();
+                position = i;
+            }
+        }
+        return position;
+    }
 
 }

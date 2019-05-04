@@ -36,7 +36,7 @@ public class Demo {
         //Ex2
         System.out.println("-------------------------------------------");
         System.out.println("Ex2: ");
-        LargeGasStation test2 = new LargeGasStation("Sem Diesel", 87797466, 2.00, 1.00);
+        LargeGasStation test2 = new LargeGasStation("Sem Diesel 2", 87797466, 2.00, 1.00);
         System.out.println("Preço do Combustivel: " + test2.getGasPrice());
         System.out.println("Preço do Café: " + test2.getCoffeePrice());
         test2.setCoffeePrice(2);
@@ -79,7 +79,7 @@ public class Demo {
         //Ex5
         System.out.println("-------------------------------------------");
         System.out.println("Ex5: ");
-        JumbHipermarket jumbo = new JumbHipermarket("Jumbo", 2132423, 1.3 , 0.5, 5 , 23);
+        JumbHipermarket jumbo = new JumbHipermarket("Jumbo", 2132423, 1.2 , 0.5, 5 , 23);
         System.out.println("Pontos Jumbo: " + jumbo.getPoints(19));
         ContinentHipermarket continente = new ContinentHipermarket("Continente", 234325, 1.3, 0.5, 5, 23);
         System.out.println("Pontos Continente: " + continente.getPoints(19));
@@ -87,6 +87,16 @@ public class Demo {
         //Ex6
         System.out.println("-------------------------------------------");
         System.out.println("Ex6: ");
+        HyperMarket[] markets = { jumbo, continente};
+        System.out.println("Nome do mercado que oferece mais pontos: " 
+                + markets[jumbo.compareHyperMarketPoints(markets, 20)].getName());
+        GasStation[] gasStations = { test, test2};
+        System.out.println("Nome das Bombas mais baratas: " 
+                + gasStations[test.compareGasStations(gasStations)].getName());
+        
+        System.out.println("Nome do mercado que oferece o cabaz mais barato: "
+                + markets[jumbo.compareHyperMarketSale(markets, 10, 60, 2)].getName());
+        
         
     }
 

@@ -27,7 +27,7 @@ public class SuperMarket extends Company implements MarketService {
         super(name, nc);
         this.potatoePrice = potatoePrice;
     }
-
+    
     @Override
     public double getPotatoesPrice() {
         return this.potatoePrice;
