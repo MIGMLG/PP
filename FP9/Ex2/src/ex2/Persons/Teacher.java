@@ -7,6 +7,7 @@ package ex2.Persons;
 
 import ex2.Courses.CourseManagement;
 import ex2.Courses.Discipline;
+import ex2.Courses.TeacherDiscipline;
 import ex2.Enums.AcademicStatus;
 import static ex2.Enums.AcademicStatus.AcademicStatusToString;
 import ex2.Enums.CientificArea;

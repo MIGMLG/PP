@@ -47,7 +47,7 @@ public class Demo {
         System.out.println(n3.addDiscipline(paradigmas));
 //        System.out.println(n2.calculateHours());
 //        System.out.println(n3.calculateHours());
-//        
+        
 //        //Testes Professor
         
         System.out.println(n4.addDiscipline(paradigmas));
@@ -56,8 +56,8 @@ public class Demo {
         System.out.println(n1.printDisciplines());
 //        System.out.println(n1.calculateHours());
 //        System.out.println(n4.calculateHours());
-//        
-//        
+        
+        
         System.out.println("FOR REAL: ");
         PersonManagement gestao = new PersonManagement();
         System.out.println(gestao.addPerson(n1));
