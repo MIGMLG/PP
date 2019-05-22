@@ -6,6 +6,7 @@
 package ex2.Courses;
 
 import ex2.Persons.Teacher;
+import java.util.Objects;
 
 /**
  * Classe da definição de uma disciplina para o professor
@@ -43,4 +44,30 @@ public class TeacherDiscipline{
         return hours;
     }
 
+    @Override
+    public int hashCode() {
+        int hash = 5;
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final TeacherDiscipline other = (TeacherDiscipline) obj;
+        if (!Objects.equals(this.discipline, other.discipline)) {
+            return false;
+        }
+        return true;
+    }
+
+    
+    
 }

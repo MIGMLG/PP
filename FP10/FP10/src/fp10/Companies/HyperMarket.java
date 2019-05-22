@@ -83,12 +83,7 @@ public class HyperMarket extends SuperMarket implements HyperMarketService {
         return ((monthlyTax * ammount) / (1 - (Math.pow((1.0 + monthlyTax), -months))));
     }
 
-    /**
-     * Metodo para obter os pontos dos clientes
-     *
-     * @param purchaseValue
-     * @return
-     */
+    @Override
     public int getPoints(double purchaseValue) {
         return (int) purchaseValue * 2;
     }
@@ -100,7 +95,7 @@ public class HyperMarket extends SuperMarket implements HyperMarketService {
      * @param valuePurchase
      * @return
      */
-    public int compareHyperMarketPoints(HyperMarket[] markets, int valuePurchase) {
+    public int compareHyperMarketPoints(HyperMarketService[] markets, int valuePurchase) {
         int points = markets[0].getPoints(valuePurchase);
         int position = 0;
         for (int i = 1; i < markets.length; i++) {
@@ -122,7 +117,7 @@ public class HyperMarket extends SuperMarket implements HyperMarketService {
      * @param coffes
      * @return
      */
-    public int compareHyperMarketSale(HyperMarket[] markets, double kilos, double litres, int coffes) {
+    public int compareHyperMarketSale(HyperMarketService[] markets, double kilos, double litres, int coffes) {
         double price = markets[0].getMarketTotal(kilos) 
                 + markets[0].getGasTotal(litres) 
                 + markets[0].getCoffeeTotal(coffes);

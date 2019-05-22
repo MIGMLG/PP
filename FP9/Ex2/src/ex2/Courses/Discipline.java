@@ -5,6 +5,8 @@
  */
 package ex2.Courses;
 
+import java.util.Objects;
+
 /**
  * Definição do Objeto de Disciplina
  *
@@ -58,6 +60,33 @@ public class Discipline {
 
     public void setHours(int hours) {
         this.hours = hours;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 3;
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Discipline other = (Discipline) obj;
+        if (this.id != other.id) {
+            return false;
+        }
+        if (!Objects.equals(this.name, other.name)) {
+            return false;
+        }
+        return true;
     }
     
     
