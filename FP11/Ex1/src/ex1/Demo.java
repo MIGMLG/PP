@@ -44,7 +44,7 @@ public class Demo {
         }
         
         try{
-            System.out.println(p1.playTrack(1));
+            System.out.println(p1.playTrack(0));
         }catch(ArrayIndexOutOfBoundsException | FileNotSupportedException | NullPointerException ex){
             Logger.getLogger(Demo.class.getName()).log(Level.SEVERE, null, ex);
         }

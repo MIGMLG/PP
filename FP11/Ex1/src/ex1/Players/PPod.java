@@ -14,6 +14,7 @@ import ex1.Interfaces.PPodInterface;
 
 /**
  * Classe que define o player de mp3
+ *
  * @author NERD-X
  */
 public class PPod extends ContainerOfObjects implements PPodInterface {
@@ -72,8 +73,12 @@ public class PPod extends ContainerOfObjects implements PPodInterface {
                 throw new NullPointerException("Não existe ficheiro na posição.");
             } else {
                 File tmp = (File) super.getObject(index);
-                System.out.println(tmp.toString());
-                return true;
+                if ("MP3".equals(tmp.getExtension().toUpperCase())) {
+                    System.out.println(tmp.toString());
+                    return true;
+                }else {
+                    throw new FileNotSupportedException("Extensão não é mp3.");
+                }
             }
         } else {
             throw new ArrayIndexOutOfBoundsException("Posição Inexistente.");
