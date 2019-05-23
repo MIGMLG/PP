@@ -182,7 +182,7 @@ public class ContainerOfObjects {
      *
      * @return
      */
-    public int getCounter() {
+    protected int getCounter() {
         return counter;
     }
 
@@ -197,4 +197,13 @@ public class ContainerOfObjects {
         return out;
     }
 
+    
+    protected Object getObject(int index){
+        if(index < counter && index >= 0){
+            return object[index];
+        }else {
+            return null;
+        }
+    }
+    
 }

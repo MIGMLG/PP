@@ -39,4 +39,11 @@ public class File {
         return duration;
     }
 
+    @Override
+    public String toString() {
+        return "File{" + "name=" + name + ", extension=" + extension + ", size=" + size + ", duration=" + duration + '}';
+    }
+    
+    
+    
 }

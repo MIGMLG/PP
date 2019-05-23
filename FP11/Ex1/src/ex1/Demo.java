@@ -5,6 +5,7 @@
  */
 package ex1;
 
+import ex1.Exceptions.FileNotSupportedException;
 import ex1.Exceptions.MaxFilesLimitException;
 import ex1.Exceptions.MemoryFullException;
 import ex1.Files.File;
@@ -39,6 +40,12 @@ public class Demo {
         try{
             System.out.println(p1.deleteFile(2));
         }catch (ArrayIndexOutOfBoundsException ex){
+            Logger.getLogger(Demo.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        try{
+            System.out.println(p1.playTrack(1));
+        }catch(ArrayIndexOutOfBoundsException | FileNotSupportedException | NullPointerException ex){
             Logger.getLogger(Demo.class.getName()).log(Level.SEVERE, null, ex);
         }
 

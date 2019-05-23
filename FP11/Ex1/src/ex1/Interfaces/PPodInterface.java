@@ -45,7 +45,7 @@ public interface PPodInterface {
      * @throws ArrayIndexOutOfBoundsException
      * @throws FileNotSupportedException
      */
-    public boolean playTrack(int index) throws ArrayIndexOutOfBoundsException, FileNotSupportedException;
+    public boolean playTrack(int index) throws ArrayIndexOutOfBoundsException, FileNotSupportedException, NullPointerException;
 
     /**
      * Metodo para avançar para a próxima track, senão for possível reproduzir

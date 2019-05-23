@@ -17,6 +17,7 @@ import ex1.Interfaces.PPodInterface;
  * @author NERD-X
  */
 public class PPod extends ContainerOfObjects implements PPodInterface {
+
     private final int MAX_FILES = 20;
     private final int MAX_MEMORY = 102400;
     private int currentMemory = 0;
@@ -30,49 +31,53 @@ public class PPod extends ContainerOfObjects implements PPodInterface {
         super(files);
         this.files = files;
     }
-    
-    
-    
+
     @Override
     public boolean addFile(File file) throws NullPointerException, MemoryFullException, MaxFilesLimitException {
-        
+
         if (super.hasObject(file)) {
             System.out.println("Ficheiro já existe.");
             return false;
         } else {
-            if((currentMemory + file.getSize()) <= MAX_MEMORY){
-                if(super.addObjects(file)){
+            if ((currentMemory + file.getSize()) <= MAX_MEMORY) {
+                if (super.addObjects(file)) {
                     currentMemory += currentMemory + file.getSize();
                     return true;
-                }else {
+                } else {
                     throw new MaxFilesLimitException("Lista cheia.");
                 }
-            }else {
+            } else {
                 throw new MemoryFullException("Memória Cheia.");
             }
         }
-        
+
     }
 
     @Override
     public boolean deleteFile(int index) throws ArrayIndexOutOfBoundsException {
-        if(index < MAX_FILES){
-            if(super.removeObjects(index)==null){
+        if (index < MAX_FILES) {
+            if (super.removeObjects(index) == null) {
                 System.out.println("Ficheiro não existe");
                 return false;
-            }else{
+            } else {
                 return true;
             }
-        }else{
+        } else {
             throw new ArrayIndexOutOfBoundsException("Posição Inexistente.");
         }
     }
 
     @Override
-    public boolean playTrack(int index) throws ArrayIndexOutOfBoundsException, FileNotSupportedException {
-        if(index < MAX_FILES){
-            return true;
-        }else{
+    public boolean playTrack(int index) throws ArrayIndexOutOfBoundsException, FileNotSupportedException, NullPointerException {
+        if (index < MAX_FILES) {
+            if (super.getObject(index) == null) {
+                throw new NullPointerException("Não existe ficheiro na posição.");
+            } else {
+                File tmp = (File) super.getObject(index);
+                System.out.println(tmp.toString());
+                return true;
+            }
+        } else {
             throw new ArrayIndexOutOfBoundsException("Posição Inexistente.");
         }
     }
