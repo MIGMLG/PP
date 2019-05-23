@@ -178,15 +178,6 @@ public class ContainerOfObjects {
     }
 
     /**
-     * Metodo de acesso para obter a referencia do Array de objetos
-     *
-     * @return
-     */
-    public Object[] getObject() {
-        return object;
-    }
-
-    /**
      * Metodo de acesso para obter o contador de posições
      *
      * @return
