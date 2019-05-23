@@ -13,7 +13,7 @@ import ex1.Files.File;
 import ex1.Interfaces.PPodInterface;
 
 /**
- *
+ * Classe que define o player de mp3
  * @author NERD-X
  */
 public class PPod extends ContainerOfObjects implements PPodInterface {
@@ -23,13 +23,11 @@ public class PPod extends ContainerOfObjects implements PPodInterface {
     private int currentMemory = 0;
     private File[] files;
 
+    /**
+     * Contructor que define o tamanho máximo do array
+     */
     public PPod() {
         super(20);
-    }
-
-    public PPod(File[] files) {
-        super(files);
-        this.files = files;
     }
 
     @Override

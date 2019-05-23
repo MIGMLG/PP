@@ -6,7 +6,7 @@
 package ex1.Files;
 
 /**
- *
+ * Classe que contem a definição de um ficheiro
  * @author NERD-X
  */
 public class File {
@@ -16,6 +16,13 @@ public class File {
     private int size;
     private int duration;
 
+    /**
+     * Contructor para classe File
+     * @param name
+     * @param extension
+     * @param size
+     * @param duration
+     */
     public File(String name, String extension, int size, int duration) {
         this.name = name;
         this.extension = extension;
@@ -23,18 +30,34 @@ public class File {
         this.duration = duration;
     }
 
+    /**
+     * Metodo para obter o nome do ficheiro
+     * @return
+     */
     public String getName() {
         return name;
     }
 
+    /**
+     * Metodo para obter a extensão do ficheiro
+     * @return
+     */
     public String getExtension() {
         return extension;
     }
 
+    /**
+     * Metodo para obter o tamanho do ficheiro
+     * @return
+     */
     public int getSize() {
         return size;
     }
 
+    /**
+     * Metodo para obter a duração do ficheiro
+     * @return
+     */
     public int getDuration() {
         return duration;
     }
