@@ -6,7 +6,9 @@
 package ex2.Players;
 
 import containerofobjectsapi.ContainerOfObjects;
+import ex2.Exceptions.FileDurationInvalidException;
 import ex2.Exceptions.FileNotSupportedException;
+import ex2.Exceptions.FileSizeInvalidException;
 import ex2.Exceptions.MaxFilesLimitException;
 import ex2.Exceptions.MemoryFullException;
 import ex2.Files.File;
@@ -32,7 +34,7 @@ public class PPod extends ContainerOfObjects implements PPodInterface {
     }
 
     @Override
-    public boolean addFile(File file) throws NullPointerException, MemoryFullException, MaxFilesLimitException {
+    public boolean addFile(File file) throws NullPointerException, MemoryFullException, MaxFilesLimitException, FileSizeInvalidException {
 
         if (file == null) {
             throw new NullPointerException("Ficheiro Inexistente");
@@ -41,15 +43,19 @@ public class PPod extends ContainerOfObjects implements PPodInterface {
                 System.out.println("Ficheiro já existe.");
                 return false;
             } else {
-                if ((currentMemory + file.getSize()) <= MAX_MEMORY) {
-                    if (super.addObjects(file)) {
-                        currentMemory += file.getSize();
-                        return true;
+                if (file.getSize() > 0) {
+                    if ((currentMemory + file.getSize()) <= MAX_MEMORY) {
+                        if (super.addObjects(file)) {
+                            currentMemory += file.getSize();
+                            return true;
+                        } else {
+                            throw new MaxFilesLimitException("Lista cheia.");
+                        }
                     } else {
-                        throw new MaxFilesLimitException("Lista cheia.");
+                        throw new MemoryFullException("Memória Cheia.");
                     }
                 } else {
-                    throw new MemoryFullException("Memória Cheia.");
+                    throw new FileSizeInvalidException("Tamanho Invalido.");
                 }
             }
         }
@@ -69,18 +75,22 @@ public class PPod extends ContainerOfObjects implements PPodInterface {
     }
 
     @Override
-    public boolean playTrack(int index) throws ArrayIndexOutOfBoundsException, FileNotSupportedException, NullPointerException {
+    public boolean playTrack(int index) throws ArrayIndexOutOfBoundsException, FileNotSupportedException, NullPointerException, FileDurationInvalidException {
         if (index < MAX_FILES && index >= 0) {
             if (super.getObject(index) == null) {
                 throw new NullPointerException("Não existe ficheiro na posição.");
             } else {
                 File tmp = (File) super.getObject(index);
-                if ("MP3".equals(tmp.getExtension().toUpperCase())) {
-                    currentTrack = index;
-                    System.out.println(tmp.toString());
-                    return true;
+                if (tmp.getDuration() > 0) {
+                    if ("MP3".equals(tmp.getExtension().toUpperCase())) {
+                        currentTrack = index;
+                        System.out.println(tmp.toString());
+                        return true;
+                    } else {
+                        throw new FileNotSupportedException("Extensão não é mp3.");
+                    }
                 } else {
-                    throw new FileNotSupportedException("Extensão não é mp3.");
+                    throw new FileDurationInvalidException("Duração do ficheiro Inválida.");
                 }
             }
         } else {
@@ -96,7 +106,7 @@ public class PPod extends ContainerOfObjects implements PPodInterface {
                 nextTrack = this.currentTrack + 1;
                 this.playTrack(nextTrack);
                 return true;
-            } catch (FileNotSupportedException ex) {
+            } catch (FileNotSupportedException | FileDurationInvalidException ex) {
                 continue;
             } catch (NullPointerException ex) {
                 System.out.println("Ainda não está preenchida a posição seguinte.");
@@ -105,7 +115,6 @@ public class PPod extends ContainerOfObjects implements PPodInterface {
                 System.out.println("Chegou ao fim da lista.");
                 break;
             }
-
         }
         return false;
     }
@@ -118,7 +127,7 @@ public class PPod extends ContainerOfObjects implements PPodInterface {
                 previousTrack = this.currentTrack - 1;
                 this.playTrack(previousTrack);
                 return true;
-            } catch (FileNotSupportedException ex) {
+            } catch (FileNotSupportedException | FileDurationInvalidException ex) {
                 continue;
             } catch (NullPointerException ex) {
                 System.out.println("Posição Vazia.");

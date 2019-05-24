@@ -5,7 +5,9 @@
  */
 package ex2.Interfaces;
 
+import ex2.Exceptions.FileDurationInvalidException;
 import ex2.Exceptions.FileNotSupportedException;
+import ex2.Exceptions.FileSizeInvalidException;
 import ex2.Exceptions.MaxFilesLimitException;
 import ex2.Exceptions.MemoryFullException;
 import ex2.Files.File;
@@ -25,8 +27,9 @@ public interface PPodInterface {
      * @throws NullPointerException
      * @throws MemoryFullException
      * @throws MaxFilesLimitException
+     * @throws ex2.Exceptions.FileSizeInvalidException
      */
-    public boolean addFile(File file) throws NullPointerException, MemoryFullException, MaxFilesLimitException;
+    public boolean addFile(File file) throws NullPointerException, MemoryFullException, MaxFilesLimitException, FileSizeInvalidException;
 
     /**
      * Metodo para apagar uma faixa da lista
@@ -44,8 +47,9 @@ public interface PPodInterface {
      * @return
      * @throws ArrayIndexOutOfBoundsException
      * @throws FileNotSupportedException
+     * @throws ex2.Exceptions.FileDurationInvalidException
      */
-    public boolean playTrack(int index) throws ArrayIndexOutOfBoundsException, FileNotSupportedException, NullPointerException;
+    public boolean playTrack(int index) throws ArrayIndexOutOfBoundsException, FileNotSupportedException, NullPointerException, FileDurationInvalidException;
 
     /**
      * Metodo para avançar para a próxima track, senão for possível reproduzir

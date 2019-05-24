@@ -6,6 +6,7 @@
 package ex2;
 
 import ex2.Exceptions.FileNotSupportedException;
+import ex2.Exceptions.FileSizeInvalidException;
 import ex2.Exceptions.MaxFilesLimitException;
 import ex2.Exceptions.MemoryFullException;
 import ex2.Files.File;
@@ -24,14 +25,14 @@ public class Demo {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        File f1 = new File("Hello World", "mp3", 15000, 300000);
+        File f1 = new File("Hello World", "mp3", 52000, 300000);
         File f2 = new File("Darudo SandStorm", "mp3", 4200, 420420);
 
         PPod p1 = new PPod();
 
         try {
             System.out.println(p1.addFile(f1));
-        } catch (MemoryFullException | MaxFilesLimitException | NullPointerException ex) {
+        } catch (MemoryFullException | MaxFilesLimitException | NullPointerException | FileSizeInvalidException ex) {
             System.out.println(ex.getMessage());
         }
 
@@ -51,7 +52,7 @@ public class Demo {
 
         try {
             System.out.println(p1.addFile(f2));
-        } catch (MemoryFullException | MaxFilesLimitException | NullPointerException ex) {
+        } catch (MemoryFullException | MaxFilesLimitException | NullPointerException | FileSizeInvalidException ex) {
             System.out.println(ex.getMessage());
         }
 
