@@ -32,19 +32,19 @@ public class Demo {
         try {
             System.out.println(p1.addFile(f1));
         } catch (MemoryFullException | MaxFilesLimitException | NullPointerException ex) {
-            System.out.println("Erro ao adicionar!");
+            System.out.println(ex.getMessage());
         }
 
         try {
             System.out.println(p1.deleteFile(2));
         } catch (ArrayIndexOutOfBoundsException | NullPointerException ex) {
-            System.out.println("Erro ao apagar!");
+            System.out.println(ex.getMessage());
         }
 
         try {
             System.out.println(p1.playTrack(0));
         } catch (ArrayIndexOutOfBoundsException | FileNotSupportedException | NullPointerException ex) {
-            System.out.println("Erro ao reproduzir!");
+            System.out.println(ex.getMessage());
         }
 
         System.out.println(p1.nextTrack());
@@ -52,7 +52,7 @@ public class Demo {
         try {
             System.out.println(p1.addFile(f2));
         } catch (MemoryFullException | MaxFilesLimitException | NullPointerException ex) {
-            System.out.println("Erro ao adicionar!");
+            System.out.println(ex.getMessage());
         }
 
         System.out.println(p1.nextTrack());

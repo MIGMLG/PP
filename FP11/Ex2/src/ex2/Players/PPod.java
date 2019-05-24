@@ -59,8 +59,7 @@ public class PPod extends ContainerOfObjects implements PPodInterface {
     public boolean deleteFile(int index) throws ArrayIndexOutOfBoundsException, NullPointerException {
         if (index < MAX_FILES) {
             if (super.removeObjects(index) == null) {
-                System.out.println("Ficheiro não existe");
-                throw new NullPointerException();
+                throw new NullPointerException("Ficheiro não existe.");
             } else {
                 return true;
             }
