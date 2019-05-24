@@ -5,6 +5,7 @@
  */
 package ex2;
 
+import ex2.Exceptions.FileDurationInvalidException;
 import ex2.Exceptions.FileNotSupportedException;
 import ex2.Exceptions.FileSizeInvalidException;
 import ex2.Exceptions.MaxFilesLimitException;
@@ -44,7 +45,7 @@ public class Demo {
 
         try {
             System.out.println(p1.playTrack(0));
-        } catch (ArrayIndexOutOfBoundsException | FileNotSupportedException | NullPointerException ex) {
+        } catch (ArrayIndexOutOfBoundsException | FileNotSupportedException | NullPointerException | FileDurationInvalidException ex) {
             System.out.println(ex.getMessage());
         }
 
@@ -59,6 +60,8 @@ public class Demo {
         System.out.println(p1.nextTrack());
         System.out.println(p1.previousTrack());
         System.out.println(p1.previousTrack());
+        
+        p1.list();
     }
     
 }

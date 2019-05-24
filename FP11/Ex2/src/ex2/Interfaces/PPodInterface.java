@@ -66,4 +66,10 @@ public interface PPodInterface {
      * @return
      */
     public boolean previousTrack();
+    
+    /**
+     * Metodo que imprime a lista de todas as músicas
+     * @return
+     */
+    public void list();
 }

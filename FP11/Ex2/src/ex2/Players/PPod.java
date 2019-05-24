@@ -140,4 +140,16 @@ public class PPod extends ContainerOfObjects implements PPodInterface {
         return false;
     }
 
+    @Override
+    public void list() {
+        for(int i = 0; i < this.MAX_FILES; i++){
+            File tmp = (File) super.getObject(i);
+            if(tmp != null){
+                System.out.println("-------------------------" + "\n"
+                                + tmp.toString() + "\n"
+                                + "-------------------------" + "\n");
+            }
+        }
+    }
+
 }
