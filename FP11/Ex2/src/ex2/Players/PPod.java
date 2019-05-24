@@ -34,26 +34,29 @@ public class PPod extends ContainerOfObjects implements PPodInterface {
     @Override
     public boolean addFile(File file) throws NullPointerException, MemoryFullException, MaxFilesLimitException {
 
-        if (super.hasObject(file)) {
-            System.out.println("Ficheiro já existe.");
-            return false;
+        if (file == null) {
+            throw new NullPointerException("Ficheiro Inexistente");
         } else {
-            if ((currentMemory + file.getSize()) <= MAX_MEMORY) {
-                if (super.addObjects(file)) {
-                    currentMemory += file.getSize();
-                    return true;
-                } else {
-                    throw new MaxFilesLimitException("Lista cheia.");
-                }
+            if (super.hasObject(file)) {
+                System.out.println("Ficheiro já existe.");
+                return false;
             } else {
-                throw new MemoryFullException("Memória Cheia.");
+                if ((currentMemory + file.getSize()) <= MAX_MEMORY) {
+                    if (super.addObjects(file)) {
+                        currentMemory += file.getSize();
+                        return true;
+                    } else {
+                        throw new MaxFilesLimitException("Lista cheia.");
+                    }
+                } else {
+                    throw new MemoryFullException("Memória Cheia.");
+                }
             }
         }
-
     }
 
     @Override
-    public boolean deleteFile(int index) throws ArrayIndexOutOfBoundsException, NullPointerException{
+    public boolean deleteFile(int index) throws ArrayIndexOutOfBoundsException, NullPointerException {
         if (index < MAX_FILES) {
             if (super.removeObjects(index) == null) {
                 System.out.println("Ficheiro não existe");
@@ -111,17 +114,17 @@ public class PPod extends ContainerOfObjects implements PPodInterface {
     @Override
     public boolean previousTrack() {
         int previousTrack = this.currentTrack;
-        for(int i = this.currentTrack; i >= 0; i--){
-            try{
+        for (int i = this.currentTrack; i >= 0; i--) {
+            try {
                 previousTrack = this.currentTrack - 1;
                 this.playTrack(previousTrack);
                 return true;
-            }catch (FileNotSupportedException ex){
+            } catch (FileNotSupportedException ex) {
                 continue;
-            }catch (NullPointerException ex){
+            } catch (NullPointerException ex) {
                 System.out.println("Posição Vazia.");
                 break;
-            }catch (ArrayIndexOutOfBoundsException ex){
+            } catch (ArrayIndexOutOfBoundsException ex) {
                 System.out.println("Chegou ao ínicio da lista.");
                 break;
             }
