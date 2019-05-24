@@ -27,8 +27,8 @@ public class Demo {
         // TODO code application logic here
 
         File f1 = new File("Hello World", "mp3", 15000, 300000);
-        File f2 = new File("Darudo SandStorm", "mp3", 420, 420420);
-        
+        File f2 = new File("Darudo SandStorm", "mp3", 4200, 420420);
+
         PPod p1 = new PPod();
 
         try {
@@ -36,19 +36,30 @@ public class Demo {
         } catch (MemoryFullException | MaxFilesLimitException | NullPointerException ex) {
             Logger.getLogger(Demo.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
-        try{
+
+        try {
             System.out.println(p1.deleteFile(2));
-        }catch (ArrayIndexOutOfBoundsException ex){
-            Logger.getLogger(Demo.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
-        try{
-            System.out.println(p1.playTrack(0));
-        }catch(ArrayIndexOutOfBoundsException | FileNotSupportedException | NullPointerException ex){
+        } catch (ArrayIndexOutOfBoundsException ex) {
             Logger.getLogger(Demo.class.getName()).log(Level.SEVERE, null, ex);
         }
 
+        try {
+            System.out.println(p1.playTrack(0));
+        } catch (ArrayIndexOutOfBoundsException | FileNotSupportedException | NullPointerException ex) {
+            Logger.getLogger(Demo.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        System.out.println(p1.nextTrack());
+
+        try {
+            System.out.println(p1.addFile(f2));
+        } catch (MemoryFullException | MaxFilesLimitException | NullPointerException ex) {
+            Logger.getLogger(Demo.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        System.out.println(p1.nextTrack());
+        System.out.println(p1.previousTrack());
+        System.out.println(p1.previousTrack());
     }
 
 }
