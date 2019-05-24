@@ -20,7 +20,7 @@ public interface PPodInterface {
     /**
      * Metodo para adicionar um ficheiro á lista
      *
-     * @param file
+     * @param file ficheiro
      * @return
      * @throws NullPointerException
      * @throws MemoryFullException
