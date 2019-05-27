@@ -27,18 +27,19 @@ public class Demo {
     public static void main(String[] args) {
         // TODO code application logic here
         File f1 = new File("Hello World", "mp3", 52000, 300000);
-        File f2 = new File("Darudo SandStorm", "mp3", 4200, 420420);
+        File f2 = new File("Darudo SandStorm", "mp3", 42000, 420420);
 
         PPod p1 = new PPod();
 
         try {
             System.out.println(p1.addFile(f1));
+            System.out.println(p1.addFile(f2));
         } catch (MemoryFullException | MaxFilesLimitException | NullPointerException | FileSizeInvalidException ex) {
             System.out.println(ex.getMessage());
         }
 
         try {
-            System.out.println(p1.deleteFile(2));
+            System.out.println(p1.deleteFile(10));
         } catch (ArrayIndexOutOfBoundsException | NullPointerException ex) {
             System.out.println(ex.getMessage());
         }
@@ -50,12 +51,6 @@ public class Demo {
         }
 
         System.out.println(p1.nextTrack());
-
-        try {
-            System.out.println(p1.addFile(f2));
-        } catch (MemoryFullException | MaxFilesLimitException | NullPointerException | FileSizeInvalidException ex) {
-            System.out.println(ex.getMessage());
-        }
 
         System.out.println(p1.nextTrack());
         System.out.println(p1.previousTrack());

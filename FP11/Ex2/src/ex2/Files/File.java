@@ -10,7 +10,7 @@ package ex2.Files;
  * @author NERD-X
  */
 public class File {
-
+    
     private String name;
     private String extension;
     private int size;

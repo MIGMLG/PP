@@ -66,7 +66,14 @@ public interface PPodInterface {
      * @return
      */
     public boolean previousTrack();
-    
+
+    /**
+     * Metodo para ordenar as músicas pelo algoritmo definido no arranque
+     *
+     * @return
+     */
+    public boolean shufflePlay();
+
     /**
      * Metodo que imprime a lista de todas as músicas
      */
