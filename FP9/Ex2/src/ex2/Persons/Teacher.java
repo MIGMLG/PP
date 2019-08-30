@@ -49,17 +49,16 @@ public class Teacher extends Person {
 
     /**
      * Metodo para calcular as horas de trabalho do Professor
-     *
-     * @return
+     * @return hours
      */
     @Override
     public float calculateHours() {
         Object[] tmp = manage.getDisciplines();
         float hours = 0;
-//        for(Object out : tmp){
-//            TeacherDiscipline disc = (TeacherDiscipline) out;
-//            hours+= disc.getHours();
-//        }
+        for(Object out : tmp){
+            TeacherDiscipline disc = (TeacherDiscipline) out;
+            hours+= disc.getHours();
+        }
         return hours;
     }
 
@@ -78,21 +77,16 @@ public class Teacher extends Person {
      *
      * @param discipline
      * @param hours
-     * @return
      */
-    public boolean addDiscipline(Discipline discipline) {
-        return manage.addDiscipline(discipline);
-    }
-
-    public boolean setDisciplineWorkHours(Discipline discipline, int hours) {
-        return false;
+    public boolean addDiscipline(Discipline discipline, int hours) {
+        TeacherDiscipline newDiscipline = new TeacherDiscipline(discipline.getId(), discipline.getName(), hours);
+        return manage.addDiscipline(newDiscipline);
     }
 
     /**
      * Metodo para remover disciplinas, retorna boolean
      *
      * @param discipline
-     * @return
      */
     public boolean removeDiscipline(Discipline discipline) {
         return manage.removeDiscipline(discipline);
@@ -100,8 +94,6 @@ public class Teacher extends Person {
 
     /**
      * Metodo para imprimir as disciplinas, retorna String
-     *
-     * @return
      */
     public String printDisciplines() {
         return manage.printAll();

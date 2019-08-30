@@ -27,10 +27,9 @@ public class CourseManagement extends ContainerOfObjects {
      * Metodo para adicionar Disciplinas
      *
      * @param discipline
-     * @return
      */
     public boolean addDiscipline(Discipline discipline) {
-        if (super.hasObject(discipline)) {
+        if (this.equals(discipline)) {
             return false;
         } else {
             return super.addObjects(discipline);
@@ -61,9 +60,30 @@ public class CourseManagement extends ContainerOfObjects {
     /**
      * Metodo para obter as disciplinas do utilizador
      *
-     * @return
      */
     public Object[] getDisciplines() {
         return super.getObjects();
     }
+
+    /**
+     *
+     * @param obj
+     * @return
+     */
+    public boolean equals(Discipline obj) {
+
+        if (super.getCounter() == 0) {
+            return false;
+        } else {
+            Object[] tmp = super.getObjects();
+            for(int i = 0; i < super.getCounter(); i++){
+                Discipline tmpDiscipline = (Discipline) tmp[i];
+                if (tmpDiscipline.getId() == obj.getId()){
+                    return true;
+                }
+            }
+            return false;
+        }
+    }
+
 }

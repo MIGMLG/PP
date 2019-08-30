@@ -10,7 +10,6 @@ package ex2.Courses;
  * @author NERD-X
  */
 public class StudentDiscipline extends Discipline{
-    private int hours;
 
     /**
      * Metodo constructor de uma disciplina para o aluno
@@ -18,19 +17,9 @@ public class StudentDiscipline extends Discipline{
      * @param id
      * @param name
      */
-    public StudentDiscipline(int hours, int id, String name) {
+    public StudentDiscipline(int id, String name, int hours) {
         super(id, name);
-        this.hours = hours;
+        super.setHours(hours);
     }
-
-    /**
-     * Metodo para obter as horas do aluno para a disciplina
-     * @return
-     */
-    public int getHours() {
-        return hours;
-    }
-    
-    
     
 }

@@ -39,19 +39,18 @@ public class Demo {
         
         Teacher n4 = new Teacher(2, "Miguel Costa", 19458462, "DONT KNOW", 255929666, 
                 AcademicStatus.MESTRADO, CientificArea.INFORMATICA, LocalDate.now());
-        System.out.println(n3.addDiscipline(paradigmas));
-        System.out.println(n3.addDiscipline(paradigmas)); // ja existe retorna false
-        System.out.println(n3.setDisciplineWorkHours(paradigmas, 2));
+        System.out.println(n3.addDiscipline(paradigmas,2));
+        System.out.println(n3.addDiscipline(paradigmas,3)); // ja existe retorna false
         System.out.println(n3.removeDiscipline(paradigmas));
         System.out.println(n3.printDisciplines());
-        System.out.println(n3.addDiscipline(paradigmas));
+        System.out.println(n3.addDiscipline(paradigmas,4));
 //        System.out.println(n2.calculateHours());
 //        System.out.println(n3.calculateHours());
         
 //        //Testes Professor
         
-        System.out.println(n4.addDiscipline(paradigmas));
-        System.out.println(n1.addDiscipline(paradigmas));
+        System.out.println(n4.addDiscipline(paradigmas, 4));
+        System.out.println(n1.addDiscipline(paradigmas, 6));
         System.out.println(n4.printDisciplines());
         System.out.println(n1.printDisciplines());
 //        System.out.println(n1.calculateHours());
@@ -63,10 +62,10 @@ public class Demo {
         System.out.println(gestao.addPerson(n1));
         System.out.println(gestao.addPerson(n1)); //Ja existe no sistema
         System.out.println(gestao.addPerson(n2));
-        System.out.println(gestao.PrintAll());
-        System.out.println("\n" + "Removido: " + gestao.removePerson(n2) + "Final do Removido");
-        System.out.println(gestao.PrintAll());
-        
+//        System.out.println(gestao.PrintAll());
+//        System.out.println("\n" + "Removido: " + gestao.removePerson(n2) + "Final do Removido");
+//        System.out.println(gestao.PrintAll());
+//        
     }
     
 }
