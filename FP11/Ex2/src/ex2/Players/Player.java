@@ -5,13 +5,13 @@
  */
 package ex2.Players;
 
-import ex2.Interfaces.PPodInterface;
+import ex2.Interfaces.PlayerInterface;
 
 /**
  * Classe que define o objeto player
  * @author NERD-X
  */
-abstract class Player implements PPodInterface {
+abstract class Player implements PlayerInterface {
     
     protected int globalAddFileFailures = 0;
 

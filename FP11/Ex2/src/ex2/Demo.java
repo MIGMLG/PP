@@ -12,6 +12,7 @@ import ex2.Exceptions.MaxFilesLimitException;
 import ex2.Exceptions.MemoryFullException;
 import ex2.Files.File;
 import ex2.Players.PPod;
+import ex2.Players.ShuffleAlgorithms;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -26,10 +27,10 @@ public class Demo {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        File f1 = new File("Hello World", "mp3", 52000, 300000);
-        File f2 = new File("Darudo SandStorm", "mp3", 42000, 420420);
+        File f1 = new File("Hello World", "mp3", 42000, 3000000);
+        File f2 = new File("Darudo SandStorm", "mp3", 52000, 420420);
 
-        PPod p1 = new PPod();
+        PPod p1 = new PPod(ShuffleAlgorithms.ORDERBYNAME);
 
         try {
             System.out.println(p1.addFile(f1));
@@ -57,6 +58,10 @@ public class Demo {
         System.out.println(p1.previousTrack());
         
         p1.list();
+        
+        System.out.println("Suffle Tests: " + p1.shufflePlay());
+        p1.list();
+        
     }
     
 }

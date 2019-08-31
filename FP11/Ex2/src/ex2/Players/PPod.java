@@ -5,32 +5,36 @@
  */
 package ex2.Players;
 
-import containerofobjectsapi.ContainerOfObjects;
 import ex2.Exceptions.FileDurationInvalidException;
 import ex2.Exceptions.FileNotSupportedException;
 import ex2.Exceptions.FileSizeInvalidException;
 import ex2.Exceptions.MaxFilesLimitException;
 import ex2.Exceptions.MemoryFullException;
 import ex2.Files.File;
-import ex2.Interfaces.PPodInterface;
 
 /**
  * Classe que define o player de mp3
  *
  * @author NERD-X
  */
-public class PPod extends Player {
+public class PPod extends Player{
 
     private final int MAX_FILES = 20;
     private final int MAX_MEMORY = 102400;
     private File[] lista = new File[MAX_FILES];
     private int currentMemory = 0;
     private int currentTrack = -1;
+    private ShuffleAlgorithms algo = ShuffleAlgorithms.ORDERBYDURATION;
+
+    public PPod(ShuffleAlgorithms algo) {
+        this.algo = algo;
+    }
 
     @Override
     public boolean addFile(File file) throws NullPointerException, MemoryFullException, MaxFilesLimitException, FileSizeInvalidException {
 
         if (file == null) {
+            this.globalAddFileFailures = this.globalAddFileFailures + 1;
             throw new NullPointerException("Ficheiro Inexistente");
         } else {
             if (file.getSize() > 0) {
@@ -42,12 +46,15 @@ public class PPod extends Player {
                             return true;
                         }
                     }
+                    this.globalAddFileFailures = this.globalAddFileFailures + 1;
                     throw new MaxFilesLimitException("Lista cheia.");
-
+                    
                 } else {
+                    this.globalAddFileFailures = this.globalAddFileFailures + 1;
                     throw new MemoryFullException("Memória Cheia.");
                 }
             } else {
+                this.globalAddFileFailures = this.globalAddFileFailures + 1;
                 throw new FileSizeInvalidException("Tamanho Invalido.");
             }
 
@@ -142,7 +149,7 @@ public class PPod extends Player {
 
     @Override
     public boolean shufflePlay() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return ShuffleAlgorithms.shuffle(algo, lista);
     }
 
     @Override

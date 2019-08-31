@@ -9,7 +9,7 @@ package ex2.Files;
  * Classe que contem a definição de um ficheiro
  * @author NERD-X
  */
-public class File {
+public class File{
     
     private String name;
     private String extension;
@@ -66,7 +66,5 @@ public class File {
     public String toString() {
         return "File{" + "name=" + name + ", extension=" + extension + ", size=" + size + ", duration=" + duration + '}';
     }
-    
-    
-    
+     
 }
