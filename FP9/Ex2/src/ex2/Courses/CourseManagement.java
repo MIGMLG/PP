@@ -43,11 +43,18 @@ public class CourseManagement extends ContainerOfObjects {
      * @return
      */
     public boolean removeDiscipline(Discipline discipline) {
-        int position = super.findObject(discipline);
-        if (position != -1) {
-            System.out.println("Removido: " + super.removeObjects(position));
-            return true;
+        
+        if (super.getCounter() == 0) {
+            return false;
         } else {
+            Object[] tmp = this.getObjects();
+            for(int i = 0; i < super.getCounter(); i++){
+                Discipline tmpDiscipline = (Discipline) tmp[i];
+                if (tmpDiscipline.getId() == discipline.getId()){
+                    System.out.println("Removido: " + super.removeObjects(i));
+                    return true;
+                }
+            }
             return false;
         }
     }
@@ -75,7 +82,7 @@ public class CourseManagement extends ContainerOfObjects {
         if (super.getCounter() == 0) {
             return false;
         } else {
-            Object[] tmp = super.getObjects();
+            Object[] tmp = this.getObjects();
             for(int i = 0; i < super.getCounter(); i++){
                 Discipline tmpDiscipline = (Discipline) tmp[i];
                 if (tmpDiscipline.getId() == obj.getId()){
