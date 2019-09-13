@@ -35,6 +35,10 @@ public class PPod extends Player {
     private int currentTrack = -1;
     private ShuffleAlgorithms algo = ShuffleAlgorithms.ORDERBYDURATION;
 
+    /**
+     * Metodo Constructor
+     * @param algo
+     */
     public PPod(ShuffleAlgorithms algo) {
         this.algo = algo;
     }
@@ -172,6 +176,11 @@ public class PPod extends Player {
         }
     }
 
+    /**
+     * Classr para realizar o backup do estado do objecto
+     * @param path
+     * @return
+     */
     public boolean backup(String path) {
         try {
             ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(path));
@@ -186,6 +195,11 @@ public class PPod extends Player {
         return false;
     }
 
+    /**
+     * Classe para obter o estado anterior do objeto apartir do ficheiro
+     * @param path
+     * @return
+     */
     public boolean restore(String path) {
         try {
             ObjectInputStream in = new ObjectInputStream(new FileInputStream(path));

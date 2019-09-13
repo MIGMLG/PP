@@ -9,13 +9,32 @@ import ex2.Files.File;
 import java.util.Arrays;
 
 /**
- *
+ * Classe com os algoritmos de od«rdenação
  * @author NERD-X
  */
 public enum ShuffleAlgorithms {
 
-    ORDERBYNAME, ORDERBYSIZE, ORDERBYDURATION;
+    /**
+     * Ordenar por nome
+     */
+    ORDERBYNAME,
 
+    /**
+     * Ordenar por tamanho
+     */
+    ORDERBYSIZE,
+
+    /**
+     * Ordenar por duração
+     */
+    ORDERBYDURATION;
+
+    /**
+     * Metodo para selecionar o algoritmo a usar
+     * @param algo
+     * @param array
+     * @return
+     */
     public static boolean shuffle(ShuffleAlgorithms algo, File[] array) {
         switch (algo) {
             case ORDERBYNAME:
@@ -29,6 +48,11 @@ public enum ShuffleAlgorithms {
         }
     }
 
+    /**
+     * Metodo para ordenar as músicas por nome
+     * @param array
+     * @return
+     */
     public static boolean orderByName(File[] array) {
         for (int i = 0; i < array.length - 1; i++) {
             for (int j = i + 1; j < array.length; j++) {
@@ -45,7 +69,11 @@ public enum ShuffleAlgorithms {
 
     }
     
-    
+    /**
+     * Metodo para ordenar as músicas por tamanho
+     * @param array
+     * @return
+     */
     public static boolean orderBySize(File[] array){
         for (int i = 0; i < array.length - 1; i++) {
             for (int j = i + 1; j < array.length; j++) {
@@ -61,6 +89,11 @@ public enum ShuffleAlgorithms {
         return true;
     }
     
+    /**
+     * Metodo para ordenar as músicas por duração
+     * @param array
+     * @return
+     */
     public static boolean orderByDuraton(File[] array){
         for (int i = 0; i < array.length - 1; i++) {
             for (int j = i + 1; j < array.length; j++) {
