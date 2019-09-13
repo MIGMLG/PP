@@ -5,11 +5,13 @@
  */
 package ex2.Files;
 
+import java.io.Serializable;
+
 /**
  * Classe que contem a definição de um ficheiro
  * @author NERD-X
  */
-public class File{
+public class File implements  Serializable{
     
     private String name;
     private String extension;

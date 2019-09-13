@@ -6,12 +6,13 @@
 package ex2.Players;
 
 import ex2.Interfaces.PlayerInterface;
+import java.io.Serializable;
 
 /**
  * Classe que define o objeto player
  * @author NERD-X
  */
-abstract class Player implements PlayerInterface {
+abstract class Player implements PlayerInterface, Serializable{
     
     protected int globalAddFileFailures = 0;
 

@@ -13,6 +13,7 @@ import ex2.Exceptions.MemoryFullException;
 import ex2.Files.File;
 import ex2.Players.PPod;
 import ex2.Players.ShuffleAlgorithms;
+import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -60,6 +61,12 @@ public class Demo {
         p1.list();
         
         System.out.println("Suffle Tests: " + p1.shufflePlay());
+        p1.list();
+        
+        System.out.println(p1.backup("backup.txt"));
+        
+        System.out.println(p1.restore("backup.txt"));
+        
         p1.list();
         
     }

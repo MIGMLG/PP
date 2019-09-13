@@ -17,7 +17,7 @@ import ex2.Files.File;
  *
  * @author NERD-X
  */
-public interface PlayerInterface {
+public interface PlayerInterface{
     
     /**
      * Metodo para adicionar um ficheiro á lista

@@ -11,16 +11,25 @@ import ex2.Exceptions.FileSizeInvalidException;
 import ex2.Exceptions.MaxFilesLimitException;
 import ex2.Exceptions.MemoryFullException;
 import ex2.Files.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import java.io.Serializable;
 
 /**
  * Classe que define o player de mp3
  *
  * @author NERD-X
  */
-public class PPod extends Player{
+public class PPod extends Player {
 
-    private final int MAX_FILES = 20;
-    private final int MAX_MEMORY = 102400;
+    private transient final int MAX_FILES = 2;
+    private transient final int MAX_MEMORY = 102400;
     private File[] lista = new File[MAX_FILES];
     private int currentMemory = 0;
     private int currentTrack = -1;
@@ -48,7 +57,7 @@ public class PPod extends Player{
                     }
                     this.globalAddFileFailures = this.globalAddFileFailures + 1;
                     throw new MaxFilesLimitException("Lista cheia.");
-                    
+
                 } else {
                     this.globalAddFileFailures = this.globalAddFileFailures + 1;
                     throw new MemoryFullException("Memória Cheia.");
@@ -99,12 +108,12 @@ public class PPod extends Player{
         } else {
             throw new ArrayIndexOutOfBoundsException("Posição Inexistente.");
         }
-        
+
     }
 
     @Override
     public boolean nextTrack() {
-        
+
         int nextTrack = this.currentTrack;
         for (int i = this.currentTrack; i < this.MAX_FILES; i++) {
             try {
@@ -122,12 +131,12 @@ public class PPod extends Player{
             }
         }
         return false;
-        
+
     }
 
     @Override
     public boolean previousTrack() {
-        
+
         int previousTrack = this.currentTrack;
         for (int i = this.currentTrack; i >= 0; i--) {
             try {
@@ -161,6 +170,40 @@ public class PPod extends Player{
                         + "-------------------------" + "\n");
             }
         }
+    }
+
+    public boolean backup(String path) {
+        try {
+            ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(path));
+            out.writeObject(this);
+            out.close();
+            return true;
+        } catch (FileNotFoundException ex) {
+            System.out.println(ex.getMessage());
+        } catch (IOException ex) {
+            System.out.println(ex.getMessage());
+        }
+        return false;
+    }
+
+    public boolean restore(String path) {
+        try {
+            ObjectInputStream in = new ObjectInputStream(new FileInputStream(path));
+            PPod tmp = (PPod) in.readObject();
+            this.lista = tmp.lista;
+            this.algo = tmp.algo;
+            this.currentMemory = tmp.currentMemory;
+            this.currentTrack = tmp.currentTrack;
+            in.close();
+            return true;
+        } catch (FileNotFoundException ex) {
+            System.out.println(ex.getMessage());
+        } catch (IOException ex) {
+            System.out.println(ex.getMessage());
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(PPod.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return false;
     }
 
 }
