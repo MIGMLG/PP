@@ -39,7 +39,7 @@ public class PhoneHistoryManagement implements HistoryManagementInterface {
 
         try (BufferedReader br = new BufferedReader(new FileReader(path))) {
             String line;
-            //Skip first Line which has the titles of each of columm
+            //Skip first Line which has the titles of each column
             br.readLine();
             while ((line = br.readLine()) != null) {
                 String[] values = line.split(";");
